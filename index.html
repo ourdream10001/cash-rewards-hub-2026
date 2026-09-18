@@ -1,1028 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>UpLevelRewards | $1,000 Cash Deposit</title>
-
-  <meta name="description"
-        content="Discover the UpLevelRewards $1,000 cash deposit promotional opportunity. Check eligibility and review the official terms.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-  <style>
-    :root {
-      --navy: #07111f;
-      --navy-2: #0b1b2e;
-      --card: #10243a;
-      --gold: #f7c948;
-      --gold-light: #ffe58a;
-      --green: #39d98a;
-      --white: #ffffff;
-      --muted: #a9b7c8;
-      --border: rgba(255,255,255,.09);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1150px, 92%);
-      margin: auto;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      position: relative;
-      z-index: 10;
-      padding: 22px 0;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      background: rgba(7,17,31,.8);
-      backdrop-filter: blur(15px);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    .nav-btn {
-      padding: 10px 18px;
-      border: 1px solid rgba(247,201,72,.4);
-      border-radius: 30px;
-      color: var(--gold-light);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      position: relative;
-      padding: 95px 0 85px;
-      background:
-        radial-gradient(circle at 75% 25%, rgba(247,201,72,.13), transparent 28%),
-        radial-gradient(circle at 15% 60%, rgba(57,217,138,.08), transparent 25%),
-        linear-gradient(180deg, #07111f, #09192b);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 50px;
-      background: rgba(247,201,72,.1);
-      border: 1px solid rgba(247,201,72,.25);
-      color: var(--gold-light);
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.02;
-      letter-spacing: -4px;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero-description {
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 32px;
-    }
-
-    .cta {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 17px 28px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #f7c948, #e9ad24);
-      color: #15110a;
-      font-weight: 900;
-      font-size: 15px;
-      box-shadow: 0 12px 35px rgba(247,201,72,.2);
-      transition: .25s ease;
-      cursor: pointer;
-    }
-
-    .cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 45px rgba(247,201,72,.3);
-    }
-
-    .small-note {
-      color: #77879a;
-      font-size: 12px;
-      margin-top: 15px;
-    }
-
-    /* ================= MONEY CARD ================= */
-
-    .reward-card {
-      position: relative;
-      min-height: 430px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .glow {
-      position: absolute;
-      width: 330px;
-      height: 330px;
-      border-radius: 50%;
-      background: rgba(247,201,72,.15);
-      filter: blur(55px);
-    }
-
-    .money-box {
-      position: relative;
-      width: min(410px, 100%);
-      padding: 42px 30px;
-      text-align: center;
-      border: 1px solid rgba(247,201,72,.28);
-      border-radius: 30px;
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,.025)
-      );
-      backdrop-filter: blur(20px);
-      box-shadow: 0 35px 90px rgba(0,0,0,.35);
-    }
-
-    .money-label {
-      font-size: 13px;
-      color: var(--gold-light);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .money {
-      font-size: clamp(70px, 10vw, 105px);
-      line-height: 1;
-      margin: 15px 0;
-      font-weight: 900;
-      letter-spacing: -6px;
-      color: var(--gold);
-      text-shadow: 0 0 35px rgba(247,201,72,.18);
-    }
-
-    .money-sub {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* ================= BANNER ================= */
-
-    .attention {
-      padding: 16px 0;
-      background: linear-gradient(90deg, #102d26, #173a2d, #102d26);
-      border-top: 1px solid rgba(57,217,138,.15);
-      border-bottom: 1px solid rgba(57,217,138,.15);
-    }
-
-    .attention-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    .attention strong {
-      color: var(--green);
-    }
-
-    /* ================= SECTIONS ================= */
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 55px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(32px, 5vw, 48px);
-      letter-spacing: -2px;
-      line-height: 1.1;
-      margin-bottom: 15px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-    }
-
-    /* ================= STEPS ================= */
-
-    .steps {
-      background: #091829;
-    }
-
-    .step-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .step {
-      position: relative;
-      padding: 30px 24px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: rgba(255,255,255,.025);
-      transition: .25s ease;
-    }
-
-    .step:hover {
-      transform: translateY(-5px);
-      border-color: rgba(247,201,72,.25);
-    }
-
-    .step-number {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 14px;
-      background: rgba(247,201,72,.1);
-      color: var(--gold);
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-
-    .step h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* ================= BIG VISUAL ================= */
-
-    .visual-section {
-      text-align: center;
-      background:
-        radial-gradient(circle at center, rgba(247,201,72,.1), transparent 40%),
-        #07111f;
-    }
-
-    .visual-section h2 {
-      font-size: clamp(38px, 6vw, 65px);
-      letter-spacing: -3px;
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
-
-    .visual-section h2 span {
-      color: var(--gold);
-    }
-
-    .visual-section p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: var(--muted);
-    }
-
-    /* ================= TRUST ================= */
-
-    .trust-box {
-      max-width: 850px;
-      margin: auto;
-      padding: 45px;
-      border-radius: 24px;
-      background: #0d2034;
-      border: 1px solid var(--border);
-    }
-
-    .trust-box h2 {
-      margin-bottom: 15px;
-      font-size: 30px;
-    }
-
-    .trust-box > p {
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .checks {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .check {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      color: #d9e3ee;
-      font-size: 14px;
-    }
-
-    .check span {
-      color: var(--green);
-      font-size: 18px;
-    }
-
-    /* ================= FAQ ================= */
-
-    .faq {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-question {
-      width: 100%;
-      padding: 22px 0;
-      background: none;
-      border: none;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-align: left;
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .faq-question span {
-      color: var(--gold);
-      font-size: 22px;
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 0 35px 22px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-
-    /* ================= FINAL CTA ================= */
-
-    .final-cta {
-      padding: 100px 0;
-      text-align: center;
-      background:
-        radial-gradient(circle at center, rgba(247,201,72,.12), transparent 40%),
-        #09192b;
-    }
-
-    .final-cta h2 {
-      font-size: clamp(35px, 5vw, 55px);
-      line-height: 1.05;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-    }
-
-    .final-cta p {
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      padding: 35px 0 90px;
-      background: #050d17;
-      text-align: center;
-      color: #6f7e90;
-      font-size: 12px;
-    }
-
-    footer a {
-      color: #aeb9c7;
-      margin: 0 8px;
-    }
-
-    /* ================= MOBILE CTA ================= */
-
-    .mobile-cta {
-      display: none;
-    }
-
-    /* ================= RESPONSIVE ================= */
-
-    @media (max-width: 900px) {
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .step-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .reward-card {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      header {
-        padding: 16px 0;
-      }
-
-      .nav-btn {
-        display: none;
-      }
-
-      .hero {
-        padding: 65px 0 55px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .hero-description {
-        font-size: 16px;
-      }
-
-      .money-box {
-        padding: 35px 20px;
-      }
-
-      .money {
-        font-size: 75px;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .step-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .checks {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-box {
-        padding: 30px 22px;
-      }
-
-      .mobile-cta {
-        display: block;
-        position: fixed;
-        z-index: 100;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 12px;
-        background: rgba(5,13,23,.94);
-        backdrop-filter: blur(15px);
-        border-top: 1px solid rgba(255,255,255,.08);
-      }
-
-      .mobile-cta .cta {
-        width: 100%;
-      }
-
-      footer {
-        padding-bottom: 100px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpLevelRewards - $1,000 Cash Deposit Opportunity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131d31;
+            --card-border: #1e293b;
+            --accent-green: #10b981;
+            --accent-green-hover: #059669;
+            --accent-gold: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 70px; /* Space for mobile sticky CTA */
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        /* Attention Banner */
+        .attention-banner {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(16, 185, 129, 0.15));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .attention-banner h3 {
+            color: var(--accent-gold);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .attention-banner p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .hero-section h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .hero-section h1 span {
+            color: var(--accent-green);
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 32px auto;
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-green);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 16px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(16, 185, 129, 0.6);
+        }
+
+        .disclaimer-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        /* Section Styling */
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 32px 24px;
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media(min-width: 600px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .step-item {
+            background: rgba(11, 15, 25, 0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--accent-green);
+            margin-bottom: 8px;
+        }
+
+        .step-item h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Big Visual Highlight Section */
+        .visual-highlight {
+            background: linear-gradient(180deg, #131d31 0%, #0b0f19 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 24px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .visual-highlight h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .visual-highlight p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 24px auto;
+            font-size: 1rem;
+        }
+
+        /* Trust List */
+        .trust-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        @media(min-width: 600px) {
+            .trust-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .trust-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            background: rgba(11, 15, 25, 0.4);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+        }
+
+        .trust-list li::before {
+            content: "✓";
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            border-bottom: 1px solid var(--card-border);
+            padding: 16px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.4rem;
+            color: var(--accent-green);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 150px;
+            margin-top: 8px;
+        }
+
+        /* Sticky Mobile CTA */
+        .mobile-sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--card-border);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .mobile-sticky-cta .cta-button {
+            width: 100%;
+            max-width: 600px;
+            padding: 12px 20px;
+            font-size: 1rem;
+        }
+
+        @media(min-width: 768px) {
+            .mobile-sticky-cta {
+                display: none; /* Hide on larger screens if desired, or keep as a footer bar */
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-  <!-- ================= HEADER ================= -->
-
-  <header>
-    <div class="container nav">
-
-      <div class="logo">
-        UpLevel<span>Rewards</span>
-      </div>
-
-      <a href="#eligibility" class="nav-btn">
-        Check Eligibility
-      </a>
-
-    </div>
-  </header>
-
-
-  <!-- ================= HERO ================= -->
-
-  <main>
-
-    <section class="hero">
-
-      <div class="container hero-grid">
-
-        <div>
-
-          <div class="badge">
-            🎁 Special Reward Opportunity
-          </div>
-
-          <h1>
-            Unlock Your Chance to Receive a
-            <span>$1,000</span> Cash Deposit
-          </h1>
-
-          <p class="hero-description">
-            Discover an exciting reward opportunity with UpLevelRewards.
-            Complete the required steps and see whether you qualify for
-            this promotional offer.
-          </p>
-
-          <a href="#eligibility" class="cta">
-            CHECK ELIGIBILITY →
-          </a>
-
-          <p class="small-note">
-            Eligibility requirements, terms, and conditions apply.
-          </p>
-
-        </div>
-
-
-        <div class="reward-card">
-
-          <div class="glow"></div>
-
-          <div class="money-box">
-
-            <div class="money-label">
-              Potential Cash Reward
-            </div>
-
-            <div class="money">
-              $1,000
-            </div>
-
-            <div class="money-sub">
-              Available to eligible participants
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= ATTENTION BANNER ================= -->
-
-    <div class="attention">
-
-      <div class="container attention-content">
-
-        <span>🎁</span>
-
-        <div>
-          <strong>SPECIAL REWARD OPPORTUNITY</strong>
-          — A potential $1,000 cash deposit could be available
-          to eligible participants.
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- ================= STEPS ================= -->
-
-    <section class="steps">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <h2>
-            Simple Steps.<br>
-            Exciting Possibilities.
-          </h2>
-
-          <p>
-            Getting started is easy. Follow the required steps
-            and review the promotional requirements.
-          </p>
-
-        </div>
-
-
-        <div class="step-grid">
-
-          <div class="step">
-
-            <div class="step-number">01</div>
-
-            <h3>Get Started</h3>
-
-            <p>
-              Enter your information to begin the promotional process.
-            </p>
-
-          </div>
-
-
-          <div class="step">
-
-            <div class="step-number">02</div>
-
-            <h3>Complete Requirements</h3>
-
-            <p>
-              Follow the promotional steps and complete any required
-              offers or activities.
-            </p>
-
-          </div>
-
-
-          <div class="step">
-
-            <div class="step-number">03</div>
-
-            <h3>Check Eligibility</h3>
-
-            <p>
-              Once the required steps are completed, your eligibility
-              can be reviewed.
-            </p>
-
-          </div>
-
-
-          <div class="step">
-
-            <div class="step-number">04</div>
-
-            <h3>Receive Your Reward</h3>
-
-            <p>
-              Eligible participants may receive the advertised reward
-              according to the official terms.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= BIG VISUAL ================= -->
-
-    <section class="visual-section">
-
-      <div class="container">
-
-        <h2>
-          Could <span>$1,000</span> Be<br>
-          Your Next Reward?
-        </h2>
-
-        <p>
-          UpLevelRewards gives eligible participants an opportunity
-          to take part in promotional reward campaigns.
-          Check the requirements today to find out if you qualify.
-        </p>
-
-        <a href="#eligibility" class="cta">
-          GET STARTED NOW →
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= TRUST ================= -->
-
-    <section>
-
-      <div class="container">
-
-        <div class="trust-box">
-
-          <h2>Before You Continue</h2>
-
-          <p>
-            We believe promotional offers should be clear and
-            transparent. Please review the official terms and
-            eligibility requirements before participating.
-          </p>
-
-
-          <div class="checks">
-
-            <div class="check">
-              <span>✓</span>
-              Eligibility requirements apply
-            </div>
-
-            <div class="check">
-              <span>✓</span>
-              Offer availability may vary
-            </div>
-
-            <div class="check">
-              <span>✓</span>
-              Terms and conditions apply
-            </div>
-
-            <div class="check">
-              <span>✓</span>
-              Reward fulfillment is subject to qualification
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= FAQ ================= -->
-
-    <section>
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <h2>Frequently Asked Questions</h2>
-
-          <p>
-            Important information about the promotional opportunity.
-          </p>
-
-        </div>
-
-
-        <div class="faq">
-
-          <div class="faq-item">
-
-            <button class="faq-question">
-              How does the $1,000 offer work?
-              <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-              Participants must complete the requirements specified
-              in the official promotion terms. Qualified participants
-              may be eligible for the advertised reward.
-            </div>
-
-          </div>
-
-
-          <div class="faq-item">
-
-            <button class="faq-question">
-              Is everyone eligible?
-              <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-              Eligibility depends on the official terms and conditions
-              of the promotion.
-            </div>
-
-          </div>
-
-
-          <div class="faq-item">
-
-            <button class="faq-question">
-              How do I get started?
-              <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-              Click the “Check Eligibility” button and follow the
-              instructions provided.
-            </div>
-
-          </div>
-
-
-          <div class="faq-item">
-
-            <button class="faq-question">
-              When will I receive the reward?
-              <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-              Reward timing depends on the promotion's official terms
-              and successful completion of all applicable requirements.
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= FINAL CTA ================= -->
-
-    <section class="final-cta" id="eligibility">
-
-      <div class="container">
-
-        <h2>
-          Your $1,000 Reward<br>
-          Opportunity Starts Here
-        </h2>
-
-        <p>
-          Take the first step and check whether you qualify.
-        </p>
-
-        <!-- Replace # with your real offer URL -->
-        <a href="#" class="cta">
-          CHECK MY ELIGIBILITY →
-        </a>
-
-        <p class="small-note">
-          Terms & Conditions Apply. Eligibility restrictions may apply.
-        </p>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
 
     <div class="container">
 
-      <p>
-        © 2026 UpLevelRewards. All rights reserved.
-      </p>
+        <!-- Attention Banner -->
+        <div class="attention-banner">
+            <h3>🎁 SPECIAL REWARD OPPORTUNITY</h3>
+            <p>A potential $1,000 cash deposit could be waiting for eligible participants.</p>
+        </div>
 
-      <p style="margin-top:10px;">
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Contact</a>
-      </p>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <span class="hero-badge">UpLevelRewards Program</span>
+            <h1>Unlock Your Chance to Receive a <span>$1,000 Cash Deposit</span></h1>
+            <p>Discover an exciting reward opportunity with UpLevelRewards. Complete the required steps and see whether you qualify for this limited promotional offer.</p>
+            <a href="#cta-link" class="cta-button">[ CHECK ELIGIBILITY ]</a>
+            <p class="disclaimer-text">Eligibility requirements, terms, and conditions apply.</p>
+        </section>
 
-      <p style="margin-top:15px;">
-        This page is for promotional purposes. Offer availability,
-        eligibility, and reward fulfillment are subject to the
-        applicable official terms.
-      </p>
+        <!-- 4-Step Process Section -->
+        <div class="section-card">
+            <h2 class="section-title">Simple Steps. Exciting Possibilities.</h2>
+            <p class="section-subtitle">Getting started is easy and straightforward:</p>
+            
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <h4>Get Started</h4>
+                    <p>Enter your information to begin your reward journey.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <h4>Complete Requirements</h4>
+                    <p>Follow the promotional steps and complete any required offers or activities.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <h4>Check Your Eligibility</h4>
+                    <p>Once the required steps are completed, your eligibility can be reviewed.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <h4>Receive Your Reward</h4>
+                    <p>Eligible participants may receive the advertised cash reward according to official terms.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Big Visual Section -->
+        <div class="visual-highlight">
+            <h2>Could $1,000 Be Your Next Reward?</h2>
+            <p>UpLevelRewards gives eligible participants an opportunity to take part in promotional reward campaigns. Check the requirements today to find out if you qualify.</p>
+            <a href="#cta-link" class="cta-button" id="cta-link">GET STARTED NOW →</a>
+        </div>
+
+        <!-- Trust / Transparency Section -->
+        <div class="section-card">
+            <h2 class="section-title" style="text-align: left;">Before You Continue</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">We believe promotional offers should be clear and transparent. Please review the official terms and eligibility requirements before participating.</p>
+            
+            <ul class="trust-list">
+                <li>Eligibility requirements apply</li>
+                <li>Offer availability may vary</li>
+                <li>Terms and conditions apply</li>
+                <li>Reward fulfillment is subject to qualification</li>
+            </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section-card">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Got questions? Find answers below.</p>
+
+            <div class="faq-item">
+                <div class="faq-question">How does the $1,000 offer work?</div>
+                <div class="faq-answer">Participants must complete the requirements specified in the official promotion terms. Qualified participants may be eligible for the advertised reward.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is everyone eligible?</div>
+                <div class="faq-answer">Eligibility depends on the official terms and conditions of the promotion and region restrictions.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I get started?</div>
+                <div class="faq-answer">Click the “Check Eligibility” button and follow the instructions provided on the partner network.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">When will I receive the reward?</div>
+                <div class="faq-answer">Reward timing depends on the promotion's official terms and successful completion of all applicable requirements.</div>
+            </div>
+        </div>
+
+        <!-- Final CTA Section -->
+        <div class="visual-highlight" style="margin-bottom: 0;">
+            <h2>Your $1,000 Reward Opportunity Starts Here</h2>
+            <p>Take the first step and check whether you qualify today.</p>
+            <a href="#" class="cta-button">[ CHECK MY ELIGIBILITY ]</a>
+            <p class="disclaimer-text" style="margin-top: 16px;">Terms & Conditions Apply. Eligibility restrictions may apply.</p>
+        </div>
 
     </div>
 
-  </footer>
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <a href="#" class="cta-button">CHECK ELIGIBILITY</a>
+    </div>
 
-
-  <!-- ================= MOBILE CTA ================= -->
-
-  <div class="mobile-cta">
-
-    <!-- Replace # with your real offer URL -->
-    <a href="#" class="cta">
-      CHECK ELIGIBILITY →
-    </a>
-
-  </div>
-
-
-  <!-- ================= JAVASCRIPT ================= -->
-
-  <script>
-
-    // FAQ Accordion
-
-    const faqItems = document.querySelectorAll(".faq-item");
-
-    faqItems.forEach(item => {
-
-      const question = item.querySelector(".faq-question");
-      const icon = question.querySelector("span");
-
-      question.addEventListener("click", () => {
-
-        const isActive = item.classList.contains("active");
-
-        faqItems.forEach(otherItem => {
-
-          otherItem.classList.remove("active");
-
-          const otherIcon =
-            otherItem.querySelector(".faq-question span");
-
-          otherIcon.textContent = "+";
-
+    <script>
+        // Simple FAQ Accordion Script
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
         });
-
-        if (!isActive) {
-
-          item.classList.add("active");
-          icon.textContent = "−";
-
-        }
-
-      });
-
-    });
-
-  </script>
-
+    </script>
 </body>
 </html>
