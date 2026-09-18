@@ -4,31 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UpLevelRewards - $1,000 Cash Deposit</title>
-
-<meta name="description"
-content="Unlock your chance to receive a $1,000 cash deposit through UpLevelRewards. Eligibility requirements apply.">
+<title>UpLevelRewards — $1,000 Cash Deposit</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-:root{
-    --bg:#050807;
-    --bg2:#09110e;
-    --card:rgba(255,255,255,.055);
-    --card-border:rgba(255,255,255,.10);
-    --text:#f5f7f6;
-    --muted:#9da9a4;
-    --green:#50e39b;
-    --green2:#19c978;
-    --gold:#ffd76a;
-    --white:#ffffff;
-    --shadow:0 30px 90px rgba(0,0,0,.45);
-}
+/* =========================================================
+   PREMIUM RESET
+========================================================= */
 
 *{
     margin:0;
@@ -42,118 +28,180 @@ html{
 
 body{
     font-family:"DM Sans",sans-serif;
-    background:
-        radial-gradient(circle at 10% 10%,rgba(43,226,139,.09),transparent 28%),
-        radial-gradient(circle at 90% 15%,rgba(255,215,106,.08),transparent 25%),
-        var(--bg);
-    color:var(--text);
+    color:#f8faf9;
+    background:#050806;
     overflow-x:hidden;
 }
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+    --black:#050806;
+    --black2:#080d0a;
+
+    --green:#45e39a;
+    --green-dark:#16bd6d;
+
+    --gold:#f7cc67;
+    --gold-light:#ffe9a5;
+
+    --white:#ffffff;
+    --muted:#929d97;
+
+    --border:rgba(255,255,255,.10);
+
+    --glass:rgba(255,255,255,.055);
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
-    pointer-events:none;
-    background-image:
-        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-    background-size:70px 70px;
-    mask-image:linear-gradient(to bottom,black,transparent 90%);
-    z-index:-5;
+    z-index:-10;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(62,227,151,.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 100% 40%,
+            rgba(247,204,103,.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #07100b 0%,
+            #050806 50%,
+            #030504 100%
+        );
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-9;
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size:70px 70px;
+
+    mask-image:linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+    );
 }
 
 .container{
-    width:min(1160px,92%);
+    width:min(1180px,92%);
     margin:auto;
 }
 
-/* =========================
-   BACKGROUND EFFECTS
-========================= */
+/* =========================================================
+   FLOATING LIGHTS
+========================================================= */
 
-.bg-orb{
+.light{
     position:fixed;
     border-radius:50%;
-    filter:blur(80px);
     pointer-events:none;
-    z-index:-2;
-    opacity:.25;
+    filter:blur(100px);
+    z-index:-5;
+    opacity:.18;
 }
 
-.orb1{
-    width:300px;
-    height:300px;
-    background:#19c978;
+.light-1{
+    width:350px;
+    height:350px;
+    background:#28d783;
+    left:-160px;
     top:15%;
-    left:-120px;
-    animation:floatOrb 10s ease-in-out infinite;
+    animation:lightMove 12s ease-in-out infinite;
 }
 
-.orb2{
-    width:280px;
-    height:280px;
-    background:#ffd76a;
-    right:-100px;
-    top:40%;
-    animation:floatOrb 13s ease-in-out infinite reverse;
+.light-2{
+    width:320px;
+    height:320px;
+    background:#e8bb50;
+    right:-150px;
+    top:30%;
+    animation:lightMove 15s ease-in-out infinite reverse;
 }
 
-.orb3{
-    width:220px;
-    height:220px;
-    background:#28b8ff;
-    left:45%;
-    bottom:5%;
-    animation:floatOrb 15s ease-in-out infinite;
-}
-
-@keyframes floatOrb{
+@keyframes lightMove{
     0%,100%{
-        transform:translate(0,0) scale(1);
+        transform:translate(0,0);
     }
     50%{
-        transform:translate(30px,-40px) scale(1.15);
+        transform:translate(50px,-35px);
     }
 }
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
-header{
-    position:fixed;
+.header{
+    position:absolute;
     top:0;
     left:0;
     width:100%;
-    z-index:1000;
-    padding:18px 0;
+    z-index:100;
+
+    padding:20px 0;
 }
 
 .nav{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:12px 16px 12px 20px;
 
-    background:rgba(8,13,11,.65);
+    padding:12px 14px 12px 20px;
+
     border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
     border-radius:18px;
-    box-shadow:0 10px 40px rgba(0,0,0,.18);
+
+    background:rgba(5,9,7,.58);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.20);
 }
 
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:11px;
 
     font-family:"Manrope",sans-serif;
     font-weight:800;
@@ -161,717 +209,900 @@ header{
 }
 
 .logo-icon{
-    width:34px;
-    height:34px;
-    border-radius:10px;
+    width:36px;
+    height:36px;
 
     display:grid;
     place-items:center;
 
-    color:#03140c;
-    background:linear-gradient(135deg,var(--green),#b8ffd9);
+    border-radius:11px;
 
-    box-shadow:0 0 25px rgba(80,227,155,.3);
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            #a5f7ca
+        );
+
+    color:#03130a;
+
+    box-shadow:
+        0 0 25px rgba(69,227,154,.22);
 }
 
-.logo span{
+.logo em{
+    font-style:normal;
     color:var(--green);
 }
 
-.nav-btn{
-    padding:11px 18px;
+.header-button{
+    padding:11px 19px;
+
+    border:1px solid rgba(69,227,154,.28);
     border-radius:12px;
 
-    font-weight:700;
-    font-size:14px;
-
-    background:rgba(80,227,155,.1);
-    border:1px solid rgba(80,227,155,.25);
     color:var(--green);
 
-    transition:.25s;
+    background:rgba(69,227,154,.07);
+
+    font-weight:700;
+    font-size:13px;
+
+    transition:.3s;
 }
 
-.nav-btn:hover{
+.header-button:hover{
     background:var(--green);
-    color:#04130b;
+    color:#03130a;
     transform:translateY(-2px);
 }
 
-/* =========================
-   HERO
-========================= */
+/* =========================================================
+   HERO — OFFER FIRST
+========================================================= */
 
 .hero{
     min-height:900px;
-    padding:170px 0 100px;
+
+    padding:
+        130px
+        0
+        80px;
 
     display:flex;
     align-items:center;
-    position:relative;
 }
 
-.hero-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+.hero-wrapper{
+    width:100%;
 }
 
-.status{
+/* TOP LABEL */
+
+.hero-label{
+    display:flex;
+    justify-content:center;
+
+    margin-bottom:25px;
+}
+
+.live-badge{
     display:inline-flex;
     align-items:center;
     gap:8px;
 
-    padding:8px 13px;
+    padding:9px 15px;
+
     border-radius:50px;
 
-    background:rgba(80,227,155,.08);
-    border:1px solid rgba(80,227,155,.2);
+    border:1px solid rgba(69,227,154,.25);
 
-    color:#b5fbd4;
-    font-size:13px;
-    font-weight:600;
+    background:
+        rgba(69,227,154,.065);
 
-    margin-bottom:25px;
+    color:#b8f8d2;
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:.3px;
 }
 
-.status-dot{
+.live-dot{
     width:8px;
     height:8px;
-    background:var(--green);
+
     border-radius:50%;
-    box-shadow:0 0 12px var(--green);
-    animation:pulse 2s infinite;
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 0 5px rgba(69,227,154,.08),
+        0 0 16px var(--green);
+
+    animation:dotPulse 2s infinite;
 }
 
-@keyframes pulse{
+@keyframes dotPulse{
+
     0%,100%{
-        box-shadow:0 0 5px var(--green);
+        opacity:1;
     }
+
     50%{
-        box-shadow:0 0 18px var(--green);
+        opacity:.45;
     }
+
 }
 
-.hero h1{
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero-heading{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 42px;
+}
+
+.hero-heading h1{
     font-family:"Manrope",sans-serif;
-    font-size:clamp(46px,6vw,78px);
-    line-height:1.01;
-    letter-spacing:-4px;
+
+    font-size:
+        clamp(38px,5vw,67px);
+
+    line-height:1.04;
+
+    letter-spacing:-3px;
+
     font-weight:800;
-    margin-bottom:25px;
+
+    margin-bottom:17px;
 }
 
-.gradient-text{
-    background:linear-gradient(
-        100deg,
-        #ffffff 10%,
-        #7ef0b2 48%,
-        #ffd76a 90%
-    );
+.hero-heading h1 span{
+    background:
+        linear-gradient(
+            100deg,
+            #ffffff 10%,
+            #76eeb0 50%,
+            #f8d475 90%
+        );
+
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 }
 
-.hero p{
-    max-width:570px;
+.hero-heading p{
+    max-width:620px;
+
+    margin:auto;
+
     color:var(--muted);
-    font-size:18px;
-    line-height:1.75;
-    margin-bottom:34px;
+
+    font-size:17px;
+
+    line-height:1.7;
 }
 
-.hero-buttons{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
+/* =========================================================
+   MAIN OFFER CARD
+========================================================= */
 
-.primary-btn{
+.offer-wrap{
     position:relative;
-    overflow:hidden;
 
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
+    max-width:950px;
 
-    padding:17px 25px;
-    border-radius:14px;
+    margin:auto;
 
-    background:linear-gradient(135deg,var(--green),#28c982);
-    color:#03130b;
+    padding:1px;
 
-    font-weight:800;
-    font-size:15px;
+    border-radius:34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(69,227,154,.45),
+            rgba(255,255,255,.08),
+            rgba(247,204,103,.35)
+        );
 
     box-shadow:
-        0 12px 30px rgba(38,220,137,.2),
-        inset 0 1px rgba(255,255,255,.45);
-
-    transition:.3s;
+        0 40px 120px rgba(0,0,0,.5),
+        0 0 90px rgba(69,227,154,.08);
 }
 
-.primary-btn::before{
+/* glow behind card */
+
+.offer-wrap::before{
     content:"";
+
     position:absolute;
-    top:0;
-    left:-100%;
-    width:70%;
-    height:100%;
 
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.45),
-        transparent
-    );
+    width:500px;
+    height:500px;
 
-    transform:skewX(-20deg);
-    transition:.6s;
-}
+    left:50%;
+    top:50%;
 
-.primary-btn:hover::before{
-    left:130%;
-}
-
-.primary-btn:hover{
-    transform:translateY(-4px);
-    box-shadow:
-        0 18px 40px rgba(38,220,137,.3),
-        inset 0 1px rgba(255,255,255,.5);
-}
-
-.secondary-btn{
-    padding:17px 22px;
-    border-radius:14px;
-
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.035);
-
-    font-weight:700;
-
-    transition:.3s;
-}
-
-.secondary-btn:hover{
-    background:rgba(255,255,255,.08);
-    transform:translateY(-3px);
-}
-
-/* =========================
-   REWARD CARD
-========================= */
-
-.reward-stage{
-    position:relative;
-    min-height:570px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.reward-glow{
-    position:absolute;
-    width:420px;
-    height:420px;
+    transform:translate(-50%,-50%);
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(80,227,155,.22),
-            rgba(255,215,106,.05) 45%,
-            transparent 70%
+            rgba(69,227,154,.17),
+            transparent 65%
         );
 
-    filter:blur(10px);
-    animation:rewardGlow 5s ease-in-out infinite;
+    filter:blur(30px);
+
+    z-index:-1;
 }
 
-@keyframes rewardGlow{
-    0%,100%{
-        transform:scale(.9);
-        opacity:.7;
-    }
-    50%{
-        transform:scale(1.12);
-        opacity:1;
-    }
-}
-
-.reward-card{
+.offer-card{
     position:relative;
-    z-index:2;
 
-    width:min(430px,100%);
-    padding:32px;
+    overflow:hidden;
 
-    border-radius:30px;
+    border-radius:33px;
+
+    padding:44px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(69,227,154,.075),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #101713,
+            #080d0a
+        );
+}
+
+/* shine */
+
+.offer-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+    left:-30%;
+
+    width:50%;
+    height:300%;
 
     background:
         linear-gradient(
-            145deg,
-            rgba(255,255,255,.12),
-            rgba(255,255,255,.035)
+            90deg,
+            transparent,
+            rgba(255,255,255,.035),
+            transparent
         );
 
-    border:1px solid rgba(255,255,255,.14);
+    transform:rotate(20deg);
 
-    backdrop-filter:blur(25px);
-    -webkit-backdrop-filter:blur(25px);
-
-    box-shadow:var(--shadow);
-
-    transform:rotate(2deg);
-    transition:.5s;
+    animation:cardShine 7s ease-in-out infinite;
 }
 
-.reward-card:hover{
-    transform:rotate(0deg) translateY(-8px);
+@keyframes cardShine{
+
+    0%,60%{
+        left:-60%;
+    }
+
+    100%{
+        left:130%;
+    }
+
 }
 
-.card-top{
+/* top line */
+
+.offer-top{
+    position:relative;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:35px;
+
+    margin-bottom:24px;
 }
 
-.card-label{
-    color:#aebbb5;
-    font-size:13px;
+.offer-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    color:#d8e0dc;
+
+    font-size:12px;
+    font-weight:700;
+
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.offer-tag::before{
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:0 0 14px var(--gold);
 }
 
 .secure{
-    display:flex;
-    align-items:center;
-    gap:6px;
-
-    color:#b8fbd4;
-    font-size:12px;
+    color:#83918a;
+    font-size:11px;
 }
 
-.secure-icon{
-    width:20px;
-    height:20px;
-    border-radius:50%;
+/* =========================================================
+   HUGE $1000
+========================================================= */
 
-    display:grid;
-    place-items:center;
+.offer-main{
+    position:relative;
 
-    background:rgba(80,227,155,.12);
-    color:var(--green);
+    text-align:center;
+
+    padding:15px 0 32px;
 }
 
-.money{
+.offer-small{
+    color:#9daaa4;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+    letter-spacing:2px;
+
+    margin-bottom:7px;
+}
+
+.amount{
+    position:relative;
+
+    display:inline-block;
+
     font-family:"Manrope",sans-serif;
-    font-size:clamp(72px,9vw,110px);
+
+    font-size:
+        clamp(100px,15vw,185px);
+
     line-height:.9;
 
-    letter-spacing:-6px;
+    letter-spacing:-10px;
+
     font-weight:800;
 
-    background:linear-gradient(
-        135deg,
-        #ffffff,
-        #8af2b8 55%,
-        #ffd76a
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 5%,
+            #82efb5 43%,
+            #f8d675 82%,
+            #ffffff 100%
+        );
 
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 
-    margin-bottom:30px;
+    filter:
+        drop-shadow(
+            0 15px 35px
+            rgba(69,227,154,.10)
+        );
+
+    animation:amountFloat 4s ease-in-out infinite;
 }
 
-.card-description{
-    color:#aebbb5;
-    font-size:14px;
-    line-height:1.6;
-    margin-bottom:25px;
-}
+@keyframes amountFloat{
 
-.progress-head{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:9px;
-
-    font-size:12px;
-    color:#aab6b1;
-}
-
-.progress{
-    height:9px;
-    background:rgba(255,255,255,.08);
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.progress-bar{
-    height:100%;
-    width:72%;
-
-    border-radius:20px;
-
-    background:linear-gradient(
-        90deg,
-        #22c979,
-        #7ef0b2,
-        #ffd76a
-    );
-
-    box-shadow:0 0 18px rgba(80,227,155,.3);
-
-    animation:progressIn 2s ease;
-}
-
-@keyframes progressIn{
-    from{
-        width:0;
-    }
-    to{
-        width:72%;
-    }
-}
-
-.card-bottom{
-    margin-top:28px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding-top:22px;
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-.card-bottom span{
-    color:#89968f;
-    font-size:12px;
-}
-
-.card-bottom strong{
-    color:#fff;
-    font-size:13px;
-}
-
-/* floating cards */
-
-.float-card{
-    position:absolute;
-    z-index:3;
-
-    padding:15px 18px;
-
-    border-radius:16px;
-
-    background:rgba(10,17,14,.75);
-    border:1px solid rgba(255,255,255,.11);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:0 20px 50px rgba(0,0,0,.3);
-
-    animation:floatCard 5s ease-in-out infinite;
-}
-
-.float-card small{
-    display:block;
-    color:#7f8d87;
-    font-size:10px;
-    margin-bottom:4px;
-}
-
-.float-card strong{
-    font-size:13px;
-}
-
-.float1{
-    top:12%;
-    right:-3%;
-}
-
-.float2{
-    bottom:15%;
-    left:-7%;
-    animation-delay:1.5s;
-}
-
-@keyframes floatCard{
     0%,100%{
         transform:translateY(0);
     }
+
     50%{
-        transform:translateY(-15px);
+        transform:translateY(-6px);
     }
+
 }
 
-/* =========================
-   TRUST STRIP
-========================= */
+.amount::after{
+    content:"";
 
-.trust-strip{
-    padding:18px 0 80px;
+    position:absolute;
+
+    width:80%;
+
+    height:25px;
+
+    left:10%;
+    bottom:-15px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(69,227,154,.28),
+            transparent 70%
+        );
+
+    filter:blur(14px);
+
 }
 
-.trust-inner{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    border-top:1px solid rgba(255,255,255,.08);
-    border-bottom:1px solid rgba(255,255,255,.08);
+/* =========================================================
+   OFFER DESCRIPTION
+========================================================= */
+
+.offer-description{
+    position:relative;
+
+    max-width:610px;
+
+    margin:0 auto 30px;
+
+    text-align:center;
+
+    color:#a7b2ad;
+
+    line-height:1.7;
+
+    font-size:14px;
 }
 
-.trust-item{
-    padding:25px;
+/* =========================================================
+   CTA
+========================================================= */
+
+.offer-actions{
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+
+    margin-bottom:23px;
+}
+
+.main-cta{
+    position:relative;
+    overflow:hidden;
+
+    min-width:310px;
+
     display:flex;
     align-items:center;
     justify-content:center;
     gap:12px;
 
-    color:#aeb9b4;
-    font-size:13px;
+    padding:18px 28px;
+
+    border-radius:15px;
+
+    color:#03140b;
+
+    background:
+        linear-gradient(
+            135deg,
+            #55e9a2,
+            #29cf80
+        );
+
+    font-weight:800;
+    font-size:15px;
+
+    box-shadow:
+        0 15px 35px rgba(69,227,154,.22),
+        inset 0 1px rgba(255,255,255,.6);
+
+    transition:.3s;
+}
+
+.main-cta::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:65%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.45),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    transition:.6s;
+}
+
+.main-cta:hover::after{
+    left:130%;
+}
+
+.main-cta:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 22px 45px rgba(69,227,154,.30),
+        inset 0 1px rgba(255,255,255,.6);
+}
+
+.arrow{
+    font-size:20px;
+}
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.offer-note{
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:7px;
+
+    color:#748079;
+
+    font-size:11px;
+}
+
+.offer-note strong{
+    color:#a4afa9;
+}
+
+/* =========================================================
+   TRUST ROW
+========================================================= */
+
+.trust{
+    margin-top:20px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+
+    background:rgba(255,255,255,.025);
+}
+
+.trust-item{
+    padding:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    color:#8e9994;
+
+    font-size:12px;
 }
 
 .trust-item + .trust-item{
-    border-left:1px solid rgba(255,255,255,.08);
+    border-left:1px solid rgba(255,255,255,.07);
 }
 
-.trust-item b{
-    color:white;
+.trust-icon{
+    color:var(--green);
+    font-weight:800;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* =========================================================
+   SECTION
+========================================================= */
 
 section{
     padding:110px 0;
 }
 
-.section-head{
-    text-align:center;
+.section-heading{
     max-width:700px;
-    margin:0 auto 65px;
+
+    text-align:center;
+
+    margin:0 auto 55px;
 }
 
 .eyebrow{
     color:var(--green);
-    text-transform:uppercase;
-    letter-spacing:2px;
+
     font-size:11px;
+
     font-weight:800;
-    margin-bottom:15px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    margin-bottom:13px;
 }
 
-.section-head h2{
+.section-heading h2{
     font-family:"Manrope",sans-serif;
-    font-size:clamp(35px,5vw,55px);
+
+    font-size:
+        clamp(34px,5vw,53px);
+
     line-height:1.05;
+
     letter-spacing:-2px;
-    margin-bottom:18px;
+
+    margin-bottom:16px;
 }
 
-.section-head p{
+.section-heading p{
     color:var(--muted);
+
     line-height:1.7;
 }
 
-/* =========================
+/* =========================================================
    STEPS
-========================= */
+========================================================= */
 
 .steps{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
 }
 
 .step{
-    position:relative;
-
-    padding:28px;
-
     min-height:250px;
 
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.065),
-        rgba(255,255,255,.025)
-    );
+    padding:27px;
+
+    border-radius:22px;
 
     border:1px solid rgba(255,255,255,.08);
-    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.02)
+        );
 
     transition:.35s;
 }
 
 .step:hover{
     transform:translateY(-8px);
-    border-color:rgba(80,227,155,.25);
-    background:rgba(80,227,155,.055);
+
+    border-color:
+        rgba(69,227,154,.24);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
 }
 
 .step-number{
-    width:43px;
-    height:43px;
+    width:44px;
+    height:44px;
 
     display:grid;
     place-items:center;
 
     border-radius:13px;
 
-    background:rgba(80,227,155,.1);
     color:var(--green);
 
-    font-weight:800;
+    background:
+        rgba(69,227,154,.08);
 
-    margin-bottom:35px;
+    border:
+        1px solid
+        rgba(69,227,154,.15);
+
+    margin-bottom:34px;
+
+    font-size:12px;
+    font-weight:800;
 }
 
 .step h3{
     font-family:"Manrope",sans-serif;
+
+    font-size:18px;
+
     margin-bottom:10px;
 }
 
 .step p{
-    color:#8e9a95;
-    font-size:14px;
-    line-height:1.65;
+    color:#858f8a;
+
+    font-size:13px;
+
+    line-height:1.7;
 }
 
-/* =========================
-   FEATURE SECTION
-========================= */
+/* =========================================================
+   BENEFITS
+========================================================= */
 
-.feature-grid{
+.benefit-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:70px;
+
     align-items:center;
 }
 
-.visual-box{
-    min-height:520px;
+.benefit-visual{
     position:relative;
+
+    min-height:470px;
+
+    display:grid;
+    place-items:center;
 
     border-radius:32px;
 
+    border:1px solid rgba(255,255,255,.08);
+
     background:
         radial-gradient(
-            circle at center,
-            rgba(80,227,155,.12),
+            circle,
+            rgba(69,227,154,.09),
             transparent 55%
         ),
         rgba(255,255,255,.025);
 
-    border:1px solid rgba(255,255,255,.08);
-
-    display:grid;
-    place-items:center;
     overflow:hidden;
 }
 
-.visual-box::before{
-    content:"";
+.ring{
     position:absolute;
-    width:330px;
-    height:330px;
-    border:1px solid rgba(80,227,155,.15);
+
     border-radius:50%;
-    animation:rotateRing 15s linear infinite;
+
+    border:1px solid
+        rgba(69,227,154,.14);
 }
 
-.visual-box::after{
-    content:"";
-    position:absolute;
-    width:450px;
-    height:450px;
-    border:1px dashed rgba(255,215,106,.12);
-    border-radius:50%;
-    animation:rotateRing 25s linear infinite reverse;
+.ring-one{
+    width:280px;
+    height:280px;
+
+    animation:spin 16s linear infinite;
 }
 
-@keyframes rotateRing{
+.ring-two{
+    width:410px;
+    height:410px;
+
+    border-style:dashed;
+
+    border-color:
+        rgba(247,204,103,.10);
+
+    animation:
+        spin 25s linear infinite reverse;
+}
+
+@keyframes spin{
     to{
         transform:rotate(360deg);
     }
 }
 
-.big-one{
+.center-reward{
     position:relative;
-    z-index:2;
+    z-index:3;
 
-    width:220px;
-    height:220px;
-
-    border-radius:50%;
+    width:210px;
+    height:210px;
 
     display:grid;
     place-items:center;
 
-    font-family:"Manrope",sans-serif;
-    font-weight:800;
-    font-size:53px;
+    border-radius:50%;
 
     background:
         radial-gradient(
-            circle at 35% 30%,
-            #152c20,
-            #07110d 65%
+            circle at 35% 25%,
+            #1b3227,
+            #070d09 70%
         );
 
-    border:1px solid rgba(80,227,155,.3);
+    border:
+        1px solid
+        rgba(69,227,154,.30);
 
     box-shadow:
-        0 0 80px rgba(80,227,155,.13),
-        inset 0 0 50px rgba(80,227,155,.08);
+        0 0 70px
+        rgba(69,227,154,.13),
+        inset 0 0 45px
+        rgba(69,227,154,.08);
 }
 
-.big-one span{
-    background:linear-gradient(135deg,#fff,#76edac,#ffd76a);
+.center-reward span{
+    font-family:"Manrope",sans-serif;
+
+    font-size:47px;
+
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            var(--green),
+            var(--gold)
+        );
+
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 }
 
-.feature-content .eyebrow{
-    text-align:left;
-}
-
-.feature-content h2{
+.benefit-content h2{
     font-family:"Manrope",sans-serif;
-    font-size:clamp(36px,5vw,55px);
-    line-height:1.05;
+
+    font-size:
+        clamp(34px,5vw,52px);
+
+    line-height:1.06;
+
     letter-spacing:-2px;
+
     margin-bottom:20px;
 }
 
-.feature-content > p{
+.benefit-content > p{
     color:var(--muted);
+
     line-height:1.75;
-    margin-bottom:30px;
+
+    margin-bottom:27px;
 }
 
-.feature-list{
+.list{
     display:grid;
-    gap:15px;
+    gap:14px;
 }
 
-.feature-list div{
+.list-item{
     display:flex;
-    gap:12px;
     align-items:flex-start;
+
+    gap:11px;
 }
 
 .check{
     width:22px;
     height:22px;
+
     flex:none;
 
     display:grid;
@@ -879,303 +1110,342 @@ section{
 
     border-radius:50%;
 
-    background:rgba(80,227,155,.1);
+    background:
+        rgba(69,227,154,.10);
+
     color:var(--green);
-    font-size:12px;
+
+    font-size:11px;
 }
 
-.feature-list span{
-    color:#c6cec9;
-    font-size:14px;
-    line-height:1.5;
-}
+.list-item span{
+    color:#bac3bf;
 
-/* =========================
-   DISCLOSURE
-========================= */
-
-.disclosure{
-    margin-top:25px;
-    padding:25px;
-
-    border-radius:20px;
-
-    background:rgba(255,215,106,.035);
-    border:1px solid rgba(255,215,106,.12);
-}
-
-.disclosure strong{
-    color:var(--gold);
     font-size:13px;
+
+    line-height:1.6;
 }
 
-.disclosure p{
-    margin-top:8px;
-    color:#89958f;
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.disclaimer{
+    margin-top:30px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:
+        rgba(247,204,103,.035);
+
+    border:
+        1px solid
+        rgba(247,204,103,.12);
+}
+
+.disclaimer strong{
+    color:var(--gold);
+
     font-size:12px;
-    line-height:1.7;
 }
 
-/* =========================
+.disclaimer p{
+    color:#7f8984;
+
+    font-size:11px;
+
+    line-height:1.7;
+
+    margin-top:6px;
+}
+
+/* =========================================================
    FAQ
-========================= */
+========================================================= */
 
 .faq{
-    max-width:820px;
+    max-width:800px;
     margin:auto;
 }
 
 .faq-item{
-    border-bottom:1px solid rgba(255,255,255,.09);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
 }
 
 .faq-question{
     width:100%;
-    padding:24px 4px;
 
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+
+    padding:23px 4px;
 
     background:none;
+
     border:0;
-    color:#fff;
+
+    color:white;
+
+    cursor:pointer;
 
     text-align:left;
 
-    font-family:"DM Sans";
-    font-size:16px;
-    font-weight:700;
+    font-size:15px;
 
-    cursor:pointer;
+    font-weight:700;
 }
 
-.faq-icon{
-    font-size:22px;
+.plus{
     color:var(--green);
+
+    font-size:22px;
+
     transition:.3s;
 }
 
-.faq-answer{
+.answer{
     max-height:0;
+
     overflow:hidden;
+
     transition:max-height .35s ease;
 }
 
-.faq-answer p{
-    padding:0 35px 24px 4px;
-    color:#8d9994;
-    font-size:14px;
+.answer p{
+    padding:
+        0
+        30px
+        22px
+        4px;
+
+    color:#89938e;
+
+    font-size:13px;
+
     line-height:1.75;
 }
 
-.faq-item.active .faq-answer{
-    max-height:250px;
+.faq-item.active .answer{
+    max-height:200px;
 }
 
-.faq-item.active .faq-icon{
+.faq-item.active .plus{
     transform:rotate(45deg);
 }
 
-/* =========================
-   CTA
-========================= */
+/* =========================================================
+   FINAL CTA
+========================================================= */
 
-.final-cta{
-    padding:50px 0 130px;
+.final{
+    padding:
+        80px
+        0
+        130px;
 }
 
-.cta-box{
+.final-box{
     position:relative;
+
     overflow:hidden;
 
-    padding:80px 50px;
+    padding:75px 30px;
 
     text-align:center;
 
     border-radius:35px;
 
+    border:1px solid rgba(255,255,255,.10);
+
     background:
         radial-gradient(
             circle at 50% 100%,
-            rgba(80,227,155,.15),
-            transparent 50%
+            rgba(69,227,154,.14),
+            transparent 55%
         ),
         linear-gradient(
             145deg,
-            rgba(255,255,255,.075),
+            rgba(255,255,255,.065),
             rgba(255,255,255,.025)
         );
-
-    border:1px solid rgba(255,255,255,.1);
-
-    box-shadow:var(--shadow);
 }
 
-.cta-box::before{
-    content:"";
-    position:absolute;
-
-    width:400px;
-    height:400px;
-
-    left:50%;
-    top:-300px;
-
-    transform:translateX(-50%);
-
-    background:rgba(80,227,155,.1);
-
-    filter:blur(70px);
-}
-
-.cta-box > *{
-    position:relative;
-    z-index:2;
-}
-
-.cta-box h2{
+.final-box h2{
     font-family:"Manrope",sans-serif;
-    font-size:clamp(38px,5vw,62px);
+
+    font-size:
+        clamp(37px,5vw,60px);
+
     letter-spacing:-2px;
+
     line-height:1.05;
 
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
-.cta-box p{
+.final-box p{
     max-width:600px;
-    margin:0 auto 30px;
 
-    color:#9ba7a2;
+    margin:
+        0
+        auto
+        28px;
+
+    color:var(--muted);
+
     line-height:1.7;
 }
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
-    border-top:1px solid rgba(255,255,255,.07);
-    padding:35px 0 100px;
+    padding:35px 0 45px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
 }
 
-.footer-inner{
+.footer{
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
-    gap:30px;
+
+    justify-content:space-between;
+
+    gap:20px;
 }
 
-.footer-copy{
-    color:#69756f;
-    font-size:12px;
+.copyright{
+    color:#66716c;
+
+    font-size:11px;
+
     line-height:1.6;
 }
 
 .footer-links{
     display:flex;
+
     gap:20px;
 }
 
 .footer-links a{
-    color:#8d9994;
-    font-size:12px;
+    color:#77817c;
+
+    font-size:11px;
 }
 
 .footer-links a:hover{
     color:white;
 }
 
-/* =========================
-   MOBILE CTA
-========================= */
+/* =========================================================
+   MOBILE STICKY CTA
+========================================================= */
 
 .mobile-cta{
     display:none;
 
     position:fixed;
+
     left:12px;
     right:12px;
     bottom:12px;
 
     z-index:999;
 
-    padding:10px;
+    padding:9px;
 
-    background:rgba(5,10,8,.82);
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.1);
     border-radius:18px;
 
-    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    background:
+        rgba(5,9,7,.86);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.5);
 }
 
 .mobile-cta a{
     width:100%;
 }
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* =========================================================
+   REVEAL
+========================================================= */
 
 .reveal{
     opacity:0;
-    transform:translateY(35px);
+
+    transform:translateY(25px);
+
     transition:
-        opacity .8s ease,
-        transform .8s ease;
+        opacity .7s ease,
+        transform .7s ease;
 }
 
 .reveal.show{
     opacity:1;
+
     transform:translateY(0);
 }
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
 @media(max-width:950px){
 
     .hero{
         min-height:auto;
-        padding-top:150px;
-    }
 
-    .hero-grid,
-    .feature-grid{
-        grid-template-columns:1fr;
-        gap:55px;
-    }
-
-    .reward-stage{
-        min-height:500px;
+        padding-top:135px;
     }
 
     .steps{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .feature-content{
-        order:-1;
+    .benefit-grid{
+        grid-template-columns:1fr;
+
+        gap:50px;
     }
+
 }
 
 @media(max-width:650px){
 
-    header{
+    .header{
         padding:10px 0;
     }
 
     .nav{
-        padding:10px 12px 10px 15px;
-        border-radius:14px;
+        border-radius:15px;
+
+        padding:
+            9px
+            10px
+            9px
+            14px;
     }
 
     .logo{
-        font-size:16px;
+        font-size:15px;
     }
 
     .logo-icon{
@@ -1183,65 +1453,83 @@ footer{
         height:30px;
     }
 
-    .nav-btn{
+    .header-button{
         padding:9px 13px;
-        font-size:12px;
+
+        font-size:11px;
     }
 
     .hero{
-        padding:125px 0 50px;
+        padding:
+            105px
+            0
+            55px;
     }
 
-    .hero h1{
-        font-size:46px;
-        letter-spacing:-2.5px;
+    .hero-heading{
+        margin-bottom:30px;
     }
 
-    .hero p{
-        font-size:16px;
+    .hero-heading h1{
+        font-size:40px;
+
+        letter-spacing:-2px;
     }
 
-    .hero-buttons{
-        display:grid;
-        grid-template-columns:1fr;
+    .hero-heading p{
+        font-size:14px;
     }
 
-    .primary-btn,
-    .secondary-btn{
-        width:100%;
+    .offer-card{
+        padding:
+            25px
+            18px;
     }
 
-    .reward-stage{
-        min-height:430px;
+    .offer-wrap{
+        border-radius:25px;
     }
 
-    .reward-card{
-        padding:24px;
+    .offer-card{
         border-radius:24px;
     }
 
-    .money{
-        font-size:72px;
-        letter-spacing:-4px;
+    .amount{
+        font-size:91px;
+
+        letter-spacing:-6px;
     }
 
-    .float1{
-        right:-2%;
-        top:5%;
+    .offer-description{
+        font-size:12px;
+
+        padding:0 5px;
     }
 
-    .float2{
-        left:-3%;
-        bottom:7%;
+    .main-cta{
+        width:100%;
+
+        min-width:0;
+
+        padding:17px 20px;
     }
 
-    .trust-inner{
+    .trust{
         grid-template-columns:1fr;
+
+        border-radius:15px;
+    }
+
+    .trust-item{
+        padding:15px;
     }
 
     .trust-item + .trust-item{
         border-left:0;
-        border-top:1px solid rgba(255,255,255,.08);
+
+        border-top:
+            1px solid
+            rgba(255,255,255,.07);
     }
 
     section{
@@ -1256,23 +1544,42 @@ footer{
         min-height:auto;
     }
 
-    .visual-box{
-        min-height:390px;
+    .benefit-visual{
+        min-height:380px;
     }
 
-    .big-one{
-        width:180px;
-        height:180px;
-        font-size:42px;
+    .center-reward{
+        width:175px;
+        height:175px;
     }
 
-    .cta-box{
-        padding:55px 25px;
-        border-radius:25px;
+    .center-reward span{
+        font-size:39px;
     }
 
-    .footer-inner{
+    .ring-one{
+        width:240px;
+        height:240px;
+    }
+
+    .ring-two{
+        width:310px;
+        height:310px;
+    }
+
+    .final{
+        padding-bottom:100px;
+    }
+
+    .final-box{
+        padding:
+            55px
+            20px;
+    }
+
+    .footer{
         flex-direction:column;
+
         text-align:center;
     }
 
@@ -1281,37 +1588,42 @@ footer{
     }
 
     footer{
-        padding-bottom:110px;
+        padding-bottom:105px;
     }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
-<div class="bg-orb orb1"></div>
-<div class="bg-orb orb2"></div>
-<div class="bg-orb orb3"></div>
+<!-- BACKGROUND -->
+<div class="light light-1"></div>
+<div class="light light-2"></div>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
-<header>
+<header class="header">
 
 <div class="container">
 
 <nav class="nav">
 
 <a href="#" class="logo">
+
     <div class="logo-icon">$</div>
-    UpLevel<span>Rewards</span>
+
+    UpLevel<em>Rewards</em>
+
 </a>
 
-<a href="#start" class="nav-btn">
-    Get Started →
+<a href="#offer" class="header-button">
+    View $1,000 Offer
 </a>
 
 </nav>
@@ -1321,128 +1633,169 @@ footer{
 </header>
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <main>
 
-<section class="hero">
+<section class="hero" id="offer">
 
 <div class="container">
 
-<div class="hero-grid">
+<div class="hero-wrapper">
 
-<div class="hero-content reveal">
 
-<div class="status">
-    <span class="status-dot"></span>
-    Offer Status: Available
+<!-- STATUS -->
+
+<div class="hero-label reveal">
+
+<div class="live-badge">
+
+<span class="live-dot"></span>
+
+Offer Available — Eligibility Required
+
 </div>
 
+</div>
+
+
+<!-- HEADING -->
+
+<div class="hero-heading reveal">
+
 <h1>
-    Your Next
-    <span class="gradient-text">$1,000</span>
-    Reward Could Be Here.
+    A Potential
+    <span>$1,000 Cash Deposit</span>
+    Could Be Waiting.
 </h1>
 
 <p>
-    Discover an opportunity to qualify for a potential
-    $1,000 cash deposit through UpLevelRewards.
-    Complete the required steps and see if you're eligible.
+    Explore the UpLevelRewards offer, review the
+    requirements and start your eligibility journey.
 </p>
 
-<div class="hero-buttons">
-
-<a href="#start" class="primary-btn">
-    Check My Eligibility
-    <span>→</span>
-</a>
-
-<a href="#how-it-works" class="secondary-btn">
-    How It Works
-</a>
-
-</div>
-
 </div>
 
 
-<div class="reward-stage reveal">
+<!-- =================================================
+     BIG OFFER CARD
+================================================= -->
 
-<div class="reward-glow"></div>
+<div class="offer-wrap reveal">
 
-
-<div class="float-card float1">
-
-<small>Reward Type</small>
-<strong>Cash Deposit</strong>
-
-</div>
+<div class="offer-card">
 
 
-<div class="float-card float2">
+<div class="offer-top">
 
-<small>Eligibility</small>
-<strong>Requirements Apply</strong>
-
-</div>
-
-
-<div class="reward-card">
-
-<div class="card-top">
-
-<div class="card-label">
-    POTENTIAL REWARD
+<div class="offer-tag">
+    Featured Cash Reward
 </div>
 
 <div class="secure">
-    <div class="secure-icon">✓</div>
-    Secure
+    UpLevelRewards
 </div>
 
 </div>
 
 
-<div class="money">
+<div class="offer-main">
+
+<div class="offer-small">
+    Potential Reward
+</div>
+
+<div class="amount">
     $1,000
 </div>
 
+</div>
 
-<div class="card-description">
 
-Your eligibility may depend on completing
-specific requirements. Review the offer
-details before continuing.
+<p class="offer-description">
+
+Complete the applicable offer requirements to
+determine whether you may qualify for the
+advertised cash deposit.
+
+</p>
+
+
+<div class="offer-actions">
+
+<!-- REPLACE # WITH YOUR REAL OFFER URL -->
+
+<a
+    href="YOUR-OFFER-URL-HERE"
+    class="main-cta"
+>
+    Check My Eligibility
+
+    <span class="arrow">→</span>
+
+</a>
 
 </div>
 
 
-<div class="progress-head">
+<div class="offer-note">
 
-<span>Eligibility Journey</span>
-<span>Step 3 of 4</span>
+<span>✓</span>
+
+<strong>Requirements apply.</strong>
+
+<span>
+    Review official offer terms before participating.
+</span>
 
 </div>
 
-<div class="progress">
-
-<div class="progress-bar"></div>
-
-</div>
-
-
-<div class="card-bottom">
-
-<span>Offer</span>
-<strong>UpLevelRewards</strong>
 
 </div>
 
 </div>
 
+
+<!-- TRUST -->
+
+<div class="trust reveal">
+
+<div class="trust-item">
+
+<span class="trust-icon">✓</span>
+
+<span>
+    Clear requirements
+</span>
+
 </div>
+
+
+<div class="trust-item">
+
+<span class="trust-icon">◆</span>
+
+<span>
+    Transparent process
+</span>
+
+</div>
+
+
+<div class="trust-item">
+
+<span class="trust-icon">↗</span>
+
+<span>
+    Simple online journey
+</span>
+
+</div>
+
+</div>
+
 
 </div>
 
@@ -1451,59 +1804,28 @@ details before continuing.
 </section>
 
 
-<!-- =========================
-     TRUST STRIP
-========================= -->
-
-<div class="trust-strip">
-
-<div class="container">
-
-<div class="trust-inner">
-
-<div class="trust-item">
-    <span>✓</span>
-    <span><b>Clear Requirements</b></span>
-</div>
-
-<div class="trust-item">
-    <span>◆</span>
-    <span><b>Transparent Process</b></span>
-</div>
-
-<div class="trust-item">
-    <span>↗</span>
-    <span><b>Simple Online Journey</b></span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =========================
+<!-- =====================================================
      HOW IT WORKS
-========================= -->
+===================================================== -->
 
-<section id="how-it-works">
+<section id="how">
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="section-heading reveal">
 
 <div class="eyebrow">
     Simple Process
 </div>
 
 <h2>
-    How It Works
+    How The Offer Works
 </h2>
 
 <p>
-    Follow the required steps and review the
-    eligibility information before completing your journey.
+    The journey is designed to be simple.
+    Follow the applicable steps and review the
+    offer terms along the way.
 </p>
 
 </div>
@@ -1511,17 +1833,20 @@ details before continuing.
 
 <div class="steps">
 
+
 <div class="step reveal">
 
 <div class="step-number">
     01
 </div>
 
-<h3>Get Started</h3>
+<h3>
+    Get Started
+</h3>
 
 <p>
-    Begin the process by reviewing the offer
-    and entering the required information.
+    Click the offer button and begin the
+    eligibility process.
 </p>
 
 </div>
@@ -1533,11 +1858,13 @@ details before continuing.
     02
 </div>
 
-<h3>Complete Requirements</h3>
+<h3>
+    Complete Steps
+</h3>
 
 <p>
-    Follow the instructions associated with
-    the offer and complete any required steps.
+    Follow the instructions and complete
+    any applicable requirements.
 </p>
 
 </div>
@@ -1549,11 +1876,13 @@ details before continuing.
     03
 </div>
 
-<h3>Eligibility Review</h3>
+<h3>
+    Review
+</h3>
 
 <p>
-    Your submitted information and completed
-    requirements may be reviewed for eligibility.
+    Your information and completed
+    requirements may be reviewed.
 </p>
 
 </div>
@@ -1565,14 +1894,18 @@ details before continuing.
     04
 </div>
 
-<h3>Potential Reward</h3>
+<h3>
+    Potential Reward
+</h3>
 
 <p>
-    Eligible participants may receive the
-    advertised reward according to the offer terms.
+    Eligible participants may receive
+    the advertised reward according
+    to the applicable terms.
 </p>
 
 </div>
+
 
 </div>
 
@@ -1581,78 +1914,121 @@ details before continuing.
 </section>
 
 
-<!-- =========================
-     FEATURE
-========================= -->
+<!-- =====================================================
+     BENEFITS / VISUAL
+===================================================== -->
 
 <section>
 
 <div class="container">
 
-<div class="feature-grid">
+<div class="benefit-grid">
 
 
-<div class="visual-box reveal">
+<div class="benefit-visual reveal">
 
-<div class="big-one">
-    <span>$1K</span>
+<div class="ring ring-one"></div>
+
+<div class="ring ring-two"></div>
+
+<div class="center-reward">
+
+<span>
+    $1K
+</span>
+
 </div>
 
 </div>
 
 
-<div class="feature-content reveal">
+<div class="benefit-content reveal">
 
 <div class="eyebrow">
     The Opportunity
 </div>
 
 <h2>
-    Could $1,000 Be Your Next Reward?
+    Make Your Next Step Count.
 </h2>
 
 <p>
-    UpLevelRewards gives eligible participants
-    an opportunity to work through a simple
-    online process toward a potential cash deposit.
+    UpLevelRewards provides a straightforward
+    way to explore a potential $1,000 cash deposit
+    opportunity.
 </p>
 
 
-<div class="feature-list">
+<div class="list">
 
-<div>
-    <div class="check">✓</div>
-    <span>Review the offer requirements clearly.</span>
+
+<div class="list-item">
+
+<div class="check">
+    ✓
 </div>
 
-<div>
-    <div class="check">✓</div>
-    <span>Complete the required eligibility steps.</span>
-</div>
-
-<div>
-    <div class="check">✓</div>
-    <span>Submit the necessary information.</span>
-</div>
-
-<div>
-    <div class="check">✓</div>
-    <span>Potential reward subject to applicable terms.</span>
-</div>
+<span>
+    Review the offer before participating.
+</span>
 
 </div>
 
 
-<div class="disclosure">
+<div class="list-item">
 
-<strong>Important Information</strong>
+<div class="check">
+    ✓
+</div>
+
+<span>
+    Understand the applicable requirements.
+</span>
+
+</div>
+
+
+<div class="list-item">
+
+<div class="check">
+    ✓
+</div>
+
+<span>
+    Complete the required eligibility steps.
+</span>
+
+</div>
+
+
+<div class="list-item">
+
+<div class="check">
+    ✓
+</div>
+
+<span>
+    Potential reward subject to official terms.
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="disclaimer">
+
+<strong>
+    Important Information
+</strong>
 
 <p>
-    $1,000 is a potential advertised reward and
-    is not guaranteed. Eligibility requirements,
-    restrictions, terms and conditions may apply.
-    Please review the official offer details before
-    participating.
+    The $1,000 amount is a potential advertised
+    reward and is not guaranteed. Eligibility,
+    restrictions, requirements and other terms
+    may apply. Please review the official offer
+    details before participating.
 </p>
 
 </div>
@@ -1666,18 +2042,18 @@ details before continuing.
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      FAQ
-========================= -->
+===================================================== -->
 
 <section>
 
 <div class="container">
 
-<div class="section-head reveal">
+<div class="section-heading reveal">
 
 <div class="eyebrow">
-    Questions
+    FAQ
 </div>
 
 <h2>
@@ -1685,7 +2061,7 @@ details before continuing.
 </h2>
 
 <p>
-    Here are some common questions about the offer.
+    Some useful information before you continue.
 </p>
 
 </div>
@@ -1698,18 +2074,22 @@ details before continuing.
 
 <button class="faq-question">
 
-<span>Is the $1,000 reward guaranteed?</span>
+<span>
+    Is the $1,000 guaranteed?
+</span>
 
-<span class="faq-icon">+</span>
+<span class="plus">
+    +
+</span>
 
 </button>
 
-<div class="faq-answer">
+<div class="answer">
 
 <p>
-    No. The advertised amount is a potential reward.
-    Eligibility requirements and offer terms apply,
-    and receiving a reward is not guaranteed.
+    No. The $1,000 is a potential advertised
+    reward. Eligibility requirements and
+    applicable terms must be satisfied.
 </p>
 
 </div>
@@ -1721,18 +2101,22 @@ details before continuing.
 
 <button class="faq-question">
 
-<span>What do I need to do?</span>
+<span>
+    What do I need to do?
+</span>
 
-<span class="faq-icon">+</span>
+<span class="plus">
+    +
+</span>
 
 </button>
 
-<div class="faq-answer">
+<div class="answer">
 
 <p>
-    You will need to follow the offer instructions
-    and complete any applicable eligibility
-    requirements shown during the process.
+    Follow the instructions presented in the
+    offer journey and complete any applicable
+    eligibility requirements.
 </p>
 
 </div>
@@ -1744,18 +2128,22 @@ details before continuing.
 
 <button class="faq-question">
 
-<span>How long does the process take?</span>
+<span>
+    Who can participate?
+</span>
 
-<span class="faq-icon">+</span>
+<span class="plus">
+    +
+</span>
 
 </button>
 
-<div class="faq-answer">
+<div class="answer">
 
 <p>
-    Processing times can vary depending on the
-    requirements and the applicable offer terms.
-    Check the official terms for the most accurate information.
+    Eligibility depends on the official offer
+    requirements, restrictions and applicable
+    terms.
 </p>
 
 </div>
@@ -1767,18 +2155,21 @@ details before continuing.
 
 <button class="faq-question">
 
-<span>Who can participate?</span>
+<span>
+    How long does the process take?
+</span>
 
-<span class="faq-icon">+</span>
+<span class="plus">
+    +
+</span>
 
 </button>
 
-<div class="faq-answer">
+<div class="answer">
 
 <p>
-    Participation depends on the eligibility
-    requirements and restrictions specified in
-    the official offer.
+    Processing times can vary depending on
+    the requirements and applicable offer terms.
 </p>
 
 </div>
@@ -1793,33 +2184,42 @@ details before continuing.
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      FINAL CTA
-========================= -->
+===================================================== -->
 
-<section class="final-cta" id="start">
+<section class="final">
 
 <div class="container">
 
-<div class="cta-box reveal">
+<div class="final-box reveal">
 
 <div class="eyebrow">
     Ready To Explore?
 </div>
 
 <h2>
-    Start Your Eligibility Journey.
+    Start With The $1,000 Offer.
 </h2>
 
 <p>
-    Review the offer requirements and continue
-    to see whether you qualify for the potential
-    $1,000 cash deposit.
+    Review the requirements and begin your
+    eligibility journey today.
 </p>
 
-<a href="#" class="primary-btn">
-    Check Eligibility
-    <span>→</span>
+
+<!-- REPLACE # WITH YOUR REAL OFFER URL -->
+
+<a
+    href="YOUR-OFFER-URL-HERE"
+    class="main-cta"
+>
+    Check My Eligibility
+
+    <span class="arrow">
+        →
+    </span>
+
 </a>
 
 </div>
@@ -1831,19 +2231,20 @@ details before continuing.
 </main>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
 <div class="container">
 
-<div class="footer-inner">
+<div class="footer">
 
-<div class="footer-copy">
+<div class="copyright">
 
 © 2026 UpLevelRewards. All rights reserved.<br>
+
 Rewards are subject to eligibility and applicable terms.
 
 </div>
@@ -1851,9 +2252,17 @@ Rewards are subject to eligibility and applicable terms.
 
 <div class="footer-links">
 
-<a href="#">Privacy</a>
-<a href="#">Terms</a>
-<a href="#">Contact</a>
+<a href="#">
+    Privacy
+</a>
+
+<a href="#">
+    Terms
+</a>
+
+<a href="#">
+    Contact
+</a>
 
 </div>
 
@@ -1864,14 +2273,18 @@ Rewards are subject to eligibility and applicable terms.
 </footer>
 
 
-<!-- =========================
+<!-- =====================================================
      MOBILE CTA
-========================= -->
+===================================================== -->
 
 <div class="mobile-cta">
 
-<a href="#start" class="primary-btn">
-    Check My Eligibility →
+<a
+    href="YOUR-OFFER-URL-HERE"
+    class="main-cta"
+>
+    Get Started — $1,000 Offer
+    <span class="arrow">→</span>
 </a>
 
 </div>
@@ -1879,26 +2292,33 @@ Rewards are subject to eligibility and applicable terms.
 
 <script>
 
-/* =========================
-   FAQ ACCORDION
-========================= */
+/* =====================================================
+   FAQ
+===================================================== */
 
-const faqItems = document.querySelectorAll(".faq-item");
+const faqItems =
+document.querySelectorAll(".faq-item");
 
 faqItems.forEach(item => {
 
-    const button = item.querySelector(".faq-question");
+    const button =
+        item.querySelector(".faq-question");
 
     button.addEventListener("click", () => {
 
-        const isActive = item.classList.contains("active");
+        const active =
+            item.classList.contains("active");
 
         faqItems.forEach(other => {
+
             other.classList.remove("active");
+
         });
 
-        if(!isActive){
+        if(!active){
+
             item.classList.add("active");
+
         }
 
     });
@@ -1906,13 +2326,15 @@ faqItems.forEach(item => {
 });
 
 
-/* =========================
+/* =====================================================
    SCROLL REVEAL
-========================= */
+===================================================== */
 
-const revealItems = document.querySelectorAll(".reveal");
+const reveals =
+document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(
+const observer =
+new IntersectionObserver(
 
 (entries) => {
 
@@ -1931,63 +2353,72 @@ const observer = new IntersectionObserver(
 },
 
 {
-    threshold:.12
+    threshold:.10
 }
 
 );
 
+reveals.forEach(el => {
 
-revealItems.forEach(el => observer.observe(el));
-
-
-/* =========================
-   SMOOTH CTA
-========================= */
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", function(e){
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if(target){
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-                behavior:"smooth"
-            });
-
-        }
-
-    });
+    observer.observe(el);
 
 });
 
 
-/* =========================
-   SUBTLE MOUSE PARALLAX
-========================= */
+/* =====================================================
+   OFFER CARD SUBTLE 3D EFFECT
+===================================================== */
 
-const rewardCard = document.querySelector(".reward-card");
+const offer =
+document.querySelector(".offer-card");
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove", e => {
 
-    if(window.innerWidth < 900) return;
+    if(window.innerWidth < 900){
+        return;
+    }
 
-    const x = (e.clientX / window.innerWidth - .5);
-    const y = (e.clientY / window.innerHeight - .5);
+    const x =
+        (e.clientX / window.innerWidth - .5);
 
-    rewardCard.style.transform =
-        `rotateY(${x * 5}deg) rotateX(${y * -5}deg)`;
+    const y =
+        (e.clientY / window.innerHeight - .5);
+
+    offer.style.transform =
+        `perspective(1200px)
+         rotateY(${x * 2.5}deg)
+         rotateX(${y * -2.5}deg)`;
 
 });
 
 
 document.addEventListener("mouseleave", () => {
 
-    rewardCard.style.transform =
-        "rotateY(0deg) rotateX(0deg)";
+    offer.style.transform =
+        "perspective(1200px) rotateY(0deg) rotateX(0deg)";
+
+});
+
+
+/* =====================================================
+   BUTTON CLICK FEEDBACK
+===================================================== */
+
+document.querySelectorAll(".main-cta")
+.forEach(button => {
+
+    button.addEventListener("mousedown", () => {
+
+        button.style.transform =
+            "translateY(1px) scale(.99)";
+
+    });
+
+    button.addEventListener("mouseup", () => {
+
+        button.style.transform = "";
+
+    });
 
 });
 
