@@ -2,37 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UpLevelRewards — $1,000 Cash Deposit</title>
+<title>UpLevelRewards | $1,000 Cash Deposit</title>
+
+<meta
+name="description"
+content="Explore the UpLevelRewards $1,000 cash deposit opportunity and review the applicable eligibility requirements."
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+rel="stylesheet">
+
 
 <style>
 
-/* =====================================================
-   PREMIUM LUXURY THEME
-===================================================== */
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 :root{
-    --black:#0b0909;
-    --black-soft:#151010;
-    --burgundy:#35181d;
-    --burgundy-light:#54252d;
 
-    --gold:#d8b56d;
-    --gold-light:#f7e4ad;
-    --gold-dark:#9b7738;
+    --black:#090909;
+    --black-2:#101010;
+    --black-3:#151515;
 
-    --cream:#fff8e8;
+    --gold:#d8b36a;
+    --gold-light:#f3d995;
+
+    --ivory:#f7f3ea;
     --white:#ffffff;
-    --muted:#b5aaa0;
 
-    --border:rgba(216,181,109,.20);
-    --glass:rgba(255,248,232,.055);
+    --gray:#aaa69d;
+    --gray-dark:#6f6c65;
+
+    --line:rgba(255,255,255,.10);
+
+    --green:#76d7a1;
+
 }
 
 *{
@@ -46,1378 +58,1773 @@ html{
 }
 
 body{
+
     font-family:"DM Sans",sans-serif;
-    color:var(--cream);
 
     background:
         radial-gradient(
-            circle at 10% 0%,
-            rgba(126,44,56,.28),
+            circle at 50% -10%,
+            rgba(216,179,106,.10),
             transparent 35%
         ),
-        radial-gradient(
-            circle at 90% 30%,
-            rgba(216,181,109,.08),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #0b0909,
-            #130d0e 55%,
-            #080707
-        );
+        #090909;
+
+    color:var(--ivory);
 
     overflow-x:hidden;
 }
 
-body::before{
-    content:"";
-
-    position:fixed;
-    inset:0;
-
-    pointer-events:none;
-    z-index:-5;
-
-    background-image:
-        linear-gradient(
-            rgba(255,248,232,.018) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,248,232,.018) 1px,
-            transparent 1px
-        );
-
-    background-size:80px 80px;
-
-    mask-image:linear-gradient(
-        to bottom,
-        black,
-        transparent 90%
-    );
-}
-
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 button{
     font-family:inherit;
 }
 
-.container{
-    width:min(1160px,92%);
-    margin:auto;
-}
 
-/* =====================================================
-   AMBIENT LIGHTS
-===================================================== */
+/* subtle grain */
 
-.ambient{
+body::after{
+
+    content:"";
+
     position:fixed;
 
-    width:360px;
-    height:360px;
-
-    border-radius:50%;
-
-    filter:blur(120px);
-
-    opacity:.18;
+    inset:0;
 
     pointer-events:none;
 
-    z-index:-2;
+    opacity:.035;
+
+    z-index:9999;
+
+    background-image:url(
+        "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+    );
+
 }
 
-.ambient-one{
-    top:10%;
-    left:-180px;
-    background:#8e3348;
 
-    animation:ambientMove 14s ease-in-out infinite;
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
 }
 
-.ambient-two{
-    top:45%;
-    right:-180px;
-    background:#d8b56d;
 
-    animation:ambientMove 17s ease-in-out infinite reverse;
-}
-
-@keyframes ambientMove{
-    0%,100%{
-        transform:translate(0,0);
-    }
-
-    50%{
-        transform:translate(45px,-35px);
-    }
-}
-
-/* =====================================================
+/* =========================================================
    HEADER
-===================================================== */
+========================================================= */
 
 header{
+
     position:absolute;
+
     top:0;
     left:0;
 
     width:100%;
 
-    padding:20px 0;
-
     z-index:100;
+
+    padding:25px 0;
+
 }
 
 .nav{
+
     display:flex;
-    align-items:center;
+
     justify-content:space-between;
 
-    padding:13px 15px 13px 20px;
+    align-items:center;
 
-    border:1px solid rgba(216,181,109,.18);
-    border-radius:16px;
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(255,248,232,.07),
-            rgba(255,248,232,.025)
-        );
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:11px;
 
-    font-size:18px;
-    font-weight:800;
-    letter-spacing:-.4px;
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    letter-spacing:.2px;
+
 }
 
-.logo-symbol{
-    width:36px;
-    height:36px;
+.logo-mark{
+
+    width:39px;
+    height:39px;
 
     display:grid;
+
     place-items:center;
 
-    border-radius:11px;
+    border-radius:50%;
 
-    color:#20150a;
+    border:1px solid
+        rgba(216,179,106,.55);
+
+    color:var(--gold-light);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:20px;
 
     background:
-        linear-gradient(
-            135deg,
-            var(--gold-light),
-            var(--gold)
+        radial-gradient(
+            circle,
+            rgba(216,179,106,.13),
+            transparent 70%
         );
 
-    box-shadow:
-        0 0 25px rgba(216,181,109,.18);
 }
 
 .logo span{
-    color:var(--gold);
+
+    color:var(--gold-light);
+
+}
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
 }
 
 .nav-link{
+
+    color:#96928a;
+
+    font-size:12px;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:white;
+
+}
+
+.nav-cta{
+
     padding:11px 18px;
 
-    border:1px solid rgba(216,181,109,.3);
-    border-radius:10px;
+    border-radius:30px;
+
+    border:1px solid
+        rgba(216,179,106,.45);
 
     color:var(--gold-light);
 
     font-size:12px;
+
     font-weight:700;
 
     transition:.3s;
+
 }
 
-.nav-link:hover{
+.nav-cta:hover{
+
     background:var(--gold);
-    color:#1b1208;
 
-    transform:translateY(-2px);
+    color:#090909;
+
 }
 
-/* =====================================================
+
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero{
-    padding:145px 0 85px;
 
-    min-height:890px;
+    min-height:920px;
+
+    padding:
+        155px
+        0
+        90px;
 
     display:flex;
+
     align-items:center;
-}
 
-.hero-content{
-    text-align:center;
-}
-
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-
-    padding:9px 15px;
-
-    border:1px solid rgba(216,181,109,.28);
-    border-radius:50px;
-
-    color:var(--gold-light);
-
-    background:
-        rgba(216,181,109,.055);
-
-    font-size:11px;
-    font-weight:700;
-
-    letter-spacing:1px;
-    text-transform:uppercase;
-
-    margin-bottom:25px;
-}
-
-.eyebrow::before{
-    content:"";
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:var(--gold);
-
-    box-shadow:
-        0 0 14px var(--gold);
-}
-
-.hero h1{
-    max-width:850px;
-
-    margin:0 auto 20px;
-
-    font-family:"Playfair Display",serif;
-
-    font-size:clamp(42px,6vw,76px);
-
-    line-height:1.05;
-
-    letter-spacing:-2.5px;
-
-    font-weight:800;
-}
-
-.hero h1 span{
-    display:block;
-
-    background:
-        linear-gradient(
-            100deg,
-            #fff8e8,
-            #f7e4ad 45%,
-            #cda45d
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-}
-
-.hero-subtitle{
-    max-width:650px;
-
-    margin:0 auto 40px;
-
-    color:var(--muted);
-
-    font-size:17px;
-
-    line-height:1.75;
-}
-
-/* =====================================================
-   PREMIUM OFFER PANEL
-===================================================== */
-
-.offer-panel{
     position:relative;
 
-    max-width:920px;
-
-    margin:auto;
-
-    padding:1px;
-
-    border-radius:30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(247,228,173,.7),
-            rgba(216,181,109,.08) 35%,
-            rgba(126,44,56,.65) 70%,
-            rgba(247,228,109,.35)
-        );
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,.55),
-        0 0 100px rgba(216,181,109,.06);
 }
 
-.offer-inner{
-    position:relative;
+.hero::before{
 
-    overflow:hidden;
-
-    padding:42px;
-
-    border-radius:29px;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(216,181,109,.10),
-            transparent 45%
-        ),
-        linear-gradient(
-            145deg,
-            #1b1213,
-            #0d0a0a
-        );
-}
-
-.offer-inner::before{
     content:"";
 
     position:absolute;
 
-    top:0;
-    left:0;
+    width:700px;
+    height:700px;
 
-    width:100%;
+    left:50%;
+    top:40%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216,179,106,.075),
+            transparent 68%
+        );
+
+    pointer-events:none;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+
+/* eyebrow */
+
+.eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:24px;
+
+    color:var(--gold-light);
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2.5px;
+
+    font-weight:700;
+
+}
+
+.eyebrow::before,
+.eyebrow::after{
+
+    content:"";
+
+    width:28px;
+
     height:1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            var(--gold-light),
+            var(--gold)
+        );
+
+}
+
+.eyebrow::after{
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
             transparent
         );
 
-    opacity:.8;
 }
 
-.offer-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
 
-    margin-bottom:25px;
-}
+/* heading */
 
-.offer-title{
-    color:var(--gold-light);
+.hero h1{
 
-    font-size:11px;
-    font-weight:800;
+    max-width:950px;
 
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.offer-status{
-    color:#d6c5a4;
-
-    font-size:11px;
-
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-.offer-status::before{
-    content:"";
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:var(--gold);
-
-    box-shadow:0 0 12px var(--gold);
-}
-
-/* =====================================================
-   LARGE OFFER AMOUNT
-===================================================== */
-
-.amount-area{
-    text-align:center;
-
-    padding:18px 0 30px;
-}
-
-.amount-label{
-    color:#a99a89;
-
-    font-size:12px;
-
-    text-transform:uppercase;
-
-    letter-spacing:3px;
-
-    margin-bottom:9px;
-}
-
-.amount{
-    display:inline-block;
+    margin:auto;
 
     font-family:"Playfair Display",serif;
 
-    font-size:clamp(105px,16vw,190px);
+    font-size:
+        clamp(48px,7vw,86px);
 
-    line-height:.9;
+    line-height:1;
 
-    letter-spacing:-9px;
+    font-weight:700;
 
-    font-weight:800;
+    letter-spacing:-3px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff9e9 5%,
-            #f7e4ad 40%,
-            #cda45d 75%,
-            #fff0bd
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-
-    filter:
-        drop-shadow(
-            0 15px 30px
-            rgba(216,181,109,.12)
-        );
-
-    animation:amountBreath 4s ease-in-out infinite;
 }
 
-@keyframes amountBreath{
-    0%,100%{
-        transform:translateY(0);
-    }
+.hero h1 .normal{
 
-    50%{
-        transform:translateY(-5px);
-    }
+    color:#f2eee5;
+
 }
 
-.amount-caption{
-    margin-top:20px;
+.hero h1 .gold{
 
-    color:#b6a99a;
+    color:var(--gold-light);
 
-    font-size:13px;
-}
-
-/* =====================================================
-   OFFER DETAILS
-===================================================== */
-
-.offer-description{
-    max-width:620px;
-
-    margin:0 auto 28px;
-
-    text-align:center;
-
-    color:#a99d91;
-
-    font-size:14px;
-
-    line-height:1.75;
-}
-
-.offer-button-wrap{
-    display:flex;
-
-    justify-content:center;
-
-    margin-bottom:20px;
-}
-
-.offer-button{
     position:relative;
-    overflow:hidden;
 
-    min-width:310px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-
-    padding:18px 28px;
-
-    border-radius:12px;
-
-    color:#211608;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f8e6b0,
-            #d8b56d
-        );
-
-    font-size:14px;
-    font-weight:800;
-
-    box-shadow:
-        0 15px 35px rgba(216,181,109,.16),
-        inset 0 1px rgba(255,255,255,.8);
-
-    transition:.3s;
 }
 
-.offer-button::before{
+.hero h1 .gold::after{
+
     content:"";
 
     position:absolute;
 
-    top:0;
-    left:-100%;
+    left:4%;
 
-    width:65%;
-    height:100%;
+    bottom:-8px;
+
+    width:92%;
+
+    height:1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.55),
+            var(--gold),
             transparent
         );
 
-    transform:skewX(-20deg);
+    opacity:.6;
 
-    transition:.7s;
 }
 
-.offer-button:hover::before{
-    left:130%;
+
+/* subtitle */
+
+.hero-subtitle{
+
+    max-width:620px;
+
+    margin:27px auto 45px;
+
+    color:#99958d;
+
+    font-size:16px;
+
+    line-height:1.8;
+
 }
 
-.offer-button:hover{
-    transform:translateY(-4px);
 
-    box-shadow:
-        0 22px 45px rgba(216,181,109,.25),
-        inset 0 1px rgba(255,255,255,.8);
+/* =========================================================
+   PREMIUM REWARD DISPLAY
+========================================================= */
+
+.reward-display{
+
+    position:relative;
+
+    max-width:850px;
+
+    margin:auto;
+
 }
 
-.offer-button span{
-    font-size:20px;
-}
 
-.offer-footnote{
-    text-align:center;
+/* decorative top */
 
-    color:#776d62;
+.reward-line{
 
-    font-size:11px;
-}
-
-/* =====================================================
-   TRUST ITEMS
-===================================================== */
-
-.trust-row{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    margin-top:18px;
-
-    border:1px solid rgba(216,181,109,.14);
-    border-radius:18px;
-
-    background:rgba(255,248,232,.025);
-}
-
-.trust-item{
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    gap:9px;
-
-    padding:19px;
-
-    color:#a79b8d;
-
-    font-size:12px;
-}
-
-.trust-item + .trust-item{
-    border-left:1px solid rgba(216,181,109,.13);
-}
-
-.trust-item b{
-    color:var(--gold-light);
-}
-
-/* =====================================================
-   GENERAL SECTIONS
-===================================================== */
-
-section{
-    padding:110px 0;
-}
-
-.section-heading{
-    max-width:700px;
-
-    text-align:center;
-
-    margin:0 auto 55px;
-}
-
-.section-heading .eyebrow{
-    margin-bottom:18px;
-}
-
-.section-heading h2{
-    font-family:"Playfair Display",serif;
-
-    font-size:clamp(36px,5vw,58px);
-
-    line-height:1.08;
-
-    letter-spacing:-1.5px;
-
-    margin-bottom:17px;
-}
-
-.section-heading p{
-    color:var(--muted);
-
-    line-height:1.75;
-}
-
-/* =====================================================
-   STEPS
-===================================================== */
-
-.steps{
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
 
     gap:15px;
+
+    margin-bottom:14px;
+
 }
 
-.step{
-    min-height:245px;
+.reward-line span{
 
-    padding:27px;
+    color:#66635d;
 
-    border:1px solid rgba(216,181,109,.13);
-    border-radius:20px;
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+.reward-line i{
+
+    display:block;
+
+    width:55px;
+
+    height:1px;
 
     background:
         linear-gradient(
-            145deg,
-            rgba(255,248,232,.055),
-            rgba(255,248,232,.018)
+            90deg,
+            transparent,
+            var(--gold)
         );
 
-    transition:.35s;
 }
 
-.step:hover{
-    transform:translateY(-7px);
-
-    border-color:rgba(216,181,109,.35);
+.reward-line i:last-child{
 
     background:
         linear-gradient(
-            145deg,
-            rgba(216,181,109,.10),
-            rgba(255,248,232,.025)
+            90deg,
+            var(--gold),
+            transparent
         );
+
 }
 
-.step-number{
-    width:43px;
-    height:43px;
 
-    display:grid;
-    place-items:center;
+/* main amount */
 
-    border-radius:12px;
+.amount{
 
-    border:1px solid rgba(216,181,109,.25);
-
-    color:var(--gold-light);
-
-    background:rgba(216,181,109,.07);
-
-    font-size:12px;
-    font-weight:800;
-
-    margin-bottom:32px;
-}
-
-.step h3{
     font-family:"Playfair Display",serif;
 
-    font-size:21px;
+    font-size:
+        clamp(100px,18vw,190px);
 
-    margin-bottom:11px;
+    line-height:.85;
+
+    letter-spacing:-8px;
+
+    color:#f6f0df;
+
+    text-shadow:
+        0 0 70px
+        rgba(216,179,106,.13);
+
+    position:relative;
+
 }
 
-.step p{
-    color:#968b80;
+.amount .currency{
+
+    font-size:.52em;
+
+    vertical-align:top;
+
+    position:relative;
+
+    top:15px;
+
+    color:var(--gold);
+
+    margin-right:7px;
+
+}
+
+.amount .comma{
+
+    color:var(--gold);
+
+}
+
+
+/* amount caption */
+
+.amount-caption{
+
+    margin-top:22px;
+
+    color:#77736c;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+}
+
+
+/* =========================================================
+   ACTION AREA
+========================================================= */
+
+.hero-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:13px;
+
+    margin-top:35px;
+
+}
+
+.primary{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:13px;
+
+    min-width:270px;
+
+    padding:17px 27px;
+
+    border-radius:4px;
+
+    color:#0b0b0b;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1d28b,
+            #c89f50
+        );
 
     font-size:13px;
 
-    line-height:1.75;
+    font-weight:800;
+
+    box-shadow:
+        0 15px 40px
+        rgba(216,179,106,.13);
+
+    transition:.35s;
+
 }
 
-/* =====================================================
-   FEATURE AREA
-===================================================== */
+.primary:hover{
 
-.feature-grid{
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(216,179,106,.24);
+
+}
+
+.primary .arrow{
+
+    font-size:18px;
+
+}
+
+.secondary{
+
+    padding:17px 23px;
+
+    border:1px solid
+        rgba(255,255,255,.13);
+
+    border-radius:4px;
+
+    color:#aaa59b;
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+.secondary:hover{
+
+    border-color:
+        rgba(216,179,106,.4);
+
+    color:var(--gold-light);
+
+}
+
+
+/* =========================================================
+   OFFER INFO
+========================================================= */
+
+.offer-info{
+
+    max-width:690px;
+
+    margin:30px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+.info-item{
+
+    padding:16px 10px;
+
+    text-align:center;
+
+}
+
+.info-item + .info-item{
+
+    border-left:
+        1px solid var(--line);
+
+}
+
+.info-item strong{
+
+    display:block;
+
+    color:#d9d4c9;
+
+    font-size:12px;
+
+    margin-bottom:4px;
+
+}
+
+.info-item span{
+
+    color:#6e6a63;
+
+    font-size:10px;
+
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.hero-disclaimer{
+
+    max-width:650px;
+
+    margin:25px auto 0;
+
+    color:#5f5c56;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   SECTION COMMON
+========================================================= */
+
+section:not(.hero){
+
+    padding:115px 0;
+
+}
+
+.section-label{
+
+    color:var(--gold);
+
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+
+    margin-bottom:17px;
+
+}
+
+.section-title{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(38px,5vw,60px);
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+    color:#f2eee5;
+
+}
+
+.section-text{
+
+    color:#89857d;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.process-section{
+
+    background:
+        #0c0c0c;
+
+    border-top:
+        1px solid rgba(255,255,255,.05);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.05);
+
+}
+
+.process-heading{
+
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
     gap:70px;
 
-    align-items:center;
+    align-items:end;
+
+    margin-bottom:65px;
+
 }
 
-.feature-visual{
-    position:relative;
+.process-heading .section-text{
 
-    min-height:470px;
+    max-width:430px;
+
+}
+
+
+/* process cards */
+
+.process-grid{
 
     display:grid;
-    place-items:center;
 
-    overflow:hidden;
+    grid-template-columns:
+        repeat(4,1fr);
 
-    border-radius:28px;
-
-    border:1px solid rgba(216,181,109,.14);
+    gap:1px;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(126,44,56,.22),
-            transparent 60%
-        ),
-        rgba(255,248,232,.025);
+        rgba(255,255,255,.08);
+
 }
 
-.feature-ring{
+.process-card{
+
+    min-height:270px;
+
+    padding:30px;
+
+    background:#0c0c0c;
+
+    position:relative;
+
+    transition:.4s;
+
+}
+
+.process-card:hover{
+
+    background:#121210;
+
+}
+
+.process-number{
+
+    color:#4e4c47;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:38px;
+
+    margin-bottom:65px;
+
+}
+
+.process-card h3{
+
+    color:#e9e4da;
+
+    font-size:16px;
+
+    margin-bottom:12px;
+
+}
+
+.process-card p{
+
+    color:#716e67;
+
+    font-size:12px;
+
+    line-height:1.75;
+
+}
+
+.process-card::after{
+
+    content:"";
+
     position:absolute;
+
+    left:30px;
+
+    bottom:25px;
+
+    width:25px;
+
+    height:1px;
+
+    background:var(--gold);
+
+    opacity:.6;
+
+}
+
+
+/* =========================================================
+   FEATURE / SPLIT
+========================================================= */
+
+.feature-section{
+
+    background:#f0ece3;
+
+    color:#151515;
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+
+/* premium visual */
+
+.visual{
+
+    min-height:500px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/* circle */
+
+.visual-circle{
+
+    width:360px;
+
+    height:360px;
 
     border-radius:50%;
 
-    border:1px solid rgba(216,181,109,.20);
+    border:1px solid
+        rgba(20,20,20,.15);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
 }
 
-.ring-one{
-    width:280px;
-    height:280px;
+.visual-circle::before{
 
-    animation:spin 18s linear infinite;
+    content:"";
+
+    position:absolute;
+
+    inset:25px;
+
+    border-radius:50%;
+
+    border:1px solid
+        rgba(20,20,20,.10);
+
 }
 
-.ring-two{
-    width:410px;
-    height:410px;
+.visual-circle::after{
 
-    border-style:dashed;
+    content:"";
 
-    border-color:rgba(126,44,56,.45);
+    position:absolute;
 
-    animation:spin 27s linear infinite reverse;
+    inset:60px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171717,
+            #33302a
+        );
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.20);
+
 }
 
-@keyframes spin{
+
+/* visual amount */
+
+.visual-amount{
+
+    position:relative;
+
+    z-index:4;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:70px;
+
+    color:#f0d08b;
+
+}
+
+.visual-amount small{
+
+    display:block;
+
+    color:#b7b2a8;
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:9px;
+
+    text-align:center;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:4px;
+
+}
+
+
+/* orbit */
+
+.orbit{
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border-radius:50%;
+
+    border:1px dashed
+        rgba(20,20,20,.15);
+
+    animation:
+        orbit 25s linear infinite;
+
+}
+
+.orbit-dot{
+
+    position:absolute;
+
+    width:9px;
+    height:9px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    top:25px;
+    left:50%;
+
+    box-shadow:
+        0 0 20px
+        rgba(216,179,106,.5);
+
+}
+
+@keyframes orbit{
+
     to{
         transform:rotate(360deg);
     }
+
 }
 
-.center-symbol{
-    position:relative;
-    z-index:2;
 
-    width:205px;
-    height:205px;
+/* feature content */
 
-    display:grid;
-    place-items:center;
+.feature-content .section-label{
 
-    border-radius:50%;
+    color:#92743c;
 
-    background:
-        radial-gradient(
-            circle at 35% 25%,
-            #54252d,
-            #130c0d 70%
-        );
-
-    border:1px solid rgba(216,181,109,.35);
-
-    box-shadow:
-        0 0 80px rgba(126,44,56,.2),
-        inset 0 0 40px rgba(216,181,109,.08);
 }
 
-.center-symbol span{
-    font-family:"Playfair Display",serif;
+.feature-content .section-title{
 
-    font-size:48px;
-    font-weight:800;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff8e8,
-            #f7e4ad,
-            #cda45d
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-}
-
-.feature-content h2{
-    font-family:"Playfair Display",serif;
-
-    font-size:clamp(36px,5vw,55px);
-
-    line-height:1.08;
-
-    letter-spacing:-1.5px;
+    color:#161616;
 
     margin-bottom:20px;
+
 }
 
-.feature-content > p{
-    color:var(--muted);
+.feature-content .section-text{
 
-    line-height:1.8;
+    color:#6c6860;
 
-    margin-bottom:28px;
+    margin-bottom:30px;
+
 }
 
 .feature-list{
+
     display:grid;
 
     gap:15px;
+
 }
 
-.feature-list-item{
+.feature-item{
+
     display:flex;
-    align-items:flex-start;
 
-    gap:11px;
+    align-items:center;
+
+    gap:12px;
+
+    color:#3d3a35;
+
+    font-size:13px;
+
 }
 
-.check{
-    width:22px;
-    height:22px;
+.feature-check{
 
-    flex:none;
+    width:23px;
+    height:23px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:50%;
 
-    color:#1b1208;
+    background:#ded3b7;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--gold-light),
-            var(--gold)
-        );
+    color:#302717;
+
+    font-size:10px;
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
+
+.requirements{
+
+    background:#090909;
+
+}
+
+.requirement-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1.4fr;
+
+    gap:100px;
+
+    align-items:start;
+
+}
+
+.requirement-left{
+
+    position:sticky;
+
+    top:50px;
+
+}
+
+.requirement-left .section-title{
+
+    margin-bottom:20px;
+
+}
+
+.requirement-list{
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+.requirement{
+
+    padding:25px 0;
+
+    border-bottom:
+        1px solid var(--line);
+
+    display:grid;
+
+    grid-template-columns:50px 1fr;
+
+    gap:20px;
+
+}
+
+.req-num{
+
+    color:var(--gold);
 
     font-size:11px;
-    font-weight:800;
+
+    padding-top:3px;
+
 }
 
-.feature-list-item span{
-    color:#c1b6a8;
+.requirement h3{
 
-    font-size:13px;
+    color:#e9e4da;
 
-    line-height:1.6;
+    font-size:15px;
+
+    margin-bottom:8px;
+
 }
 
-/* =====================================================
-   DISCLOSURE
-===================================================== */
+.requirement p{
 
-.disclosure{
-    margin-top:28px;
-
-    padding:20px;
-
-    border-radius:16px;
-
-    background:
-        rgba(126,44,56,.12);
-
-    border:1px solid rgba(126,44,56,.32);
-}
-
-.disclosure strong{
-    color:var(--gold-light);
+    color:#6f6c65;
 
     font-size:12px;
-}
-
-.disclosure p{
-    margin-top:7px;
-
-    color:#92857a;
-
-    font-size:11px;
 
     line-height:1.75;
+
 }
 
-/* =====================================================
-   FAQ
-===================================================== */
 
-.faq{
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-section{
+
+    background:#0d0d0d;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+.faq-wrapper{
+
     max-width:820px;
 
     margin:auto;
+
+}
+
+.faq-title{
+
+    text-align:center;
+
+    margin-bottom:55px;
+
 }
 
 .faq-item{
-    border-bottom:1px solid rgba(216,181,109,.14);
+
+    border-bottom:
+        1px solid var(--line);
+
 }
 
 .faq-question{
+
     width:100%;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:24px 3px;
-
     border:0;
+
     background:none;
 
-    color:var(--cream);
+    color:#e8e3d9;
 
-    text-align:left;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:24px 0;
 
     cursor:pointer;
 
-    font-size:15px;
-    font-weight:700;
+    text-align:left;
+
+    font-size:14px;
+
+    font-weight:600;
+
 }
 
 .faq-plus{
+
     color:var(--gold);
 
-    font-size:22px;
+    font-size:20px;
+
+    font-weight:300;
 
     transition:.3s;
+
 }
 
 .faq-answer{
+
     max-height:0;
 
     overflow:hidden;
 
-    transition:max-height .35s ease;
+    transition:
+        max-height .4s ease;
+
 }
 
 .faq-answer p{
-    padding:
-        0
-        35px
-        23px
-        3px;
 
-    color:#958a80;
+    color:#74716a;
 
-    font-size:13px;
+    font-size:12px;
 
     line-height:1.8;
+
+    padding:
+        0
+        40px
+        22px
+        0;
+
 }
 
-.faq-item.active .faq-answer{
-    max-height:220px;
+.faq-item.active
+.faq-answer{
+
+    max-height:180px;
+
 }
 
-.faq-item.active .faq-plus{
+.faq-item.active
+.faq-plus{
+
     transform:rotate(45deg);
+
 }
 
-/* =====================================================
+
+/* =========================================================
    FINAL CTA
-===================================================== */
+========================================================= */
 
 .final{
-    padding:80px 0 125px;
-}
 
-.final-box{
-    position:relative;
-
-    overflow:hidden;
-
-    padding:75px 30px;
-
-    text-align:center;
-
-    border-radius:30px;
-
-    border:1px solid rgba(216,181,109,.22);
+    padding:
+        120px
+        0
+        140px !important;
 
     background:
         radial-gradient(
-            circle at 50% 100%,
-            rgba(126,44,56,.22),
-            transparent 60%
+            circle at 50% 80%,
+            rgba(216,179,106,.09),
+            transparent 50%
         ),
-        linear-gradient(
-            145deg,
-            rgba(255,248,232,.065),
-            rgba(255,248,232,.018)
-        );
+        #090909;
+
 }
 
-.final-box h2{
-    font-family:"Playfair Display",serif;
+.final-inner{
 
-    font-size:clamp(38px,5vw,62px);
+    text-align:center;
 
-    line-height:1.06;
+    max-width:800px;
 
-    letter-spacing:-1.5px;
+    margin:auto;
 
-    margin-bottom:17px;
 }
 
-.final-box p{
-    max-width:600px;
+.final-inner .section-title{
 
-    margin:0 auto 30px;
+    font-size:
+        clamp(42px,6vw,72px);
 
-    color:var(--muted);
+    margin-bottom:22px;
 
-    line-height:1.75;
 }
 
-/* =====================================================
+.final-inner p{
+
+    max-width:580px;
+
+    margin:
+        0
+        auto
+        32px;
+
+    color:#858179;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer{
-    padding:35px 0 45px;
 
-    border-top:1px solid rgba(216,181,109,.12);
+    border-top:
+        1px solid var(--line);
+
+    padding:35px 0;
+
+    background:#070707;
+
 }
 
 .footer{
+
     display:flex;
 
-    align-items:center;
     justify-content:space-between;
 
-    gap:25px;
+    align-items:center;
+
 }
 
 .footer-copy{
-    color:#6f665d;
 
-    font-size:11px;
+    color:#56534e;
+
+    font-size:10px;
 
     line-height:1.7;
+
 }
 
 .footer-links{
+
     display:flex;
 
-    gap:20px;
+    gap:22px;
+
 }
 
 .footer-links a{
-    color:#8e8277;
 
-    font-size:11px;
+    color:#67635d;
+
+    font-size:10px;
+
 }
 
 .footer-links a:hover{
+
     color:var(--gold-light);
+
 }
 
-/* =====================================================
-   MOBILE CTA
-===================================================== */
 
-.mobile-cta{
+/* =========================================================
+   MOBILE CTA
+========================================================= */
+
+.mobile-bar{
+
     display:none;
 
     position:fixed;
 
-    left:12px;
-    right:12px;
-    bottom:12px;
+    bottom:0;
+    left:0;
+
+    width:100%;
 
     z-index:999;
 
-    padding:9px;
+    padding:10px;
 
-    border-radius:17px;
+    background:
+        rgba(8,8,8,.92);
 
-    background:rgba(11,9,9,.88);
+    border-top:
+        1px solid
+        rgba(216,179,106,.20);
 
-    border:1px solid rgba(216,181,109,.22);
+    backdrop-filter:blur(15px);
 
-    backdrop-filter:blur(20px);
-
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 
-.mobile-cta a{
+.mobile-bar a{
+
     width:100%;
+
 }
 
-/* =====================================================
-   REVEAL ANIMATION
-===================================================== */
+
+/* =========================================================
+   ANIMATION
+========================================================= */
 
 .reveal{
+
     opacity:0;
 
-    transform:translateY(28px);
+    transform:
+        translateY(25px);
 
     transition:
         opacity .8s ease,
         transform .8s ease;
+
 }
 
 .reveal.show{
+
     opacity:1;
 
-    transform:translateY(0);
+    transform:
+        translateY(0);
+
 }
 
-/* =====================================================
+
+/* =========================================================
    RESPONSIVE
-===================================================== */
+========================================================= */
 
 @media(max-width:950px){
 
-    .steps{
-        grid-template-columns:repeat(2,1fr);
+    .hero{
+
+        min-height:auto;
+
+        padding-top:140px;
+
+        padding-bottom:80px;
+
+    }
+
+    .process-heading{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .process-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
     .feature-grid{
+
         grid-template-columns:1fr;
 
         gap:50px;
+
+    }
+
+    .requirement-grid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .requirement-left{
+
+        position:static;
+
     }
 
 }
+
 
 @media(max-width:650px){
 
     header{
-        padding:10px 0;
-    }
 
-    .nav{
-        padding:9px 10px 9px 14px;
+        padding:15px 0;
 
-        border-radius:14px;
-    }
-
-    .logo{
-        font-size:15px;
-    }
-
-    .logo-symbol{
-        width:30px;
-        height:30px;
     }
 
     .nav-link{
-        padding:9px 12px;
 
-        font-size:10px;
+        display:none;
+
+    }
+
+    .nav-right{
+
+        gap:0;
+
+    }
+
+    .logo{
+
+        font-size:14px;
+
+    }
+
+    .logo-mark{
+
+        width:34px;
+        height:34px;
+
     }
 
     .hero{
-        padding:105px 0 55px;
 
-        min-height:auto;
+        padding:
+            120px
+            0
+            65px;
+
     }
 
     .hero h1{
-        font-size:42px;
 
-        letter-spacing:-1.5px;
+        font-size:44px;
+
+        letter-spacing:-2px;
+
+        line-height:1.04;
+
     }
 
     .hero-subtitle{
-        font-size:14px;
-    }
 
-    .offer-inner{
-        padding:25px 17px;
-    }
+        font-size:13px;
 
-    .offer-panel{
-        border-radius:24px;
-    }
+        margin-top:20px;
 
-    .offer-inner{
-        border-radius:23px;
-    }
+        margin-bottom:32px;
 
-    .offer-header{
-        gap:15px;
-    }
-
-    .offer-title{
-        font-size:9px;
-    }
-
-    .offer-status{
-        font-size:9px;
     }
 
     .amount{
+
         font-size:92px;
 
-        letter-spacing:-6px;
+        letter-spacing:-5px;
+
     }
 
-    .offer-description{
-        font-size:12px;
+    .amount .currency{
+
+        top:8px;
+
     }
 
-    .offer-button{
+    .hero-actions{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+    }
+
+    .primary,
+    .secondary{
+
         width:100%;
 
-        min-width:0;
-
-        padding:17px 18px;
     }
 
-    .trust-row{
+    .offer-info{
+
         grid-template-columns:1fr;
+
     }
 
-    .trust-item{
-        padding:15px;
+    .info-item{
+
+        padding:13px;
+
     }
 
-    .trust-item + .trust-item{
+    .info-item + .info-item{
+
         border-left:0;
 
-        border-top:1px solid rgba(216,181,109,.13);
+        border-top:
+            1px solid var(--line);
+
     }
 
-    section{
+    section:not(.hero){
+
         padding:80px 0;
+
     }
 
-    .steps{
+    .process-grid{
+
         grid-template-columns:1fr;
+
     }
 
-    .step{
-        min-height:auto;
+    .process-card{
+
+        min-height:230px;
+
     }
 
-    .feature-visual{
+    .visual{
+
         min-height:380px;
+
     }
 
-    .center-symbol{
-        width:175px;
-        height:175px;
+    .visual-circle{
+
+        width:270px;
+        height:270px;
+
     }
 
-    .center-symbol span{
-        font-size:40px;
+    .orbit{
+
+        width:325px;
+        height:325px;
+
     }
 
-    .ring-one{
-        width:240px;
-        height:240px;
-    }
+    .visual-amount{
 
-    .ring-two{
-        width:310px;
-        height:310px;
+        font-size:54px;
+
     }
 
     .final{
-        padding-bottom:100px;
-    }
 
-    .final-box{
-        padding:55px 20px;
+        padding:
+            80px
+            0
+            110px !important;
+
     }
 
     .footer{
+
         flex-direction:column;
 
         text-align:center;
+
+        gap:20px;
+
     }
 
-    .mobile-cta{
+    .mobile-bar{
+
         display:block;
+
     }
 
     footer{
-        padding-bottom:105px;
+
+        padding-bottom:100px;
+
     }
 
 }
@@ -1427,9 +1834,6 @@ footer{
 
 
 <body>
-
-<div class="ambient ambient-one"></div>
-<div class="ambient ambient-two"></div>
 
 
 <!-- =====================================================
@@ -1444,21 +1848,38 @@ footer{
 
 <a href="#" class="logo">
 
-    <div class="logo-symbol">$</div>
+<div class="logo-mark">
+    U
+</div>
 
-    UpLevel<span>Rewards</span>
+UpLevel<span>Rewards</span>
 
 </a>
 
-<a href="#offer" class="nav-link">
-    View $1,000 Offer
+
+<div class="nav-right">
+
+<a href="#how" class="nav-link">
+    How It Works
 </a>
+
+<a href="#faq" class="nav-link">
+    FAQ
+</a>
+
+<a href="#offer"
+class="nav-cta">
+    $1,000 Offer
+</a>
+
+</div>
 
 </nav>
 
 </div>
 
 </header>
+
 
 
 <!-- =====================================================
@@ -1475,137 +1896,158 @@ footer{
 
 
 <div class="eyebrow reveal">
-    Featured Cash Opportunity
+
+Featured Reward
+
 </div>
 
 
 <h1 class="reveal">
 
-    Discover Your Potential
+A Potential
 
-    <span>$1,000 Cash Deposit</span>
+<span class="gold">
+    $1,000
+</span>
+
+Cash Deposit
+
+<span class="normal">
+    Opportunity.
+</span>
 
 </h1>
 
 
 <p class="hero-subtitle reveal">
 
-    Explore the UpLevelRewards opportunity,
-    review the requirements and begin your
-    eligibility journey.
+Explore the UpLevelRewards offer,
+review the applicable requirements,
+and begin your eligibility journey.
 
 </p>
 
 
-<!-- =================================================
-     OFFER PANEL
-================================================= -->
+<!-- BIG REWARD -->
 
-<div class="offer-panel reveal">
-
-<div class="offer-inner">
+<div class="reward-display reveal">
 
 
-<div class="offer-header">
+<div class="reward-line">
 
-<div class="offer-title">
-    Premium Reward Offer
-</div>
+<i></i>
 
-<div class="offer-status">
-    Offer Available
-</div>
+<span>
+    Potential Cash Reward
+</span>
+
+<i></i>
 
 </div>
 
-
-<div class="amount-area">
-
-<div class="amount-label">
-    Potential Reward
-</div>
 
 <div class="amount">
-    $1,000
+
+<span class="currency">$</span>1<span class="comma">,</span>000
+
 </div>
+
 
 <div class="amount-caption">
-    Cash Deposit Opportunity
-</div>
+
+UpLevelRewards Cash Deposit Offer
 
 </div>
 
 
-<p class="offer-description">
+<!-- CTA -->
 
-Complete the applicable requirements to
-determine whether you may qualify for the
-advertised cash deposit.
+<div class="hero-actions">
 
-</p>
-
-
-<div class="offer-button-wrap">
-
-<!-- REPLACE THIS URL -->
+<!-- PUT YOUR REAL OFFER URL HERE -->
 
 <a
-    href="YOUR-OFFER-URL-HERE"
-    class="offer-button"
+href="YOUR-OFFER-URL-HERE"
+class="primary"
 >
-    Check My Eligibility
 
-    <span>→</span>
+Check My Eligibility
+
+<span class="arrow">
+    →
+</span>
+
+</a>
+
+
+<a
+href="#how"
+class="secondary"
+>
+
+See How It Works
 
 </a>
 
 </div>
 
 
-<div class="offer-footnote">
+<!-- INFO -->
 
-Requirements apply. Review official offer terms before participating.
+<div class="offer-info">
 
-</div>
+<div class="info-item">
 
+<strong>
+    $1,000
+</strong>
 
-</div>
-
-</div>
-
-
-<!-- TRUST ROW -->
-
-<div class="trust-row reveal">
-
-<div class="trust-item">
-
-<span>✦</span>
-
-<b>Clear Requirements</b>
+<span>
+    Potential Reward
+</span>
 
 </div>
 
 
-<div class="trust-item">
+<div class="info-item">
 
-<span>◇</span>
+<strong>
+    Online
+</strong>
 
-<b>Transparent Process</b>
+<span>
+    Eligibility Journey
+</span>
+
+</div>
+
+
+<div class="info-item">
+
+<strong>
+    Requirements
+</strong>
+
+<span>
+    May Apply
+</span>
+
+</div>
 
 </div>
 
 
-<div class="trust-item">
+<p class="hero-disclaimer">
 
-<span>↗</span>
+The advertised reward is not guaranteed.
+Eligibility, restrictions and applicable
+offer terms may apply. Review the official
+offer details before participating.
 
-<b>Online Eligibility</b>
+</p>
+
 
 </div>
-
-</div>
-
 
 </div>
 
@@ -1614,38 +2056,52 @@ Requirements apply. Review official offer terms before participating.
 </section>
 
 
+
 <!-- =====================================================
      HOW IT WORKS
 ===================================================== -->
 
-<section>
+<section
+class="process-section"
+id="how"
+>
 
 <div class="container">
 
-<div class="section-heading reveal">
 
-<div class="eyebrow">
+<div class="process-heading reveal">
+
+<div>
+
+<div class="section-label">
     The Process
 </div>
 
-<h2>
-    A Simple Way To Begin
+<h2 class="section-title">
+    Four Steps.<br>
+    One Simple Journey.
 </h2>
 
-<p>
-    Follow the applicable steps and review the
-    requirements throughout your eligibility journey.
+</div>
+
+
+<p class="section-text">
+
+Follow the applicable offer instructions,
+complete the required steps and review
+your eligibility along the way.
+
 </p>
 
 </div>
 
 
-<div class="steps">
+<div class="process-grid">
 
 
-<div class="step reveal">
+<div class="process-card reveal">
 
-<div class="step-number">
+<div class="process-number">
     01
 </div>
 
@@ -1654,16 +2110,16 @@ Requirements apply. Review official offer terms before participating.
 </h3>
 
 <p>
-    Open the offer and review the available
-    eligibility information.
+    Begin by selecting the offer and
+    reviewing the information provided.
 </p>
 
 </div>
 
 
-<div class="step reveal">
+<div class="process-card reveal">
 
-<div class="step-number">
+<div class="process-number">
     02
 </div>
 
@@ -1672,16 +2128,16 @@ Requirements apply. Review official offer terms before participating.
 </h3>
 
 <p>
-    Follow the instructions and complete
-    any applicable offer requirements.
+    Follow the applicable instructions
+    and complete the required steps.
 </p>
 
 </div>
 
 
-<div class="step reveal">
+<div class="process-card reveal">
 
-<div class="step-number">
+<div class="process-number">
     03
 </div>
 
@@ -1690,16 +2146,16 @@ Requirements apply. Review official offer terms before participating.
 </h3>
 
 <p>
-    Your submitted information may be reviewed
-    according to the applicable offer terms.
+    Submitted information and completed
+    requirements may be reviewed.
 </p>
 
 </div>
 
 
-<div class="step reveal">
+<div class="process-card reveal">
 
-<div class="step-number">
+<div class="process-number">
     04
 </div>
 
@@ -1708,8 +2164,9 @@ Requirements apply. Review official offer terms before participating.
 </h3>
 
 <p>
-    Eligible participants may receive the
-    advertised reward under the official terms.
+    Eligible participants may receive
+    the advertised reward according
+    to the applicable terms.
 </p>
 
 </div>
@@ -1722,122 +2179,128 @@ Requirements apply. Review official offer terms before participating.
 </section>
 
 
+
 <!-- =====================================================
-     FEATURE
+     PREMIUM FEATURE
 ===================================================== -->
 
-<section>
+<section
+class="feature-section"
+>
 
 <div class="container">
 
 <div class="feature-grid">
 
 
-<div class="feature-visual reveal">
+<div class="visual reveal">
 
-<div class="feature-ring ring-one"></div>
+<div class="orbit">
 
-<div class="feature-ring ring-two"></div>
+<div class="orbit-dot"></div>
 
-<div class="center-symbol">
+</div>
 
-<span>
-    $1K
-</span>
+
+<div class="visual-circle">
+
+<div class="visual-amount">
+
+<small>
+    Potential
+</small>
+
+$1K
 
 </div>
 
 </div>
+
+</div>
+
 
 
 <div class="feature-content reveal">
 
-<div class="eyebrow">
-    The Opportunity
+<div class="section-label">
+
+The Opportunity
+
 </div>
 
-<h2>
-    Every Step Starts With Clarity.
+
+<h2 class="section-title">
+
+Designed To Keep
+The Journey Clear.
+
 </h2>
 
-<p>
-    UpLevelRewards is designed to help you
-    explore a potential cash deposit opportunity
-    through a clear online process.
+
+<p class="section-text">
+
+The UpLevelRewards experience is designed
+around a straightforward eligibility journey,
+with the applicable requirements presented
+before you proceed.
+
 </p>
 
 
 <div class="feature-list">
 
 
-<div class="feature-list-item">
+<div class="feature-item">
 
-<div class="check">
+<div class="feature-check">
     ✓
 </div>
 
 <span>
-    Understand the offer before participating.
+    Review the offer details
 </span>
 
 </div>
 
 
-<div class="feature-list-item">
+<div class="feature-item">
 
-<div class="check">
+<div class="feature-check">
     ✓
 </div>
 
 <span>
-    Review eligibility requirements.
+    Understand applicable requirements
 </span>
 
 </div>
 
 
-<div class="feature-list-item">
+<div class="feature-item">
 
-<div class="check">
+<div class="feature-check">
     ✓
 </div>
 
 <span>
-    Complete the applicable steps.
+    Complete the required steps
 </span>
 
 </div>
 
 
-<div class="feature-list-item">
+<div class="feature-item">
 
-<div class="check">
+<div class="feature-check">
     ✓
 </div>
 
 <span>
-    Check whether you may qualify.
+    Check potential eligibility
 </span>
 
 </div>
 
-
-</div>
-
-
-<div class="disclosure">
-
-<strong>
-    Important Information
-</strong>
-
-<p>
-    The $1,000 amount is a potential advertised
-    reward and is not guaranteed. Eligibility,
-    restrictions, requirements and other terms
-    may apply. Review the official offer details
-    before participating.
-</p>
 
 </div>
 
@@ -1850,32 +2313,171 @@ Requirements apply. Review official offer terms before participating.
 </section>
 
 
+
 <!-- =====================================================
-     FAQ
+     REQUIREMENTS
 ===================================================== -->
 
-<section>
+<section class="requirements">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="requirement-grid">
 
-<div class="eyebrow">
-    Frequently Asked Questions
+
+<div class="requirement-left reveal">
+
+<div class="section-label">
+    Before You Continue
 </div>
 
-<h2>
-    Questions, Answered.
+<h2 class="section-title">
+
+Know The
+Requirements.
+
 </h2>
 
-<p>
-    Review these common questions before continuing.
+<p class="section-text">
+
+Participation is subject to the official
+offer terms and eligibility requirements.
+
 </p>
 
 </div>
 
 
-<div class="faq">
+<div class="requirement-list">
+
+
+<div class="requirement reveal">
+
+<div class="req-num">
+    01
+</div>
+
+<div>
+
+<h3>
+    Eligibility
+</h3>
+
+<p>
+    Participation may depend on location,
+    age, account status or other requirements
+    specified by the official offer.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="requirement reveal">
+
+<div class="req-num">
+    02
+</div>
+
+<div>
+
+<h3>
+    Required Steps
+</h3>
+
+<p>
+    Participants may need to complete
+    specific actions or requirements
+    before becoming eligible.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="requirement reveal">
+
+<div class="req-num">
+    03
+</div>
+
+<div>
+
+<h3>
+    Verification
+</h3>
+
+<p>
+    Information provided during the
+    process may be subject to review
+    or verification.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="requirement reveal">
+
+<div class="req-num">
+    04
+</div>
+
+<div>
+
+<h3>
+    Reward Terms
+</h3>
+
+<p>
+    The $1,000 amount is a potential
+    advertised reward and is subject
+    to the official offer terms.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section
+class="faq-section"
+id="faq"
+>
+
+<div class="container">
+
+<div class="faq-wrapper">
+
+
+<div class="faq-title reveal">
+
+<div class="section-label">
+    Frequently Asked
+</div>
+
+<h2 class="section-title">
+    Questions.
+</h2>
+
+</div>
 
 
 <div class="faq-item reveal">
@@ -1892,17 +2494,19 @@ Requirements apply. Review official offer terms before participating.
 
 </button>
 
+
 <div class="faq-answer">
 
 <p>
     No. The $1,000 is a potential advertised
     reward. Eligibility requirements and
-    applicable offer terms must be satisfied.
+    applicable terms must be satisfied.
 </p>
 
 </div>
 
 </div>
+
 
 
 <div class="faq-item reveal">
@@ -1919,17 +2523,19 @@ Requirements apply. Review official offer terms before participating.
 
 </button>
 
+
 <div class="faq-answer">
 
 <p>
-    Follow the instructions shown in the offer
-    journey and complete any applicable
-    eligibility requirements.
+    Follow the instructions presented in
+    the offer journey and complete any
+    applicable requirements.
 </p>
 
 </div>
 
 </div>
+
 
 
 <div class="faq-item reveal">
@@ -1946,17 +2552,19 @@ Requirements apply. Review official offer terms before participating.
 
 </button>
 
+
 <div class="faq-answer">
 
 <p>
-    Participation depends on the official
-    eligibility requirements, restrictions
-    and applicable terms.
+    Eligibility depends on the official
+    offer requirements, restrictions and
+    applicable terms.
 </p>
 
 </div>
 
 </div>
+
 
 
 <div class="faq-item reveal">
@@ -1973,12 +2581,13 @@ Requirements apply. Review official offer terms before participating.
 
 </button>
 
+
 <div class="faq-answer">
 
 <p>
-    Processing times may vary depending on
-    the requirements and the applicable
-    offer conditions.
+    Processing times can vary depending
+    on the applicable requirements and
+    offer terms.
 </p>
 
 </div>
@@ -1993,6 +2602,7 @@ Requirements apply. Review official offer terms before participating.
 </section>
 
 
+
 <!-- =====================================================
      FINAL CTA
 ===================================================== -->
@@ -2001,32 +2611,39 @@ Requirements apply. Review official offer terms before participating.
 
 <div class="container">
 
-<div class="final-box reveal">
+<div class="final-inner reveal">
 
-<div class="eyebrow">
-    Ready To Explore?
+<div class="section-label">
+    Your Next Step
 </div>
 
-<h2>
-    Your Next Step Starts Here.
+<h2 class="section-title">
+
+Explore The
+$1,000 Opportunity.
+
 </h2>
 
 <p>
-    Review the offer requirements and begin
-    your eligibility journey for the potential
-    $1,000 cash deposit.
+
+Review the applicable requirements
+and start your eligibility journey.
+
 </p>
 
 
-<!-- REPLACE THIS URL -->
+<!-- PUT YOUR REAL OFFER URL HERE -->
 
 <a
-    href="YOUR-OFFER-URL-HERE"
-    class="offer-button"
+href="YOUR-OFFER-URL-HERE"
+class="primary"
 >
-    Check My Eligibility
 
-    <span>→</span>
+Check My Eligibility
+
+<span class="arrow">
+    →
+</span>
 
 </a>
 
@@ -2039,6 +2656,7 @@ Requirements apply. Review official offer terms before participating.
 </main>
 
 
+
 <!-- =====================================================
      FOOTER
 ===================================================== -->
@@ -2049,11 +2667,13 @@ Requirements apply. Review official offer terms before participating.
 
 <div class="footer">
 
+
 <div class="footer-copy">
 
 © 2026 UpLevelRewards. All rights reserved.<br>
 
-Rewards are subject to eligibility and applicable terms.
+Potential rewards are subject to eligibility
+and applicable offer terms.
 
 </div>
 
@@ -2081,21 +2701,28 @@ Rewards are subject to eligibility and applicable terms.
 </footer>
 
 
+
 <!-- =====================================================
      MOBILE CTA
 ===================================================== -->
 
-<div class="mobile-cta">
+<div class="mobile-bar">
 
 <a
-    href="YOUR-OFFER-URL-HERE"
-    class="offer-button"
+href="YOUR-OFFER-URL-HERE"
+class="primary"
 >
-    Get Started — $1,000 Offer
-    <span>→</span>
+
+Get Started — $1,000 Offer
+
+<span class="arrow">
+    →
+</span>
+
 </a>
 
 </div>
+
 
 
 <script>
@@ -2114,8 +2741,9 @@ faqItems.forEach(item => {
 
     button.addEventListener("click", () => {
 
-        const active =
+        const isOpen =
             item.classList.contains("active");
+
 
         faqItems.forEach(other => {
 
@@ -2123,7 +2751,8 @@ faqItems.forEach(item => {
 
         });
 
-        if(!active){
+
+        if(!isOpen){
 
             item.classList.add("active");
 
@@ -2134,12 +2763,14 @@ faqItems.forEach(item => {
 });
 
 
+
 /* =====================================================
    SCROLL REVEAL
 ===================================================== */
 
 const revealElements =
 document.querySelectorAll(".reveal");
+
 
 const revealObserver =
 new IntersectionObserver(
@@ -2152,7 +2783,9 @@ new IntersectionObserver(
 
             entry.target.classList.add("show");
 
-            revealObserver.unobserve(entry.target);
+            revealObserver.unobserve(
+                entry.target
+            );
 
         }
 
@@ -2161,10 +2794,11 @@ new IntersectionObserver(
 },
 
 {
-    threshold:.10
+    threshold:.12
 }
 
 );
+
 
 revealElements.forEach(element => {
 
@@ -2173,41 +2807,76 @@ revealElements.forEach(element => {
 });
 
 
+
 /* =====================================================
-   SUBTLE OFFER CARD MOTION
+   SUBTLE AMOUNT MOVEMENT
 ===================================================== */
 
-const offerPanel =
-document.querySelector(".offer-panel");
+const amount =
+document.querySelector(".amount");
 
-document.addEventListener("mousemove", event => {
 
-    if(window.innerWidth < 950){
-        return;
+document.addEventListener(
+    "mousemove",
+    (event) => {
+
+        if(window.innerWidth < 900){
+            return;
+        }
+
+        const x =
+            (event.clientX /
+            window.innerWidth - .5);
+
+        const y =
+            (event.clientY /
+            window.innerHeight - .5);
+
+
+        amount.style.transform =
+            `
+            translate(
+                ${x * 3}px,
+                ${y * 3}px
+            )
+            `;
+
     }
-
-    const x =
-        event.clientX / window.innerWidth - .5;
-
-    const y =
-        event.clientY / window.innerHeight - .5;
-
-    offerPanel.style.transform =
-        `perspective(1400px)
-         rotateY(${x * 1.5}deg)
-         rotateX(${y * -1.5}deg)`;
-
-});
+);
 
 
-document.addEventListener("mouseleave", () => {
 
-    offerPanel.style.transform =
-        "perspective(1400px) rotateY(0deg) rotateX(0deg)";
+/* =====================================================
+   BUTTON PRESS
+===================================================== */
+
+document
+.querySelectorAll(".primary")
+.forEach(button => {
+
+    button.addEventListener(
+        "mousedown",
+        () => {
+
+            button.style.transform =
+                "translateY(1px) scale(.99)";
+
+        }
+    );
+
+    button.addEventListener(
+        "mouseup",
+        () => {
+
+            button.style.transform = "";
+
+        }
+    );
 
 });
 
 </script>
+
 
 </body>
 </html>
