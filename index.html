@@ -448,7 +448,7 @@ header{
 
 
 /* =========================================================
-   COUNTDOWN TIMER & LIVE TICKER STYLES (NEW)
+   COUNTDOWN TIMER & LIVE TICKER STYLES
 ========================================================= */
 .urgency-banner {
     display: inline-flex;
@@ -1458,7 +1458,7 @@ section:not(.hero){
 
 
 /* =========================================================
-   FINAL CTA
+   FINAL CTA (REDESIGNED FOR PREMIUM LOOK)
 ========================================================= */
 
 .final{
@@ -1466,34 +1466,47 @@ section:not(.hero){
     padding:
         120px
         0
-        140px !important;
+        120px !important;
 
     background:
         radial-gradient(
-            circle at 50% 80%,
-            rgba(216,179,106,.09),
-            transparent 50%
+            circle at 50% 50%,
+            rgba(216,179,106,.12),
+            transparent 65%
         ),
         #090909;
 
 }
 
-.final-inner{
+.final-card {
+    max-width: 900px;
+    margin: auto;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
+    border: 1px solid rgba(216, 179, 106, 0.25);
+    border-radius: 16px;
+    padding: 70px 40px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), inset 0 0 40px rgba(216,179,106,.05);
+}
 
-    text-align:center;
-
-    max-width:800px;
-
-    margin:auto;
-
+.final-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 .final-inner .section-title{
 
     font-size:
-        clamp(42px,6vw,72px);
+        clamp(36px, 5vw, 60px);
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 
 }
 
@@ -1504,11 +1517,11 @@ section:not(.hero){
     margin:
         0
         auto
-        32px;
+        35px;
 
-    color:#858179;
+    color:#9b968e;
 
-    font-size:14px;
+    font-size:15px;
 
     line-height:1.8;
 
@@ -1516,7 +1529,7 @@ section:not(.hero){
 
 
 /* =========================================================
-   FOOTER
+   FOOTER (REDESIGNED & SPACIOUS)
 ========================================================= */
 
 footer{
@@ -1524,9 +1537,9 @@ footer{
     border-top:
         1px solid var(--line);
 
-    padding:35px 0;
+    padding:55px 0;
 
-    background:#070707;
+    background:#060606;
 
 }
 
@@ -1538,15 +1551,38 @@ footer{
 
     align-items:center;
 
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo-mark {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(216,179,106,.4);
+    color: var(--gold-light);
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    background: rgba(216,179,106,.1);
 }
 
 .footer-copy{
 
-    color:#56534e;
+    color:#6e6a63;
 
-    font-size:10px;
+    font-size:11px;
 
-    line-height:1.7;
+    line-height:1.6;
 
 }
 
@@ -1554,15 +1590,17 @@ footer{
 
     display:flex;
 
-    gap:22px;
+    gap:25px;
 
 }
 
 .footer-links a{
 
-    color:#67635d;
+    color:#8a857d;
 
-    font-size:10px;
+    font-size:12px;
+
+    transition: .3s;
 
 }
 
@@ -1854,8 +1892,12 @@ footer{
         padding:
             80px
             0
-            110px !important;
+            90px !important;
 
+    }
+
+    .final-card {
+        padding: 40px 20px;
     }
 
     .footer{
@@ -1866,6 +1908,10 @@ footer{
 
         gap:20px;
 
+    }
+
+    .footer-left {
+        flex-direction: column;
     }
 
     .mobile-bar{
@@ -2666,14 +2712,16 @@ id="faq"
 
 
 <!-- =====================================================
-     FINAL CTA
+     FINAL CTA (REDESIGNED)
 ===================================================== -->
 
 <section class="final">
 
 <div class="container">
 
-<div class="final-inner reveal">
+<div class="final-card reveal">
+
+<div class="final-inner">
 
 <div class="section-label">
     Your Next Step
@@ -2689,7 +2737,7 @@ $1,000 Opportunity.
 <p>
 
 Review the applicable requirements
-and start your eligibility journey.
+and start your eligibility journey today.
 
 </p>
 
@@ -2713,6 +2761,8 @@ Check My Eligibility
 
 </div>
 
+</div>
+
 </section>
 
 </main>
@@ -2720,7 +2770,7 @@ Check My Eligibility
 
 
 <!-- =====================================================
-     FOOTER
+     FOOTER (REDESIGNED)
 ===================================================== -->
 
 <footer>
@@ -2729,16 +2779,13 @@ Check My Eligibility
 
 <div class="footer">
 
-
-<div class="footer-copy">
-
-© 2026 UpLevelRewards. All rights reserved.<br>
-
-Potential rewards are subject to eligibility
-and applicable offer terms.
-
+<div class="footer-left">
+    <div class="footer-logo-mark">U</div>
+    <div class="footer-copy">
+        © 2026 UpLevelRewards. All rights reserved.<br>
+        Potential rewards are subject to eligibility and applicable offer terms.
+    </div>
 </div>
-
 
 <div class="footer-links">
 
@@ -2938,9 +2985,8 @@ document
 });
 
 /* =====================================================
-   COUNTDOWN & LIVE TICKER SCRIPT (NEW)
+   COUNTDOWN & LIVE TICKER SCRIPT
 ===================================================== */
-// Countdown Timer logic
 let time = 12 * 3600 + 45 * 60 + 30;
 setInterval(() => {
     let hours = Math.floor(time / 3600);
@@ -2953,7 +2999,6 @@ setInterval(() => {
     if (time > 0) time--;
 }, 1000);
 
-// Live Ticker Rotation logic
 const tickerMessages = [
     "Michael R. from Texas just checked eligibility (1 min ago)",
     "Sarah L. from California unlocked the reward journey (Just now)",
