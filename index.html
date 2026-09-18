@@ -8,13 +8,32 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
-   PREMIUM RESET
-========================================================= */
+/* =====================================================
+   PREMIUM LUXURY THEME
+===================================================== */
+
+:root{
+    --black:#0b0909;
+    --black-soft:#151010;
+    --burgundy:#35181d;
+    --burgundy-light:#54252d;
+
+    --gold:#d8b56d;
+    --gold-light:#f7e4ad;
+    --gold-dark:#9b7738;
+
+    --cream:#fff8e8;
+    --white:#ffffff;
+    --muted:#b5aaa0;
+
+    --border:rgba(216,181,109,.20);
+    --glass:rgba(255,248,232,.055);
+}
 
 *{
     margin:0;
@@ -28,9 +47,56 @@ html{
 
 body{
     font-family:"DM Sans",sans-serif;
-    color:#f8faf9;
-    background:#050806;
+    color:var(--cream);
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(126,44,56,.28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(216,181,109,.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0b0909,
+            #130d0e 55%,
+            #080707
+        );
+
     overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+    z-index:-5;
+
+    background-image:
+        linear-gradient(
+            rgba(255,248,232,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,248,232,.018) 1px,
+            transparent 1px
+        );
+
+    background-size:80px 80px;
+
+    mask-image:linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
 }
 
 a{
@@ -42,141 +108,72 @@ button{
     font-family:inherit;
 }
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-:root{
-    --black:#050806;
-    --black2:#080d0a;
-
-    --green:#45e39a;
-    --green-dark:#16bd6d;
-
-    --gold:#f7cc67;
-    --gold-light:#ffe9a5;
-
-    --white:#ffffff;
-    --muted:#929d97;
-
-    --border:rgba(255,255,255,.10);
-
-    --glass:rgba(255,255,255,.055);
-}
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-10;
-
-    background:
-        radial-gradient(
-            circle at 50% -10%,
-            rgba(62,227,151,.18),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 100% 40%,
-            rgba(247,204,103,.10),
-            transparent 30%
-        ),
-        linear-gradient(
-            180deg,
-            #07100b 0%,
-            #050806 50%,
-            #030504 100%
-        );
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-9;
-    pointer-events:none;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.018) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.018) 1px,
-            transparent 1px
-        );
-
-    background-size:70px 70px;
-
-    mask-image:linear-gradient(
-        to bottom,
-        black,
-        transparent 85%
-    );
-}
-
 .container{
-    width:min(1180px,92%);
+    width:min(1160px,92%);
     margin:auto;
 }
 
-/* =========================================================
-   FLOATING LIGHTS
-========================================================= */
+/* =====================================================
+   AMBIENT LIGHTS
+===================================================== */
 
-.light{
+.ambient{
     position:fixed;
+
+    width:360px;
+    height:360px;
+
     border-radius:50%;
-    pointer-events:none;
-    filter:blur(100px);
-    z-index:-5;
+
+    filter:blur(120px);
+
     opacity:.18;
+
+    pointer-events:none;
+
+    z-index:-2;
 }
 
-.light-1{
-    width:350px;
-    height:350px;
-    background:#28d783;
-    left:-160px;
-    top:15%;
-    animation:lightMove 12s ease-in-out infinite;
+.ambient-one{
+    top:10%;
+    left:-180px;
+    background:#8e3348;
+
+    animation:ambientMove 14s ease-in-out infinite;
 }
 
-.light-2{
-    width:320px;
-    height:320px;
-    background:#e8bb50;
-    right:-150px;
-    top:30%;
-    animation:lightMove 15s ease-in-out infinite reverse;
+.ambient-two{
+    top:45%;
+    right:-180px;
+    background:#d8b56d;
+
+    animation:ambientMove 17s ease-in-out infinite reverse;
 }
 
-@keyframes lightMove{
+@keyframes ambientMove{
     0%,100%{
         transform:translate(0,0);
     }
+
     50%{
-        transform:translate(50px,-35px);
+        transform:translate(45px,-35px);
     }
 }
 
-/* =========================================================
+/* =====================================================
    HEADER
-========================================================= */
+===================================================== */
 
-.header{
+header{
     position:absolute;
     top:0;
     left:0;
+
     width:100%;
-    z-index:100;
 
     padding:20px 0;
+
+    z-index:100;
 }
 
 .nav{
@@ -184,18 +181,20 @@ body::after{
     align-items:center;
     justify-content:space-between;
 
-    padding:12px 14px 12px 20px;
+    padding:13px 15px 13px 20px;
 
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
+    border:1px solid rgba(216,181,109,.18);
+    border-radius:16px;
 
-    background:rgba(5,9,7,.58);
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,248,232,.07),
+            rgba(255,248,232,.025)
+        );
 
-    backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.20);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 }
 
 .logo{
@@ -203,12 +202,12 @@ body::after{
     align-items:center;
     gap:11px;
 
-    font-family:"Manrope",sans-serif;
+    font-size:18px;
     font-weight:800;
-    font-size:19px;
+    letter-spacing:-.4px;
 }
 
-.logo-icon{
+.logo-symbol{
     width:36px;
     height:36px;
 
@@ -217,320 +216,86 @@ body::after{
 
     border-radius:11px;
 
+    color:#20150a;
+
     background:
         linear-gradient(
             135deg,
-            var(--green),
-            #a5f7ca
+            var(--gold-light),
+            var(--gold)
         );
 
-    color:#03130a;
-
     box-shadow:
-        0 0 25px rgba(69,227,154,.22);
+        0 0 25px rgba(216,181,109,.18);
 }
 
-.logo em{
-    font-style:normal;
-    color:var(--green);
+.logo span{
+    color:var(--gold);
 }
 
-.header-button{
-    padding:11px 19px;
+.nav-link{
+    padding:11px 18px;
 
-    border:1px solid rgba(69,227,154,.28);
-    border-radius:12px;
+    border:1px solid rgba(216,181,109,.3);
+    border-radius:10px;
 
-    color:var(--green);
+    color:var(--gold-light);
 
-    background:rgba(69,227,154,.07);
-
+    font-size:12px;
     font-weight:700;
-    font-size:13px;
 
     transition:.3s;
 }
 
-.header-button:hover{
-    background:var(--green);
-    color:#03130a;
+.nav-link:hover{
+    background:var(--gold);
+    color:#1b1208;
+
     transform:translateY(-2px);
 }
 
-/* =========================================================
-   HERO — OFFER FIRST
-========================================================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-    min-height:900px;
+    padding:145px 0 85px;
 
-    padding:
-        130px
-        0
-        80px;
+    min-height:890px;
 
     display:flex;
     align-items:center;
 }
 
-.hero-wrapper{
-    width:100%;
+.hero-content{
+    text-align:center;
 }
 
-/* TOP LABEL */
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
 
-.hero-label{
-    display:flex;
-    justify-content:center;
+    padding:9px 15px;
+
+    border:1px solid rgba(216,181,109,.28);
+    border-radius:50px;
+
+    color:var(--gold-light);
+
+    background:
+        rgba(216,181,109,.055);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:1px;
+    text-transform:uppercase;
 
     margin-bottom:25px;
 }
 
-.live-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    padding:9px 15px;
-
-    border-radius:50px;
-
-    border:1px solid rgba(69,227,154,.25);
-
-    background:
-        rgba(69,227,154,.065);
-
-    color:#b8f8d2;
-
-    font-size:12px;
-    font-weight:700;
-
-    letter-spacing:.3px;
-}
-
-.live-dot{
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:var(--green);
-
-    box-shadow:
-        0 0 0 5px rgba(69,227,154,.08),
-        0 0 16px var(--green);
-
-    animation:dotPulse 2s infinite;
-}
-
-@keyframes dotPulse{
-
-    0%,100%{
-        opacity:1;
-    }
-
-    50%{
-        opacity:.45;
-    }
-
-}
-
-/* =========================================================
-   HERO HEADING
-========================================================= */
-
-.hero-heading{
-    text-align:center;
-    max-width:850px;
-    margin:0 auto 42px;
-}
-
-.hero-heading h1{
-    font-family:"Manrope",sans-serif;
-
-    font-size:
-        clamp(38px,5vw,67px);
-
-    line-height:1.04;
-
-    letter-spacing:-3px;
-
-    font-weight:800;
-
-    margin-bottom:17px;
-}
-
-.hero-heading h1 span{
-    background:
-        linear-gradient(
-            100deg,
-            #ffffff 10%,
-            #76eeb0 50%,
-            #f8d475 90%
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-}
-
-.hero-heading p{
-    max-width:620px;
-
-    margin:auto;
-
-    color:var(--muted);
-
-    font-size:17px;
-
-    line-height:1.7;
-}
-
-/* =========================================================
-   MAIN OFFER CARD
-========================================================= */
-
-.offer-wrap{
-    position:relative;
-
-    max-width:950px;
-
-    margin:auto;
-
-    padding:1px;
-
-    border-radius:34px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(69,227,154,.45),
-            rgba(255,255,255,.08),
-            rgba(247,204,103,.35)
-        );
-
-    box-shadow:
-        0 40px 120px rgba(0,0,0,.5),
-        0 0 90px rgba(69,227,154,.08);
-}
-
-/* glow behind card */
-
-.offer-wrap::before{
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(69,227,154,.17),
-            transparent 65%
-        );
-
-    filter:blur(30px);
-
-    z-index:-1;
-}
-
-.offer-card{
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:33px;
-
-    padding:44px;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(69,227,154,.075),
-            transparent 45%
-        ),
-        linear-gradient(
-            145deg,
-            #101713,
-            #080d0a
-        );
-}
-
-/* shine */
-
-.offer-card::before{
-    content:"";
-
-    position:absolute;
-
-    top:-100%;
-    left:-30%;
-
-    width:50%;
-    height:300%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.035),
-            transparent
-        );
-
-    transform:rotate(20deg);
-
-    animation:cardShine 7s ease-in-out infinite;
-}
-
-@keyframes cardShine{
-
-    0%,60%{
-        left:-60%;
-    }
-
-    100%{
-        left:130%;
-    }
-
-}
-
-/* top line */
-
-.offer-top{
-    position:relative;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    margin-bottom:24px;
-}
-
-.offer-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    color:#d8e0dc;
-
-    font-size:12px;
-    font-weight:700;
-
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-}
-
-.offer-tag::before{
+.eyebrow::before{
     content:"";
 
     width:7px;
@@ -540,60 +305,211 @@ body::after{
 
     background:var(--gold);
 
-    box-shadow:0 0 14px var(--gold);
+    box-shadow:
+        0 0 14px var(--gold);
 }
 
-.secure{
-    color:#83918a;
-    font-size:11px;
+.hero h1{
+    max-width:850px;
+
+    margin:0 auto 20px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(42px,6vw,76px);
+
+    line-height:1.05;
+
+    letter-spacing:-2.5px;
+
+    font-weight:800;
 }
 
-/* =========================================================
-   HUGE $1000
-========================================================= */
+.hero h1 span{
+    display:block;
 
-.offer-main{
+    background:
+        linear-gradient(
+            100deg,
+            #fff8e8,
+            #f7e4ad 45%,
+            #cda45d
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero-subtitle{
+    max-width:650px;
+
+    margin:0 auto 40px;
+
+    color:var(--muted);
+
+    font-size:17px;
+
+    line-height:1.75;
+}
+
+/* =====================================================
+   PREMIUM OFFER PANEL
+===================================================== */
+
+.offer-panel{
     position:relative;
 
-    text-align:center;
+    max-width:920px;
 
-    padding:15px 0 32px;
+    margin:auto;
+
+    padding:1px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(247,228,173,.7),
+            rgba(216,181,109,.08) 35%,
+            rgba(126,44,56,.65) 70%,
+            rgba(247,228,109,.35)
+        );
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.55),
+        0 0 100px rgba(216,181,109,.06);
 }
 
-.offer-small{
-    color:#9daaa4;
+.offer-inner{
+    position:relative;
 
-    font-size:13px;
+    overflow:hidden;
+
+    padding:42px;
+
+    border-radius:29px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(216,181,109,.10),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #1b1213,
+            #0d0a0a
+        );
+}
+
+.offer-inner::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold-light),
+            transparent
+        );
+
+    opacity:.8;
+}
+
+.offer-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:25px;
+}
+
+.offer-title{
+    color:var(--gold-light);
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.offer-status{
+    color:#d6c5a4;
+
+    font-size:11px;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.offer-status::before{
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:0 0 12px var(--gold);
+}
+
+/* =====================================================
+   LARGE OFFER AMOUNT
+===================================================== */
+
+.amount-area{
+    text-align:center;
+
+    padding:18px 0 30px;
+}
+
+.amount-label{
+    color:#a99a89;
+
+    font-size:12px;
 
     text-transform:uppercase;
-    letter-spacing:2px;
 
-    margin-bottom:7px;
+    letter-spacing:3px;
+
+    margin-bottom:9px;
 }
 
 .amount{
-    position:relative;
-
     display:inline-block;
 
-    font-family:"Manrope",sans-serif;
+    font-family:"Playfair Display",serif;
 
-    font-size:
-        clamp(100px,15vw,185px);
+    font-size:clamp(105px,16vw,190px);
 
     line-height:.9;
 
-    letter-spacing:-10px;
+    letter-spacing:-9px;
 
     font-weight:800;
 
     background:
         linear-gradient(
             135deg,
-            #ffffff 5%,
-            #82efb5 43%,
-            #f8d675 82%,
-            #ffffff 100%
+            #fff9e9 5%,
+            #f7e4ad 40%,
+            #cda45d 75%,
+            #fff0bd
         );
 
     -webkit-background-clip:text;
@@ -603,82 +519,58 @@ body::after{
 
     filter:
         drop-shadow(
-            0 15px 35px
-            rgba(69,227,154,.10)
+            0 15px 30px
+            rgba(216,181,109,.12)
         );
 
-    animation:amountFloat 4s ease-in-out infinite;
+    animation:amountBreath 4s ease-in-out infinite;
 }
 
-@keyframes amountFloat{
-
+@keyframes amountBreath{
     0%,100%{
         transform:translateY(0);
     }
 
     50%{
-        transform:translateY(-6px);
+        transform:translateY(-5px);
     }
-
 }
 
-.amount::after{
-    content:"";
+.amount-caption{
+    margin-top:20px;
 
-    position:absolute;
+    color:#b6a99a;
 
-    width:80%;
-
-    height:25px;
-
-    left:10%;
-    bottom:-15px;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(69,227,154,.28),
-            transparent 70%
-        );
-
-    filter:blur(14px);
-
+    font-size:13px;
 }
 
-/* =========================================================
-   OFFER DESCRIPTION
-========================================================= */
+/* =====================================================
+   OFFER DETAILS
+===================================================== */
 
 .offer-description{
-    position:relative;
+    max-width:620px;
 
-    max-width:610px;
-
-    margin:0 auto 30px;
+    margin:0 auto 28px;
 
     text-align:center;
 
-    color:#a7b2ad;
-
-    line-height:1.7;
+    color:#a99d91;
 
     font-size:14px;
+
+    line-height:1.75;
 }
 
-/* =========================================================
-   CTA
-========================================================= */
-
-.offer-actions{
-    position:relative;
-
+.offer-button-wrap{
     display:flex;
+
     justify-content:center;
 
-    margin-bottom:23px;
+    margin-bottom:20px;
 }
 
-.main-cta{
+.offer-button{
     position:relative;
     overflow:hidden;
 
@@ -691,28 +583,28 @@ body::after{
 
     padding:18px 28px;
 
-    border-radius:15px;
+    border-radius:12px;
 
-    color:#03140b;
+    color:#211608;
 
     background:
         linear-gradient(
             135deg,
-            #55e9a2,
-            #29cf80
+            #f8e6b0,
+            #d8b56d
         );
 
+    font-size:14px;
     font-weight:800;
-    font-size:15px;
 
     box-shadow:
-        0 15px 35px rgba(69,227,154,.22),
-        inset 0 1px rgba(255,255,255,.6);
+        0 15px 35px rgba(216,181,109,.16),
+        inset 0 1px rgba(255,255,255,.8);
 
     transition:.3s;
 }
 
-.main-cta::after{
+.offer-button::before{
     content:"";
 
     position:absolute;
@@ -727,93 +619,80 @@ body::after{
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.45),
+            rgba(255,255,255,.55),
             transparent
         );
 
     transform:skewX(-20deg);
 
-    transition:.6s;
+    transition:.7s;
 }
 
-.main-cta:hover::after{
+.offer-button:hover::before{
     left:130%;
 }
 
-.main-cta:hover{
+.offer-button:hover{
     transform:translateY(-4px);
 
     box-shadow:
-        0 22px 45px rgba(69,227,154,.30),
-        inset 0 1px rgba(255,255,255,.6);
+        0 22px 45px rgba(216,181,109,.25),
+        inset 0 1px rgba(255,255,255,.8);
 }
 
-.arrow{
+.offer-button span{
     font-size:20px;
 }
 
-/* =========================================================
-   CARD FOOTER
-========================================================= */
+.offer-footnote{
+    text-align:center;
 
-.offer-note{
-    position:relative;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:7px;
-
-    color:#748079;
+    color:#776d62;
 
     font-size:11px;
 }
 
-.offer-note strong{
-    color:#a4afa9;
-}
+/* =====================================================
+   TRUST ITEMS
+===================================================== */
 
-/* =========================================================
-   TRUST ROW
-========================================================= */
-
-.trust{
-    margin-top:20px;
-
+.trust-row{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
 
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:20px;
+    margin-top:18px;
 
-    background:rgba(255,255,255,.025);
+    border:1px solid rgba(216,181,109,.14);
+    border-radius:18px;
+
+    background:rgba(255,248,232,.025);
 }
 
 .trust-item{
-    padding:20px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:9px;
 
-    color:#8e9994;
+    padding:19px;
+
+    color:#a79b8d;
 
     font-size:12px;
 }
 
 .trust-item + .trust-item{
-    border-left:1px solid rgba(255,255,255,.07);
+    border-left:1px solid rgba(216,181,109,.13);
 }
 
-.trust-icon{
-    color:var(--green);
-    font-weight:800;
+.trust-item b{
+    color:var(--gold-light);
 }
 
-/* =========================================================
-   SECTION
-========================================================= */
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
 
 section{
     padding:110px 0;
@@ -827,137 +706,123 @@ section{
     margin:0 auto 55px;
 }
 
-.eyebrow{
-    color:var(--green);
-
-    font-size:11px;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-    margin-bottom:13px;
+.section-heading .eyebrow{
+    margin-bottom:18px;
 }
 
 .section-heading h2{
-    font-family:"Manrope",sans-serif;
+    font-family:"Playfair Display",serif;
 
-    font-size:
-        clamp(34px,5vw,53px);
+    font-size:clamp(36px,5vw,58px);
 
-    line-height:1.05;
+    line-height:1.08;
 
-    letter-spacing:-2px;
+    letter-spacing:-1.5px;
 
-    margin-bottom:16px;
+    margin-bottom:17px;
 }
 
 .section-heading p{
     color:var(--muted);
 
-    line-height:1.7;
+    line-height:1.75;
 }
 
-/* =========================================================
+/* =====================================================
    STEPS
-========================================================= */
+===================================================== */
 
 .steps{
     display:grid;
 
-    grid-template-columns:
-        repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:15px;
 }
 
 .step{
-    min-height:250px;
+    min-height:245px;
 
     padding:27px;
 
-    border-radius:22px;
-
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(216,181,109,.13);
+    border-radius:20px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.06),
-            rgba(255,255,255,.02)
+            rgba(255,248,232,.055),
+            rgba(255,248,232,.018)
         );
 
     transition:.35s;
 }
 
 .step:hover{
-    transform:translateY(-8px);
+    transform:translateY(-7px);
 
-    border-color:
-        rgba(69,227,154,.24);
+    border-color:rgba(216,181,109,.35);
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.25);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(216,181,109,.10),
+            rgba(255,248,232,.025)
+        );
 }
 
 .step-number{
-    width:44px;
-    height:44px;
+    width:43px;
+    height:43px;
 
     display:grid;
     place-items:center;
 
-    border-radius:13px;
+    border-radius:12px;
 
-    color:var(--green);
+    border:1px solid rgba(216,181,109,.25);
 
-    background:
-        rgba(69,227,154,.08);
+    color:var(--gold-light);
 
-    border:
-        1px solid
-        rgba(69,227,154,.15);
-
-    margin-bottom:34px;
+    background:rgba(216,181,109,.07);
 
     font-size:12px;
     font-weight:800;
+
+    margin-bottom:32px;
 }
 
 .step h3{
-    font-family:"Manrope",sans-serif;
+    font-family:"Playfair Display",serif;
 
-    font-size:18px;
+    font-size:21px;
 
-    margin-bottom:10px;
+    margin-bottom:11px;
 }
 
 .step p{
-    color:#858f8a;
+    color:#968b80;
 
     font-size:13px;
 
-    line-height:1.7;
+    line-height:1.75;
 }
 
-/* =========================================================
-   BENEFITS
-========================================================= */
+/* =====================================================
+   FEATURE AREA
+===================================================== */
 
-.benefit-grid{
+.feature-grid{
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:70px;
 
     align-items:center;
 }
 
-.benefit-visual{
+.feature-visual{
     position:relative;
 
     min-height:470px;
@@ -965,35 +830,34 @@ section{
     display:grid;
     place-items:center;
 
-    border-radius:32px;
+    overflow:hidden;
 
-    border:1px solid rgba(255,255,255,.08);
+    border-radius:28px;
+
+    border:1px solid rgba(216,181,109,.14);
 
     background:
         radial-gradient(
             circle,
-            rgba(69,227,154,.09),
-            transparent 55%
+            rgba(126,44,56,.22),
+            transparent 60%
         ),
-        rgba(255,255,255,.025);
-
-    overflow:hidden;
+        rgba(255,248,232,.025);
 }
 
-.ring{
+.feature-ring{
     position:absolute;
 
     border-radius:50%;
 
-    border:1px solid
-        rgba(69,227,154,.14);
+    border:1px solid rgba(216,181,109,.20);
 }
 
 .ring-one{
     width:280px;
     height:280px;
 
-    animation:spin 16s linear infinite;
+    animation:spin 18s linear infinite;
 }
 
 .ring-two{
@@ -1002,11 +866,9 @@ section{
 
     border-style:dashed;
 
-    border-color:
-        rgba(247,204,103,.10);
+    border-color:rgba(126,44,56,.45);
 
-    animation:
-        spin 25s linear infinite reverse;
+    animation:spin 27s linear infinite reverse;
 }
 
 @keyframes spin{
@@ -1015,12 +877,12 @@ section{
     }
 }
 
-.center-reward{
+.center-symbol{
     position:relative;
-    z-index:3;
+    z-index:2;
 
-    width:210px;
-    height:210px;
+    width:205px;
+    height:205px;
 
     display:grid;
     place-items:center;
@@ -1030,34 +892,29 @@ section{
     background:
         radial-gradient(
             circle at 35% 25%,
-            #1b3227,
-            #070d09 70%
+            #54252d,
+            #130c0d 70%
         );
 
-    border:
-        1px solid
-        rgba(69,227,154,.30);
+    border:1px solid rgba(216,181,109,.35);
 
     box-shadow:
-        0 0 70px
-        rgba(69,227,154,.13),
-        inset 0 0 45px
-        rgba(69,227,154,.08);
+        0 0 80px rgba(126,44,56,.2),
+        inset 0 0 40px rgba(216,181,109,.08);
 }
 
-.center-reward span{
-    font-family:"Manrope",sans-serif;
+.center-symbol span{
+    font-family:"Playfair Display",serif;
 
-    font-size:47px;
-
+    font-size:48px;
     font-weight:800;
 
     background:
         linear-gradient(
             135deg,
-            white,
-            var(--green),
-            var(--gold)
+            #fff8e8,
+            #f7e4ad,
+            #cda45d
         );
 
     -webkit-background-clip:text;
@@ -1066,33 +923,33 @@ section{
     color:transparent;
 }
 
-.benefit-content h2{
-    font-family:"Manrope",sans-serif;
+.feature-content h2{
+    font-family:"Playfair Display",serif;
 
-    font-size:
-        clamp(34px,5vw,52px);
+    font-size:clamp(36px,5vw,55px);
 
-    line-height:1.06;
+    line-height:1.08;
 
-    letter-spacing:-2px;
+    letter-spacing:-1.5px;
 
     margin-bottom:20px;
 }
 
-.benefit-content > p{
+.feature-content > p{
     color:var(--muted);
 
-    line-height:1.75;
+    line-height:1.8;
 
-    margin-bottom:27px;
+    margin-bottom:28px;
 }
 
-.list{
+.feature-list{
     display:grid;
-    gap:14px;
+
+    gap:15px;
 }
 
-.list-item{
+.feature-list-item{
     display:flex;
     align-items:flex-start;
 
@@ -1110,70 +967,72 @@ section{
 
     border-radius:50%;
 
-    background:
-        rgba(69,227,154,.10);
+    color:#1b1208;
 
-    color:var(--green);
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
 
     font-size:11px;
+    font-weight:800;
 }
 
-.list-item span{
-    color:#bac3bf;
+.feature-list-item span{
+    color:#c1b6a8;
 
     font-size:13px;
 
     line-height:1.6;
 }
 
-/* =========================================================
-   DISCLAIMER
-========================================================= */
+/* =====================================================
+   DISCLOSURE
+===================================================== */
 
-.disclaimer{
-    margin-top:30px;
+.disclosure{
+    margin-top:28px;
 
     padding:20px;
 
-    border-radius:18px;
+    border-radius:16px;
 
     background:
-        rgba(247,204,103,.035);
+        rgba(126,44,56,.12);
 
-    border:
-        1px solid
-        rgba(247,204,103,.12);
+    border:1px solid rgba(126,44,56,.32);
 }
 
-.disclaimer strong{
-    color:var(--gold);
+.disclosure strong{
+    color:var(--gold-light);
 
     font-size:12px;
 }
 
-.disclaimer p{
-    color:#7f8984;
+.disclosure p{
+    margin-top:7px;
+
+    color:#92857a;
 
     font-size:11px;
 
-    line-height:1.7;
-
-    margin-top:6px;
+    line-height:1.75;
 }
 
-/* =========================================================
+/* =====================================================
    FAQ
-========================================================= */
+===================================================== */
 
 .faq{
-    max-width:800px;
+    max-width:820px;
+
     margin:auto;
 }
 
 .faq-item{
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(216,181,109,.14);
 }
 
 .faq-question{
@@ -1183,32 +1042,30 @@ section{
     align-items:center;
     justify-content:space-between;
 
-    padding:23px 4px;
-
-    background:none;
+    padding:24px 3px;
 
     border:0;
+    background:none;
 
-    color:white;
-
-    cursor:pointer;
+    color:var(--cream);
 
     text-align:left;
 
-    font-size:15px;
+    cursor:pointer;
 
+    font-size:15px;
     font-weight:700;
 }
 
-.plus{
-    color:var(--green);
+.faq-plus{
+    color:var(--gold);
 
     font-size:22px;
 
     transition:.3s;
 }
 
-.answer{
+.faq-answer{
     max-height:0;
 
     overflow:hidden;
@@ -1216,37 +1073,34 @@ section{
     transition:max-height .35s ease;
 }
 
-.answer p{
+.faq-answer p{
     padding:
         0
-        30px
-        22px
-        4px;
+        35px
+        23px
+        3px;
 
-    color:#89938e;
+    color:#958a80;
 
     font-size:13px;
 
-    line-height:1.75;
+    line-height:1.8;
 }
 
-.faq-item.active .answer{
-    max-height:200px;
+.faq-item.active .faq-answer{
+    max-height:220px;
 }
 
-.faq-item.active .plus{
+.faq-item.active .faq-plus{
     transform:rotate(45deg);
 }
 
-/* =========================================================
+/* =====================================================
    FINAL CTA
-========================================================= */
+===================================================== */
 
 .final{
-    padding:
-        80px
-        0
-        130px;
+    padding:80px 0 125px;
 }
 
 .final-box{
@@ -1258,77 +1112,70 @@ section{
 
     text-align:center;
 
-    border-radius:35px;
+    border-radius:30px;
 
-    border:1px solid rgba(255,255,255,.10);
+    border:1px solid rgba(216,181,109,.22);
 
     background:
         radial-gradient(
             circle at 50% 100%,
-            rgba(69,227,154,.14),
-            transparent 55%
+            rgba(126,44,56,.22),
+            transparent 60%
         ),
         linear-gradient(
             145deg,
-            rgba(255,255,255,.065),
-            rgba(255,255,255,.025)
+            rgba(255,248,232,.065),
+            rgba(255,248,232,.018)
         );
 }
 
 .final-box h2{
-    font-family:"Manrope",sans-serif;
+    font-family:"Playfair Display",serif;
 
-    font-size:
-        clamp(37px,5vw,60px);
+    font-size:clamp(38px,5vw,62px);
 
-    letter-spacing:-2px;
+    line-height:1.06;
 
-    line-height:1.05;
+    letter-spacing:-1.5px;
 
-    margin-bottom:16px;
+    margin-bottom:17px;
 }
 
 .final-box p{
     max-width:600px;
 
-    margin:
-        0
-        auto
-        28px;
+    margin:0 auto 30px;
 
     color:var(--muted);
 
-    line-height:1.7;
+    line-height:1.75;
 }
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer{
     padding:35px 0 45px;
 
-    border-top:
-        1px solid
-        rgba(255,255,255,.07);
+    border-top:1px solid rgba(216,181,109,.12);
 }
 
 .footer{
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
-    gap:20px;
+    gap:25px;
 }
 
-.copyright{
-    color:#66716c;
+.footer-copy{
+    color:#6f665d;
 
     font-size:11px;
 
-    line-height:1.6;
+    line-height:1.7;
 }
 
 .footer-links{
@@ -1338,18 +1185,18 @@ footer{
 }
 
 .footer-links a{
-    color:#77817c;
+    color:#8e8277;
 
     font-size:11px;
 }
 
 .footer-links a:hover{
-    color:white;
+    color:var(--gold-light);
 }
 
-/* =========================================================
-   MOBILE STICKY CTA
-========================================================= */
+/* =====================================================
+   MOBILE CTA
+===================================================== */
 
 .mobile-cta{
     display:none;
@@ -1364,37 +1211,33 @@ footer{
 
     padding:9px;
 
-    border-radius:18px;
+    border-radius:17px;
 
-    background:
-        rgba(5,9,7,.86);
+    background:rgba(11,9,9,.88);
 
-    border:
-        1px solid
-        rgba(255,255,255,.10);
+    border:1px solid rgba(216,181,109,.22);
 
     backdrop-filter:blur(20px);
 
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.5);
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 
 .mobile-cta a{
     width:100%;
 }
 
-/* =========================================================
-   REVEAL
-========================================================= */
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
 
 .reveal{
     opacity:0;
 
-    transform:translateY(25px);
+    transform:translateY(28px);
 
     transition:
-        opacity .7s ease,
-        transform .7s ease;
+        opacity .8s ease,
+        transform .8s ease;
 }
 
 .reveal.show{
@@ -1403,24 +1246,17 @@ footer{
     transform:translateY(0);
 }
 
-/* =========================================================
+/* =====================================================
    RESPONSIVE
-========================================================= */
+===================================================== */
 
 @media(max-width:950px){
 
-    .hero{
-        min-height:auto;
-
-        padding-top:135px;
-    }
-
     .steps{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .benefit-grid{
+    .feature-grid{
         grid-template-columns:1fr;
 
         gap:50px;
@@ -1430,94 +1266,91 @@ footer{
 
 @media(max-width:650px){
 
-    .header{
+    header{
         padding:10px 0;
     }
 
     .nav{
-        border-radius:15px;
+        padding:9px 10px 9px 14px;
 
-        padding:
-            9px
-            10px
-            9px
-            14px;
+        border-radius:14px;
     }
 
     .logo{
         font-size:15px;
     }
 
-    .logo-icon{
+    .logo-symbol{
         width:30px;
         height:30px;
     }
 
-    .header-button{
-        padding:9px 13px;
+    .nav-link{
+        padding:9px 12px;
 
-        font-size:11px;
+        font-size:10px;
     }
 
     .hero{
-        padding:
-            105px
-            0
-            55px;
+        padding:105px 0 55px;
+
+        min-height:auto;
     }
 
-    .hero-heading{
-        margin-bottom:30px;
+    .hero h1{
+        font-size:42px;
+
+        letter-spacing:-1.5px;
     }
 
-    .hero-heading h1{
-        font-size:40px;
-
-        letter-spacing:-2px;
-    }
-
-    .hero-heading p{
+    .hero-subtitle{
         font-size:14px;
     }
 
-    .offer-card{
-        padding:
-            25px
-            18px;
+    .offer-inner{
+        padding:25px 17px;
     }
 
-    .offer-wrap{
-        border-radius:25px;
-    }
-
-    .offer-card{
+    .offer-panel{
         border-radius:24px;
     }
 
+    .offer-inner{
+        border-radius:23px;
+    }
+
+    .offer-header{
+        gap:15px;
+    }
+
+    .offer-title{
+        font-size:9px;
+    }
+
+    .offer-status{
+        font-size:9px;
+    }
+
     .amount{
-        font-size:91px;
+        font-size:92px;
 
         letter-spacing:-6px;
     }
 
     .offer-description{
         font-size:12px;
-
-        padding:0 5px;
     }
 
-    .main-cta{
+    .offer-button{
         width:100%;
 
         min-width:0;
 
-        padding:17px 20px;
+        padding:17px 18px;
     }
 
-    .trust{
+    .trust-row{
         grid-template-columns:1fr;
-
-        border-radius:15px;
     }
 
     .trust-item{
@@ -1527,9 +1360,7 @@ footer{
     .trust-item + .trust-item{
         border-left:0;
 
-        border-top:
-            1px solid
-            rgba(255,255,255,.07);
+        border-top:1px solid rgba(216,181,109,.13);
     }
 
     section{
@@ -1544,17 +1375,17 @@ footer{
         min-height:auto;
     }
 
-    .benefit-visual{
+    .feature-visual{
         min-height:380px;
     }
 
-    .center-reward{
+    .center-symbol{
         width:175px;
         height:175px;
     }
 
-    .center-reward span{
-        font-size:39px;
+    .center-symbol span{
+        font-size:40px;
     }
 
     .ring-one{
@@ -1572,9 +1403,7 @@ footer{
     }
 
     .final-box{
-        padding:
-            55px
-            20px;
+        padding:55px 20px;
     }
 
     .footer{
@@ -1599,16 +1428,15 @@ footer{
 
 <body>
 
-<!-- BACKGROUND -->
-<div class="light light-1"></div>
-<div class="light light-2"></div>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
 
 
 <!-- =====================================================
      HEADER
 ===================================================== -->
 
-<header class="header">
+<header>
 
 <div class="container">
 
@@ -1616,13 +1444,13 @@ footer{
 
 <a href="#" class="logo">
 
-    <div class="logo-icon">$</div>
+    <div class="logo-symbol">$</div>
 
-    UpLevel<em>Rewards</em>
+    UpLevel<span>Rewards</span>
 
 </a>
 
-<a href="#offer" class="header-button">
+<a href="#offer" class="nav-link">
     View $1,000 Offer
 </a>
 
@@ -1643,67 +1471,57 @@ footer{
 
 <div class="container">
 
-<div class="hero-wrapper">
+<div class="hero-content">
 
 
-<!-- STATUS -->
-
-<div class="hero-label reveal">
-
-<div class="live-badge">
-
-<span class="live-dot"></span>
-
-Offer Available — Eligibility Required
-
-</div>
-
+<div class="eyebrow reveal">
+    Featured Cash Opportunity
 </div>
 
 
-<!-- HEADING -->
+<h1 class="reveal">
 
-<div class="hero-heading reveal">
+    Discover Your Potential
 
-<h1>
-    A Potential
     <span>$1,000 Cash Deposit</span>
-    Could Be Waiting.
+
 </h1>
 
-<p>
-    Explore the UpLevelRewards offer, review the
-    requirements and start your eligibility journey.
-</p>
 
-</div>
+<p class="hero-subtitle reveal">
+
+    Explore the UpLevelRewards opportunity,
+    review the requirements and begin your
+    eligibility journey.
+
+</p>
 
 
 <!-- =================================================
-     BIG OFFER CARD
+     OFFER PANEL
 ================================================= -->
 
-<div class="offer-wrap reveal">
+<div class="offer-panel reveal">
 
-<div class="offer-card">
+<div class="offer-inner">
 
 
-<div class="offer-top">
+<div class="offer-header">
 
-<div class="offer-tag">
-    Featured Cash Reward
+<div class="offer-title">
+    Premium Reward Offer
 </div>
 
-<div class="secure">
-    UpLevelRewards
+<div class="offer-status">
+    Offer Available
 </div>
 
 </div>
 
 
-<div class="offer-main">
+<div class="amount-area">
 
-<div class="offer-small">
+<div class="amount-label">
     Potential Reward
 </div>
 
@@ -1711,44 +1529,42 @@ Offer Available — Eligibility Required
     $1,000
 </div>
 
+<div class="amount-caption">
+    Cash Deposit Opportunity
+</div>
+
 </div>
 
 
 <p class="offer-description">
 
-Complete the applicable offer requirements to
+Complete the applicable requirements to
 determine whether you may qualify for the
 advertised cash deposit.
 
 </p>
 
 
-<div class="offer-actions">
+<div class="offer-button-wrap">
 
-<!-- REPLACE # WITH YOUR REAL OFFER URL -->
+<!-- REPLACE THIS URL -->
 
 <a
     href="YOUR-OFFER-URL-HERE"
-    class="main-cta"
+    class="offer-button"
 >
     Check My Eligibility
 
-    <span class="arrow">→</span>
+    <span>→</span>
 
 </a>
 
 </div>
 
 
-<div class="offer-note">
+<div class="offer-footnote">
 
-<span>✓</span>
-
-<strong>Requirements apply.</strong>
-
-<span>
-    Review official offer terms before participating.
-</span>
+Requirements apply. Review official offer terms before participating.
 
 </div>
 
@@ -1758,39 +1574,33 @@ advertised cash deposit.
 </div>
 
 
-<!-- TRUST -->
+<!-- TRUST ROW -->
 
-<div class="trust reveal">
+<div class="trust-row reveal">
 
 <div class="trust-item">
 
-<span class="trust-icon">✓</span>
+<span>✦</span>
 
-<span>
-    Clear requirements
-</span>
+<b>Clear Requirements</b>
 
 </div>
 
 
 <div class="trust-item">
 
-<span class="trust-icon">◆</span>
+<span>◇</span>
 
-<span>
-    Transparent process
-</span>
+<b>Transparent Process</b>
 
 </div>
 
 
 <div class="trust-item">
 
-<span class="trust-icon">↗</span>
+<span>↗</span>
 
-<span>
-    Simple online journey
-</span>
+<b>Online Eligibility</b>
 
 </div>
 
@@ -1808,24 +1618,23 @@ advertised cash deposit.
      HOW IT WORKS
 ===================================================== -->
 
-<section id="how">
+<section>
 
 <div class="container">
 
 <div class="section-heading reveal">
 
 <div class="eyebrow">
-    Simple Process
+    The Process
 </div>
 
 <h2>
-    How The Offer Works
+    A Simple Way To Begin
 </h2>
 
 <p>
-    The journey is designed to be simple.
     Follow the applicable steps and review the
-    offer terms along the way.
+    requirements throughout your eligibility journey.
 </p>
 
 </div>
@@ -1845,8 +1654,8 @@ advertised cash deposit.
 </h3>
 
 <p>
-    Click the offer button and begin the
-    eligibility process.
+    Open the offer and review the available
+    eligibility information.
 </p>
 
 </div>
@@ -1859,12 +1668,12 @@ advertised cash deposit.
 </div>
 
 <h3>
-    Complete Steps
+    Complete Requirements
 </h3>
 
 <p>
     Follow the instructions and complete
-    any applicable requirements.
+    any applicable offer requirements.
 </p>
 
 </div>
@@ -1877,12 +1686,12 @@ advertised cash deposit.
 </div>
 
 <h3>
-    Review
+    Eligibility Review
 </h3>
 
 <p>
-    Your information and completed
-    requirements may be reviewed.
+    Your submitted information may be reviewed
+    according to the applicable offer terms.
 </p>
 
 </div>
@@ -1899,9 +1708,8 @@ advertised cash deposit.
 </h3>
 
 <p>
-    Eligible participants may receive
-    the advertised reward according
-    to the applicable terms.
+    Eligible participants may receive the
+    advertised reward under the official terms.
 </p>
 
 </div>
@@ -1915,23 +1723,23 @@ advertised cash deposit.
 
 
 <!-- =====================================================
-     BENEFITS / VISUAL
+     FEATURE
 ===================================================== -->
 
 <section>
 
 <div class="container">
 
-<div class="benefit-grid">
+<div class="feature-grid">
 
 
-<div class="benefit-visual reveal">
+<div class="feature-visual reveal">
 
-<div class="ring ring-one"></div>
+<div class="feature-ring ring-one"></div>
 
-<div class="ring ring-two"></div>
+<div class="feature-ring ring-two"></div>
 
-<div class="center-reward">
+<div class="center-symbol">
 
 <span>
     $1K
@@ -1942,73 +1750,73 @@ advertised cash deposit.
 </div>
 
 
-<div class="benefit-content reveal">
+<div class="feature-content reveal">
 
 <div class="eyebrow">
     The Opportunity
 </div>
 
 <h2>
-    Make Your Next Step Count.
+    Every Step Starts With Clarity.
 </h2>
 
 <p>
-    UpLevelRewards provides a straightforward
-    way to explore a potential $1,000 cash deposit
-    opportunity.
+    UpLevelRewards is designed to help you
+    explore a potential cash deposit opportunity
+    through a clear online process.
 </p>
 
 
-<div class="list">
+<div class="feature-list">
 
 
-<div class="list-item">
-
-<div class="check">
-    ✓
-</div>
-
-<span>
-    Review the offer before participating.
-</span>
-
-</div>
-
-
-<div class="list-item">
+<div class="feature-list-item">
 
 <div class="check">
     ✓
 </div>
 
 <span>
-    Understand the applicable requirements.
+    Understand the offer before participating.
 </span>
 
 </div>
 
 
-<div class="list-item">
+<div class="feature-list-item">
 
 <div class="check">
     ✓
 </div>
 
 <span>
-    Complete the required eligibility steps.
+    Review eligibility requirements.
 </span>
 
 </div>
 
 
-<div class="list-item">
+<div class="feature-list-item">
 
 <div class="check">
     ✓
 </div>
 
 <span>
-    Potential reward subject to official terms.
+    Complete the applicable steps.
+</span>
+
+</div>
+
+
+<div class="feature-list-item">
+
+<div class="check">
+    ✓
+</div>
+
+<span>
+    Check whether you may qualify.
 </span>
 
 </div>
@@ -2017,7 +1825,7 @@ advertised cash deposit.
 </div>
 
 
-<div class="disclaimer">
+<div class="disclosure">
 
 <strong>
     Important Information
@@ -2027,8 +1835,8 @@ advertised cash deposit.
     The $1,000 amount is a potential advertised
     reward and is not guaranteed. Eligibility,
     restrictions, requirements and other terms
-    may apply. Please review the official offer
-    details before participating.
+    may apply. Review the official offer details
+    before participating.
 </p>
 
 </div>
@@ -2053,15 +1861,15 @@ advertised cash deposit.
 <div class="section-heading reveal">
 
 <div class="eyebrow">
-    FAQ
+    Frequently Asked Questions
 </div>
 
 <h2>
-    Frequently Asked Questions
+    Questions, Answered.
 </h2>
 
 <p>
-    Some useful information before you continue.
+    Review these common questions before continuing.
 </p>
 
 </div>
@@ -2075,21 +1883,21 @@ advertised cash deposit.
 <button class="faq-question">
 
 <span>
-    Is the $1,000 guaranteed?
+    Is the $1,000 reward guaranteed?
 </span>
 
-<span class="plus">
+<span class="faq-plus">
     +
 </span>
 
 </button>
 
-<div class="answer">
+<div class="faq-answer">
 
 <p>
     No. The $1,000 is a potential advertised
     reward. Eligibility requirements and
-    applicable terms must be satisfied.
+    applicable offer terms must be satisfied.
 </p>
 
 </div>
@@ -2105,17 +1913,17 @@ advertised cash deposit.
     What do I need to do?
 </span>
 
-<span class="plus">
+<span class="faq-plus">
     +
 </span>
 
 </button>
 
-<div class="answer">
+<div class="faq-answer">
 
 <p>
-    Follow the instructions presented in the
-    offer journey and complete any applicable
+    Follow the instructions shown in the offer
+    journey and complete any applicable
     eligibility requirements.
 </p>
 
@@ -2132,18 +1940,18 @@ advertised cash deposit.
     Who can participate?
 </span>
 
-<span class="plus">
+<span class="faq-plus">
     +
 </span>
 
 </button>
 
-<div class="answer">
+<div class="faq-answer">
 
 <p>
-    Eligibility depends on the official offer
-    requirements, restrictions and applicable
-    terms.
+    Participation depends on the official
+    eligibility requirements, restrictions
+    and applicable terms.
 </p>
 
 </div>
@@ -2159,17 +1967,18 @@ advertised cash deposit.
     How long does the process take?
 </span>
 
-<span class="plus">
+<span class="faq-plus">
     +
 </span>
 
 </button>
 
-<div class="answer">
+<div class="faq-answer">
 
 <p>
-    Processing times can vary depending on
-    the requirements and applicable offer terms.
+    Processing times may vary depending on
+    the requirements and the applicable
+    offer conditions.
 </p>
 
 </div>
@@ -2199,26 +2008,25 @@ advertised cash deposit.
 </div>
 
 <h2>
-    Start With The $1,000 Offer.
+    Your Next Step Starts Here.
 </h2>
 
 <p>
-    Review the requirements and begin your
-    eligibility journey today.
+    Review the offer requirements and begin
+    your eligibility journey for the potential
+    $1,000 cash deposit.
 </p>
 
 
-<!-- REPLACE # WITH YOUR REAL OFFER URL -->
+<!-- REPLACE THIS URL -->
 
 <a
     href="YOUR-OFFER-URL-HERE"
-    class="main-cta"
+    class="offer-button"
 >
     Check My Eligibility
 
-    <span class="arrow">
-        →
-    </span>
+    <span>→</span>
 
 </a>
 
@@ -2241,7 +2049,7 @@ advertised cash deposit.
 
 <div class="footer">
 
-<div class="copyright">
+<div class="footer-copy">
 
 © 2026 UpLevelRewards. All rights reserved.<br>
 
@@ -2281,10 +2089,10 @@ Rewards are subject to eligibility and applicable terms.
 
 <a
     href="YOUR-OFFER-URL-HERE"
-    class="main-cta"
+    class="offer-button"
 >
     Get Started — $1,000 Offer
-    <span class="arrow">→</span>
+    <span>→</span>
 </a>
 
 </div>
@@ -2293,7 +2101,7 @@ Rewards are subject to eligibility and applicable terms.
 <script>
 
 /* =====================================================
-   FAQ
+   FAQ ACCORDION
 ===================================================== */
 
 const faqItems =
@@ -2330,10 +2138,10 @@ faqItems.forEach(item => {
    SCROLL REVEAL
 ===================================================== */
 
-const reveals =
+const revealElements =
 document.querySelectorAll(".reveal");
 
-const observer =
+const revealObserver =
 new IntersectionObserver(
 
 (entries) => {
@@ -2344,7 +2152,7 @@ new IntersectionObserver(
 
             entry.target.classList.add("show");
 
-            observer.unobserve(entry.target);
+            revealObserver.unobserve(entry.target);
 
         }
 
@@ -2358,67 +2166,44 @@ new IntersectionObserver(
 
 );
 
-reveals.forEach(el => {
+revealElements.forEach(element => {
 
-    observer.observe(el);
+    revealObserver.observe(element);
 
 });
 
 
 /* =====================================================
-   OFFER CARD SUBTLE 3D EFFECT
+   SUBTLE OFFER CARD MOTION
 ===================================================== */
 
-const offer =
-document.querySelector(".offer-card");
+const offerPanel =
+document.querySelector(".offer-panel");
 
-document.addEventListener("mousemove", e => {
+document.addEventListener("mousemove", event => {
 
-    if(window.innerWidth < 900){
+    if(window.innerWidth < 950){
         return;
     }
 
     const x =
-        (e.clientX / window.innerWidth - .5);
+        event.clientX / window.innerWidth - .5;
 
     const y =
-        (e.clientY / window.innerHeight - .5);
+        event.clientY / window.innerHeight - .5;
 
-    offer.style.transform =
-        `perspective(1200px)
-         rotateY(${x * 2.5}deg)
-         rotateX(${y * -2.5}deg)`;
+    offerPanel.style.transform =
+        `perspective(1400px)
+         rotateY(${x * 1.5}deg)
+         rotateX(${y * -1.5}deg)`;
 
 });
 
 
 document.addEventListener("mouseleave", () => {
 
-    offer.style.transform =
-        "perspective(1200px) rotateY(0deg) rotateX(0deg)";
-
-});
-
-
-/* =====================================================
-   BUTTON CLICK FEEDBACK
-===================================================== */
-
-document.querySelectorAll(".main-cta")
-.forEach(button => {
-
-    button.addEventListener("mousedown", () => {
-
-        button.style.transform =
-            "translateY(1px) scale(.99)";
-
-    });
-
-    button.addEventListener("mouseup", () => {
-
-        button.style.transform = "";
-
-    });
+    offerPanel.style.transform =
+        "perspective(1400px) rotateY(0deg) rotateX(0deg)";
 
 });
 
