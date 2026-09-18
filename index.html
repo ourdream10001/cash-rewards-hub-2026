@@ -436,7 +436,7 @@ header{
 
     max-width:620px;
 
-    margin:27px auto 45px;
+    margin:27px auto 35px;
 
     color:#99958d;
 
@@ -444,6 +444,59 @@ header{
 
     line-height:1.8;
 
+}
+
+
+/* =========================================================
+   COUNTDOWN TIMER & LIVE TICKER STYLES (NEW)
+========================================================= */
+.urgency-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(216, 179, 106, 0.08);
+    border: 1px solid rgba(216, 179, 106, 0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    font-size: 12px;
+    color: var(--gold-light);
+}
+
+.timer-box {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.live-ticker {
+    max-width: 480px;
+    margin: 20px auto 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    padding: 10px 18px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #b5af9f;
+    text-align: left;
+}
+
+.ticker-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--green);
+    flex-shrink: 0;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
 }
 
 
@@ -1894,6 +1947,12 @@ class="nav-cta">
 
 <div class="hero-content">
 
+<!-- URGENCY TIMER BANNER -->
+<div class="urgency-banner reveal">
+    <span>⚡ Limited Eligibility Window:</span>
+    <span class="timer-box" id="countdown">12:45:30</span>
+</div>
+
 
 <div class="eyebrow reveal">
 
@@ -1953,6 +2012,13 @@ and begin your eligibility journey.
 
 UpLevelRewards Cash Deposit Offer
 
+</div>
+
+
+<!-- LIVE TICKER SOCIAL PROOF -->
+<div class="live-ticker">
+    <div class="ticker-dot"></div>
+    <span id="ticker-text">Michael R. from Texas just checked eligibility (1 min ago)</span>
 </div>
 
 
@@ -2870,6 +2936,35 @@ document
     );
 
 });
+
+/* =====================================================
+   COUNTDOWN & LIVE TICKER SCRIPT (NEW)
+===================================================== */
+// Countdown Timer logic
+let time = 12 * 3600 + 45 * 60 + 30;
+setInterval(() => {
+    let hours = Math.floor(time / 3600);
+    let minutes = Math.floor((time % 3600) / 60);
+    let seconds = time % 60;
+    document.getElementById("countdown").innerText = 
+        String(hours).padStart(2, '0') + ":" + 
+        String(minutes).padStart(2, '0') + ":" + 
+        String(seconds).padStart(2, '0');
+    if (time > 0) time--;
+}, 1000);
+
+// Live Ticker Rotation logic
+const tickerMessages = [
+    "Michael R. from Texas just checked eligibility (1 min ago)",
+    "Sarah L. from California unlocked the reward journey (Just now)",
+    "David K. from New York reviewed requirements (3 mins ago)",
+    "Jessica M. from Florida completed the process (4 mins ago)"
+];
+let tickerIndex = 0;
+setInterval(() => {
+    tickerIndex = (tickerIndex + 1) % tickerMessages.length;
+    document.getElementById("ticker-text").innerText = tickerMessages[tickerIndex];
+}, 4000);
 
 </script>
 
