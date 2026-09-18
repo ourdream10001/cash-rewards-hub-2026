@@ -1458,7 +1458,7 @@ section:not(.hero){
 
 
 /* =========================================================
-   FINAL CTA (REDESIGNED & PREMIUM)
+   FINAL CTA
 ========================================================= */
 
 .final{
@@ -1529,7 +1529,7 @@ section:not(.hero){
 
 
 /* =========================================================
-   FOOTER (REDESIGNED & SPACIOUS)
+   EXPANDED LARGE FOOTER (NEW STYLES)
 ========================================================= */
 
 footer{
@@ -1537,77 +1537,94 @@ footer{
     border-top:
         1px solid var(--line);
 
-    padding:55px 0;
+    padding: 80px 0 40px;
 
-    background:#060606;
-
-}
-
-.footer{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    flex-wrap: wrap;
-
-    gap: 25px;
+    background:#050505;
 
 }
 
-.footer-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.footer-logo-mark {
-    width: 32px;
-    height: 32px;
+.footer-grid {
     display: grid;
-    place-items: center;
-    border-radius: 50%;
-    border: 1px solid rgba(216,179,106,.4);
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-col h4 {
+    color: var(--ivory);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: .5px;
+}
+
+.footer-col p {
+    color: #7b776e;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 15px;
+    max-width: 300px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #8a857d;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.footer-col ul li a:hover {
     color: var(--gold-light);
-    font-family: "Playfair Display", serif;
-    font-size: 16px;
-    background: rgba(216,179,106,.1);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer-copy{
 
     color:#6e6a63;
 
-    font-size:11px;
+    font-size:12px;
 
     line-height:1.6;
 
 }
 
-.footer-links{
-
-    display:flex;
-
-    gap:25px;
-
+.footer-socials {
+    display: flex;
+    gap: 15px;
 }
 
-.footer-links a{
-
-    color:#8a857d;
-
-    font-size:12px;
-
+.footer-socials a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    color: #aaa59b;
+    font-size: 12px;
     transition: .3s;
-
 }
 
-.footer-links a:hover{
-
-    color:var(--gold-light);
-
+.footer-socials a:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: rgba(216,179,106,.05);
 }
 
 
@@ -1726,6 +1743,11 @@ footer{
 
         position:static;
 
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
     }
 
 }
@@ -1900,18 +1922,9 @@ footer{
         padding: 40px 20px;
     }
 
-    .footer{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        gap:20px;
-
-    }
-
-    .footer-left {
-        flex-direction: column;
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
     }
 
     .mobile-bar{
@@ -2712,7 +2725,7 @@ id="faq"
 
 
 <!-- =====================================================
-     FINAL CTA (REDESIGNED)
+     FINAL CTA
 ===================================================== -->
 
 <section class="final">
@@ -2770,38 +2783,64 @@ Check My Eligibility
 
 
 <!-- =====================================================
-     FOOTER (REDESIGNED)
+     EXPANDED LARGE FOOTER
 ===================================================== -->
 
 <footer>
 
 <div class="container">
 
-<div class="footer">
+<div class="footer-grid">
 
-<div class="footer-left">
-    <div class="footer-logo-mark">U</div>
+    <div class="footer-col">
+        <a href="#" class="logo" style="margin-bottom: 15px; display: inline-flex;">
+            <div class="logo-mark">U</div>
+            UpLevel<span>Rewards</span>
+        </a>
+        <p>Your trusted platform to explore exclusive reward opportunities and begin your eligibility journey securely.</p>
+    </div>
+
+    <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="#offer">Featured Offer</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-col">
+        <h4>Legal & Terms</h4>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Disclaimer</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Eligibility Terms</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="footer-bottom">
+
     <div class="footer-copy">
         © 2026 UpLevelRewards. All rights reserved.<br>
         Potential rewards are subject to eligibility and applicable offer terms.
     </div>
-</div>
 
-<div class="footer-links">
-
-<a href="#">
-    Privacy
-</a>
-
-<a href="#">
-    Terms
-</a>
-
-<a href="#">
-    Contact
-</a>
-
-</div>
+    <div class="footer-socials">
+        <a href="#">tw</a>
+        <a href="#">in</a>
+        <a href="#">fb</a>
+    </div>
 
 </div>
 
