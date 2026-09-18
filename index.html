@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UpLevelRewards — $1,000 Cash Reward</title>
+<title>UpLevelRewards - $1,000 Cash Deposit</title>
 
 <meta name="description"
-content="Explore the UpLevelRewards promotional reward opportunity and review eligibility requirements.">
+content="Unlock your chance to receive a $1,000 cash deposit through UpLevelRewards. Eligibility requirements apply.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,2341 +16,1874 @@ content="Explore the UpLevelRewards promotional reward opportunity and review el
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
-
-:root {
-    --bg: #050b12;
-    --bg2: #08131e;
-    --card: rgba(255,255,255,.055);
-    --card-border: rgba(255,255,255,.10);
-
-    --white: #ffffff;
-    --muted: #91a0b3;
-
-    --green: #42e695;
-    --green-dark: #18b96d;
-
-    --gold: #ffd45a;
-    --gold-dark: #f0ad22;
-
-    --blue: #5b8cff;
-
-    --radius: 24px;
-
-    --shadow:
-        0 30px 80px rgba(0,0,0,.35);
+:root{
+    --bg:#050807;
+    --bg2:#09110e;
+    --card:rgba(255,255,255,.055);
+    --card-border:rgba(255,255,255,.10);
+    --text:#f5f7f6;
+    --muted:#9da9a4;
+    --green:#50e39b;
+    --green2:#19c978;
+    --gold:#ffd76a;
+    --white:#ffffff;
+    --shadow:0 30px 90px rgba(0,0,0,.45);
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: "DM Sans", sans-serif;
+body{
+    font-family:"DM Sans",sans-serif;
     background:
-        radial-gradient(circle at 10% 10%, rgba(91,140,255,.09), transparent 25%),
-        radial-gradient(circle at 90% 20%, rgba(66,230,149,.08), transparent 25%),
+        radial-gradient(circle at 10% 10%,rgba(43,226,139,.09),transparent 28%),
+        radial-gradient(circle at 90% 15%,rgba(255,215,106,.08),transparent 25%),
         var(--bg);
-
-    color: var(--white);
-    overflow-x: hidden;
+    color:var(--text);
+    overflow-x:hidden;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,black,transparent 90%);
+    z-index:-5;
 }
 
-button {
-    font-family: inherit;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-
-/* =========================================================
-   BACKGROUND EFFECT
-========================================================= */
-
-.background {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: -1;
+.container{
+    width:min(1160px,92%);
+    margin:auto;
 }
 
-.orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: .22;
-    animation: float 12s ease-in-out infinite;
+/* =========================
+   BACKGROUND EFFECTS
+========================= */
+
+.bg-orb{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(80px);
+    pointer-events:none;
+    z-index:-2;
+    opacity:.25;
 }
 
-.orb.one {
-    width: 350px;
-    height: 350px;
-    background: var(--green);
-    top: 5%;
-    left: -120px;
+.orb1{
+    width:300px;
+    height:300px;
+    background:#19c978;
+    top:15%;
+    left:-120px;
+    animation:floatOrb 10s ease-in-out infinite;
 }
 
-.orb.two {
-    width: 400px;
-    height: 400px;
-    background: var(--blue);
-    top: 45%;
-    right: -150px;
-    animation-delay: -4s;
+.orb2{
+    width:280px;
+    height:280px;
+    background:#ffd76a;
+    right:-100px;
+    top:40%;
+    animation:floatOrb 13s ease-in-out infinite reverse;
 }
 
-.orb.three {
-    width: 300px;
-    height: 300px;
-    background: var(--gold);
-    bottom: -100px;
-    left: 40%;
-    animation-delay: -7s;
+.orb3{
+    width:220px;
+    height:220px;
+    background:#28b8ff;
+    left:45%;
+    bottom:5%;
+    animation:floatOrb 15s ease-in-out infinite;
 }
 
-@keyframes float {
-
-    0%,100% {
-        transform: translate(0,0) scale(1);
+@keyframes floatOrb{
+    0%,100%{
+        transform:translate(0,0) scale(1);
     }
-
-    50% {
-        transform: translate(30px,-35px) scale(1.08);
+    50%{
+        transform:translate(30px,-40px) scale(1.15);
     }
-
 }
 
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.container {
-    width: min(1180px, 92%);
-    margin: auto;
-}
-
-
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-
-    background: rgba(5,11,18,.72);
-    backdrop-filter: blur(20px);
-
-    border-bottom: 1px solid rgba(255,255,255,.06);
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 0;
 }
 
-.nav {
-    height: 76px;
+.nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 16px 12px 20px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background:rgba(8,13,11,.65);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-radius:18px;
+    box-shadow:0 10px 40px rgba(0,0,0,.18);
 }
 
-.logo {
-    font-family: "Manrope", sans-serif;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
 
-    font-size: 21px;
-    font-weight: 800;
-
-    letter-spacing: -.7px;
+    font-family:"Manrope",sans-serif;
+    font-weight:800;
+    font-size:19px;
 }
 
-.logo span {
-    color: var(--green);
+.logo-icon{
+    width:34px;
+    height:34px;
+    border-radius:10px;
+
+    display:grid;
+    place-items:center;
+
+    color:#03140c;
+    background:linear-gradient(135deg,var(--green),#b8ffd9);
+
+    box-shadow:0 0 25px rgba(80,227,155,.3);
 }
 
-.nav-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 10px 17px;
-
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 999px;
-
-    color: #dce5ef;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    transition: .25s;
+.logo span{
+    color:var(--green);
 }
 
-.nav-link:hover {
-    border-color: var(--green);
-    color: var(--green);
+.nav-btn{
+    padding:11px 18px;
+    border-radius:12px;
+
+    font-weight:700;
+    font-size:14px;
+
+    background:rgba(80,227,155,.1);
+    border:1px solid rgba(80,227,155,.25);
+    color:var(--green);
+
+    transition:.25s;
 }
 
+.nav-btn:hover{
+    background:var(--green);
+    color:#04130b;
+    transform:translateY(-2px);
+}
 
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
-.hero {
-    position: relative;
+.hero{
+    min-height:900px;
+    padding:170px 0 100px;
 
-    padding: 90px 0 70px;
+    display:flex;
+    align-items:center;
+    position:relative;
 }
 
-.hero-grid {
-    display: grid;
-
-    grid-template-columns: 1.05fr .95fr;
-
-    align-items: center;
-
-    gap: 70px;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
 }
 
-.hero-content {
-    position: relative;
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 13px;
+    border-radius:50px;
+
+    background:rgba(80,227,155,.08);
+    border:1px solid rgba(80,227,155,.2);
+
+    color:#b5fbd4;
+    font-size:13px;
+    font-weight:600;
+
+    margin-bottom:25px;
 }
 
-.eyebrow {
-
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-
-    padding: 8px 14px;
-
-    border-radius: 999px;
-
-    background: rgba(66,230,149,.08);
-    border: 1px solid rgba(66,230,149,.20);
-
-    color: #9af5c8;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    text-transform: uppercase;
-    letter-spacing: 1px;
-
-    margin-bottom: 24px;
+.status-dot{
+    width:8px;
+    height:8px;
+    background:var(--green);
+    border-radius:50%;
+    box-shadow:0 0 12px var(--green);
+    animation:pulse 2s infinite;
 }
 
-.status-dot {
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    box-shadow: 0 0 15px var(--green);
-
-    animation: pulse 1.8s infinite;
-}
-
-@keyframes pulse {
-
-    0%,100% {
-        opacity: 1;
-        transform: scale(1);
+@keyframes pulse{
+    0%,100%{
+        box-shadow:0 0 5px var(--green);
     }
-
-    50% {
-        opacity: .45;
-        transform: scale(.75);
+    50%{
+        box-shadow:0 0 18px var(--green);
     }
-
 }
 
-.hero h1 {
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: clamp(45px, 6vw, 78px);
-
-    line-height: .98;
-
-    letter-spacing: -4px;
-
-    max-width: 780px;
-
-    margin-bottom: 25px;
+.hero h1{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(46px,6vw,78px);
+    line-height:1.01;
+    letter-spacing:-4px;
+    font-weight:800;
+    margin-bottom:25px;
 }
 
-.hero h1 .highlight {
-
-    color: var(--gold);
-
-    text-shadow:
-        0 0 35px rgba(255,212,90,.18);
+.gradient-text{
+    background:linear-gradient(
+        100deg,
+        #ffffff 10%,
+        #7ef0b2 48%,
+        #ffd76a 90%
+    );
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
-.hero-text {
-
-    max-width: 630px;
-
-    color: var(--muted);
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-    margin-bottom: 32px;
+.hero p{
+    max-width:570px;
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.75;
+    margin-bottom:34px;
 }
 
-.hero-buttons {
-
-    display: flex;
-
-    gap: 13px;
-
-    flex-wrap: wrap;
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
 }
 
-.primary-btn {
+.primary-btn{
+    position:relative;
+    overflow:hidden;
 
-    display: inline-flex;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
 
-    align-items: center;
-    justify-content: center;
+    padding:17px 25px;
+    border-radius:14px;
 
-    gap: 10px;
+    background:linear-gradient(135deg,var(--green),#28c982);
+    color:#03130b;
 
-    padding: 17px 26px;
-
-    border-radius: 13px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe17a,
-            #f2b52c
-        );
-
-    color: #171208;
-
-    font-size: 14px;
-    font-weight: 900;
+    font-weight:800;
+    font-size:15px;
 
     box-shadow:
-        0 12px 35px rgba(255,196,58,.18);
+        0 12px 30px rgba(38,220,137,.2),
+        inset 0 1px rgba(255,255,255,.45);
 
-    transition: .25s;
+    transition:.3s;
 }
 
-.primary-btn:hover {
+.primary-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:70%;
+    height:100%;
 
-    transform: translateY(-3px);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
 
+    transform:skewX(-20deg);
+    transition:.6s;
+}
+
+.primary-btn:hover::before{
+    left:130%;
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px);
     box-shadow:
-        0 18px 45px rgba(255,196,58,.30);
+        0 18px 40px rgba(38,220,137,.3),
+        inset 0 1px rgba(255,255,255,.5);
 }
 
-.secondary-btn {
+.secondary-btn{
+    padding:17px 22px;
+    border-radius:14px;
 
-    display: inline-flex;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.035);
 
-    align-items: center;
-    justify-content: center;
+    font-weight:700;
 
-    padding: 17px 24px;
-
-    border-radius: 13px;
-
-    border: 1px solid rgba(255,255,255,.11);
-
-    color: #d9e2ed;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    transition: .25s;
+    transition:.3s;
 }
 
-.secondary-btn:hover {
-    background: rgba(255,255,255,.05);
+.secondary-btn:hover{
+    background:rgba(255,255,255,.08);
+    transform:translateY(-3px);
 }
 
-.hero-note {
+/* =========================
+   REWARD CARD
+========================= */
 
-    margin-top: 15px;
+.reward-stage{
+    position:relative;
+    min-height:570px;
 
-    color: #657386;
-
-    font-size: 11px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-
-/* =========================================================
-   HERO REWARD CARD
-========================================================= */
-
-.hero-visual {
-
-    position: relative;
-
-    min-height: 510px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-.reward-card {
-
-    position: relative;
-
-    width: min(440px,100%);
-
-    padding: 30px;
-
-    border-radius: 32px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.10),
-            rgba(255,255,255,.025)
-        );
-
-    border: 1px solid rgba(255,255,255,.14);
-
-    backdrop-filter: blur(25px);
-
-    box-shadow:
-        0 40px 100px rgba(0,0,0,.42);
-
-    transform: rotate(1deg);
-
-    transition: .4s;
-}
-
-.reward-card:hover {
-    transform: rotate(0deg) translateY(-7px);
-}
-
-.card-top {
-
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 35px;
-}
-
-.card-brand {
-
-    font-weight: 800;
-
-    font-size: 14px;
-}
-
-.card-brand span {
-    color: var(--green);
-}
-
-.card-icon {
-
-    width: 42px;
-    height: 42px;
-
-    border-radius: 13px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255,255,255,.07);
-
-    font-size: 19px;
-}
-
-.reward-label {
-
-    color: #93a1b3;
-
-    text-transform: uppercase;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    font-weight: 800;
-}
-
-.reward-amount {
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: clamp(75px,9vw,105px);
-
-    line-height: 1;
-
-    letter-spacing: -7px;
-
-    font-weight: 800;
-
-    margin: 12px 0;
-
-    color: var(--gold);
-
-    text-shadow:
-        0 0 50px rgba(255,212,90,.18);
-}
-
-.reward-description {
-
-    color: #8f9dae;
-
-    font-size: 13px;
-
-    margin-bottom: 28px;
-}
-
-
-/* progress */
-
-.progress-box {
-
-    padding: 18px;
-
-    border-radius: 18px;
-
-    background: rgba(0,0,0,.18);
-
-    border: 1px solid rgba(255,255,255,.06);
-}
-
-.progress-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-bottom: 10px;
-
-    font-size: 11px;
-
-    color: #a6b2c1;
-}
-
-.progress {
-
-    height: 7px;
-
-    border-radius: 999px;
-
-    background: rgba(255,255,255,.08);
-
-    overflow: hidden;
-}
-
-.progress-bar {
-
-    width: 68%;
-
-    height: 100%;
-
-    border-radius: inherit;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--green),
-            #a2f8cb
-        );
-
-    animation: progress 2s ease-out;
-}
-
-@keyframes progress {
-
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 68%;
-    }
-
-}
-
-
-/* floating card */
-
-.float-card {
-
-    position: absolute;
-
-    padding: 13px 17px;
-
-    border-radius: 14px;
-
-    background: rgba(12,28,42,.88);
-
-    border: 1px solid rgba(255,255,255,.10);
-
-    backdrop-filter: blur(18px);
-
-    box-shadow: var(--shadow);
-
-    font-size: 11px;
-
-    color: #d6e0ea;
-
-    animation: floating 4s ease-in-out infinite;
-}
-
-.float-card strong {
-    color: var(--green);
-}
-
-.float-one {
-    left: -20px;
-    top: 100px;
-}
-
-.float-two {
-    right: -20px;
-    bottom: 95px;
-    animation-delay: -2s;
-}
-
-@keyframes floating {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-}
-
-
-/* =========================================================
-   TRUST STRIP
-========================================================= */
-
-.trust-strip {
-
-    padding: 22px 0;
-
-    border-top: 1px solid rgba(255,255,255,.06);
-    border-bottom: 1px solid rgba(255,255,255,.06);
-
-    background: rgba(255,255,255,.018);
-}
-
-.trust-items {
-
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 20px;
-}
-
-.trust-item {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    color: #91a0b2;
-
-    font-size: 12px;
-}
-
-.trust-item span {
-
-    width: 28px;
-    height: 28px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 9px;
-
-    background: rgba(66,230,149,.08);
-
-    color: var(--green);
-}
-
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.section {
-
-    padding: 100px 0;
-}
-
-.section-heading {
-
-    max-width: 680px;
-
-    margin: 0 auto 55px;
-
-    text-align: center;
-}
-
-.section-kicker {
-
-    color: var(--green);
-
-    text-transform: uppercase;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 12px;
-}
-
-.section-heading h2 {
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: clamp(34px,5vw,52px);
-
-    line-height: 1.05;
-
-    letter-spacing: -2.5px;
-
-    margin-bottom: 16px;
-}
-
-.section-heading p {
-
-    color: var(--muted);
-
-    font-size: 15px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   STEPS
-========================================================= */
-
-.steps-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(4,1fr);
-
-    gap: 18px;
-}
-
-.step {
-
-    position: relative;
-
-    padding: 30px 25px;
-
-    border-radius: 22px;
-
-    background: var(--card);
-
-    border: 1px solid var(--card-border);
-
-    transition: .3s;
-}
-
-.step:hover {
-
-    transform: translateY(-7px);
-
-    border-color: rgba(66,230,149,.25);
-
-    background: rgba(255,255,255,.065);
-}
-
-.step-number {
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    color: var(--green);
-
-    margin-bottom: 25px;
-}
-
-.step-icon {
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 14px;
-
-    background: rgba(255,255,255,.06);
-
-    font-size: 20px;
-
-    margin-bottom: 20px;
-}
-
-.step h3 {
-
-    font-size: 17px;
-
-    margin-bottom: 10px;
-}
-
-.step p {
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   FEATURE SECTION
-========================================================= */
-
-.feature {
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(66,230,149,.08),
-            transparent 35%
-        );
-}
-
-.feature-grid {
-
-    display: grid;
-
-    grid-template-columns: .9fr 1.1fr;
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-.feature-visual {
-
-    min-height: 430px;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.feature-circle {
-
-    width: 310px;
-    height: 310px;
-
-    border-radius: 50%;
+.reward-glow{
+    position:absolute;
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(66,230,149,.18),
-            rgba(66,230,149,.02) 65%,
-            transparent
+            rgba(80,227,155,.22),
+            rgba(255,215,106,.05) 45%,
+            transparent 70%
         );
 
-    border: 1px solid rgba(66,230,149,.18);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+    filter:blur(10px);
+    animation:rewardGlow 5s ease-in-out infinite;
 }
 
-.feature-inner {
+@keyframes rewardGlow{
+    0%,100%{
+        transform:scale(.9);
+        opacity:.7;
+    }
+    50%{
+        transform:scale(1.12);
+        opacity:1;
+    }
+}
 
-    width: 215px;
-    height: 215px;
+.reward-card{
+    position:relative;
+    z-index:2;
 
-    border-radius: 50%;
+    width:min(430px,100%);
+    padding:32px;
 
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
+    border-radius:30px;
 
     background:
         linear-gradient(
             145deg,
-            #112e2a,
-            #09171b
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
         );
 
-    border: 1px solid rgba(66,230,149,.22);
+    border:1px solid rgba(255,255,255,.14);
 
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.35);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    box-shadow:var(--shadow);
+
+    transform:rotate(2deg);
+    transition:.5s;
 }
 
-.feature-inner strong {
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 48px;
-
-    color: var(--gold);
+.reward-card:hover{
+    transform:rotate(0deg) translateY(-8px);
 }
 
-.feature-inner span {
-
-    color: #8da09f;
-
-    font-size: 11px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
 }
 
-.feature-content h2 {
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: clamp(34px,5vw,53px);
-
-    line-height: 1.05;
-
-    letter-spacing: -2.5px;
-
-    margin-bottom: 20px;
+.card-label{
+    color:#aebbb5;
+    font-size:13px;
 }
 
-.feature-content > p {
+.secure{
+    display:flex;
+    align-items:center;
+    gap:6px;
 
-    color: var(--muted);
-
-    font-size: 15px;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
+    color:#b8fbd4;
+    font-size:12px;
 }
 
-.feature-list {
+.secure-icon{
+    width:20px;
+    height:20px;
+    border-radius:50%;
 
-    list-style: none;
+    display:grid;
+    place-items:center;
 
-    display: grid;
-
-    gap: 14px;
+    background:rgba(80,227,155,.12);
+    color:var(--green);
 }
 
-.feature-list li {
+.money{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(72px,9vw,110px);
+    line-height:.9;
 
-    display: flex;
+    letter-spacing:-6px;
+    font-weight:800;
 
-    gap: 11px;
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #8af2b8 55%,
+        #ffd76a
+    );
 
-    color: #d5dfe9;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 
-    font-size: 13px;
+    margin-bottom:30px;
 }
 
-.feature-list span {
-    color: var(--green);
+.card-description{
+    color:#aebbb5;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:25px;
 }
 
+.progress-head{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:9px;
 
-/* =========================================================
-   TRANSPARENCY
-========================================================= */
-
-.transparency {
-
-    padding: 35px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.07),
-            rgba(255,255,255,.025)
-        );
-
-    border: 1px solid var(--card-border);
+    font-size:12px;
+    color:#aab6b1;
 }
 
-.transparency h3 {
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 23px;
-
-    margin-bottom: 12px;
+.progress{
+    height:9px;
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
 }
 
-.transparency p {
+.progress-bar{
+    height:100%;
+    width:72%;
 
-    color: var(--muted);
+    border-radius:20px;
 
-    font-size: 13px;
+    background:linear-gradient(
+        90deg,
+        #22c979,
+        #7ef0b2,
+        #ffd76a
+    );
 
-    line-height: 1.8;
+    box-shadow:0 0 18px rgba(80,227,155,.3);
 
-    margin-bottom: 25px;
+    animation:progressIn 2s ease;
 }
 
-.disclosures {
-
-    display: grid;
-
-    grid-template-columns: repeat(2,1fr);
-
-    gap: 12px;
+@keyframes progressIn{
+    from{
+        width:0;
+    }
+    to{
+        width:72%;
+    }
 }
 
-.disclosure {
+.card-bottom{
+    margin-top:28px;
 
-    padding: 15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-    border-radius: 14px;
-
-    background: rgba(0,0,0,.14);
-
-    color: #c6d1dd;
-
-    font-size: 12px;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
-.disclosure span {
-    color: var(--green);
-    margin-right: 5px;
+.card-bottom span{
+    color:#89968f;
+    font-size:12px;
 }
 
-
-/* =========================================================
-   FAQ
-========================================================= */
-
-.faq {
-
-    max-width: 850px;
-
-    margin: auto;
+.card-bottom strong{
+    color:#fff;
+    font-size:13px;
 }
 
-.faq-item {
+/* floating cards */
 
-    border-bottom: 1px solid rgba(255,255,255,.08);
+.float-card{
+    position:absolute;
+    z-index:3;
+
+    padding:15px 18px;
+
+    border-radius:16px;
+
+    background:rgba(10,17,14,.75);
+    border:1px solid rgba(255,255,255,.11);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+    animation:floatCard 5s ease-in-out infinite;
 }
 
-.faq-question {
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 23px 0;
-
-    background: none;
-    border: none;
-
-    color: white;
-
-    text-align: left;
-
-    cursor: pointer;
-
-    font-size: 15px;
-    font-weight: 700;
+.float-card small{
+    display:block;
+    color:#7f8d87;
+    font-size:10px;
+    margin-bottom:4px;
 }
 
-.faq-question span {
-
-    width: 30px;
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 9px;
-
-    background: rgba(255,255,255,.05);
-
-    color: var(--green);
-
-    transition: .25s;
+.float-card strong{
+    font-size:13px;
 }
 
-.faq-answer {
-
-    max-height: 0;
-
-    overflow: hidden;
-
-    transition: max-height .35s ease;
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.8;
+.float1{
+    top:12%;
+    right:-3%;
 }
 
-.faq-item.active .faq-answer {
-
-    max-height: 180px;
-
-    padding-bottom: 22px;
+.float2{
+    bottom:15%;
+    left:-7%;
+    animation-delay:1.5s;
 }
 
-.faq-item.active .faq-question span {
-    transform: rotate(45deg);
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
 }
 
+/* =========================
+   TRUST STRIP
+========================= */
 
-/* =========================================================
-   FINAL CTA
-========================================================= */
+.trust-strip{
+    padding:18px 0 80px;
+}
 
-.final {
+.trust-inner{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
 
-    position: relative;
+.trust-item{
+    padding:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
 
-    padding: 110px 0;
+    color:#aeb9b4;
+    font-size:13px;
+}
 
-    text-align: center;
+.trust-item + .trust-item{
+    border-left:1px solid rgba(255,255,255,.08);
+}
 
-    overflow: hidden;
+.trust-item b{
+    color:white;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:110px 0;
+}
+
+.section-head{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 65px;
+}
+
+.eyebrow{
+    color:var(--green);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.section-head h2{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(35px,5vw,55px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:18px;
+}
+
+.section-head p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* =========================
+   STEPS
+========================= */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.step{
+    position:relative;
+
+    padding:28px;
+
+    min-height:250px;
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.025)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+
+    transition:.35s;
+}
+
+.step:hover{
+    transform:translateY(-8px);
+    border-color:rgba(80,227,155,.25);
+    background:rgba(80,227,155,.055);
+}
+
+.step-number{
+    width:43px;
+    height:43px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:13px;
+
+    background:rgba(80,227,155,.1);
+    color:var(--green);
+
+    font-weight:800;
+
+    margin-bottom:35px;
+}
+
+.step h3{
+    font-family:"Manrope",sans-serif;
+    margin-bottom:10px;
+}
+
+.step p{
+    color:#8e9a95;
+    font-size:14px;
+    line-height:1.65;
+}
+
+/* =========================
+   FEATURE SECTION
+========================= */
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.visual-box{
+    min-height:520px;
+    position:relative;
+
+    border-radius:32px;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(66,230,149,.10),
-            transparent 45%
+            rgba(80,227,155,.12),
+            transparent 55%
+        ),
+        rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+}
+
+.visual-box::before{
+    content:"";
+    position:absolute;
+    width:330px;
+    height:330px;
+    border:1px solid rgba(80,227,155,.15);
+    border-radius:50%;
+    animation:rotateRing 15s linear infinite;
+}
+
+.visual-box::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border:1px dashed rgba(255,215,106,.12);
+    border-radius:50%;
+    animation:rotateRing 25s linear infinite reverse;
+}
+
+@keyframes rotateRing{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.big-one{
+    position:relative;
+    z-index:2;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    font-family:"Manrope",sans-serif;
+    font-weight:800;
+    font-size:53px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #152c20,
+            #07110d 65%
         );
+
+    border:1px solid rgba(80,227,155,.3);
+
+    box-shadow:
+        0 0 80px rgba(80,227,155,.13),
+        inset 0 0 50px rgba(80,227,155,.08);
 }
 
-.final h2 {
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: clamp(40px,6vw,65px);
-
-    line-height: 1;
-
-    letter-spacing: -3px;
-
-    margin-bottom: 18px;
+.big-one span{
+    background:linear-gradient(135deg,#fff,#76edac,#ffd76a);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
-.final h2 span {
-    color: var(--gold);
+.feature-content .eyebrow{
+    text-align:left;
 }
 
-.final p {
-
-    max-width: 600px;
-
-    margin: 0 auto 30px;
-
-    color: var(--muted);
-
-    font-size: 15px;
+.feature-content h2{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(36px,5vw,55px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:20px;
 }
 
+.feature-content > p{
+    color:var(--muted);
+    line-height:1.75;
+    margin-bottom:30px;
+}
 
-/* =========================================================
+.feature-list{
+    display:grid;
+    gap:15px;
+}
+
+.feature-list div{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.check{
+    width:22px;
+    height:22px;
+    flex:none;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:rgba(80,227,155,.1);
+    color:var(--green);
+    font-size:12px;
+}
+
+.feature-list span{
+    color:#c6cec9;
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* =========================
+   DISCLOSURE
+========================= */
+
+.disclosure{
+    margin-top:25px;
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,215,106,.035);
+    border:1px solid rgba(255,215,106,.12);
+}
+
+.disclosure strong{
+    color:var(--gold);
+    font-size:13px;
+}
+
+.disclosure p{
+    margin-top:8px;
+    color:#89958f;
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    max-width:820px;
+    margin:auto;
+}
+
+.faq-item{
+    border-bottom:1px solid rgba(255,255,255,.09);
+}
+
+.faq-question{
+    width:100%;
+    padding:24px 4px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:none;
+    border:0;
+    color:#fff;
+
+    text-align:left;
+
+    font-family:"DM Sans";
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.faq-icon{
+    font-size:22px;
+    color:var(--green);
+    transition:.3s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+}
+
+.faq-answer p{
+    padding:0 35px 24px 4px;
+    color:#8d9994;
+    font-size:14px;
+    line-height:1.75;
+}
+
+.faq-item.active .faq-answer{
+    max-height:250px;
+}
+
+.faq-item.active .faq-icon{
+    transform:rotate(45deg);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.final-cta{
+    padding:50px 0 130px;
+}
+
+.cta-box{
+    position:relative;
+    overflow:hidden;
+
+    padding:80px 50px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(80,227,155,.15),
+            transparent 50%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:var(--shadow);
+}
+
+.cta-box::before{
+    content:"";
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    left:50%;
+    top:-300px;
+
+    transform:translateX(-50%);
+
+    background:rgba(80,227,155,.1);
+
+    filter:blur(70px);
+}
+
+.cta-box > *{
+    position:relative;
+    z-index:2;
+}
+
+.cta-box h2{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(38px,5vw,62px);
+    letter-spacing:-2px;
+    line-height:1.05;
+
+    margin-bottom:18px;
+}
+
+.cta-box p{
+    max-width:600px;
+    margin:0 auto 30px;
+
+    color:#9ba7a2;
+    line-height:1.7;
+}
+
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
-.footer {
-
-    padding: 40px 0 100px;
-
-    border-top: 1px solid rgba(255,255,255,.06);
-
-    color: #687789;
-
-    font-size: 11px;
-
-    text-align: center;
+footer{
+    border-top:1px solid rgba(255,255,255,.07);
+    padding:35px 0 100px;
 }
 
-.footer-links {
-
-    margin-top: 12px;
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
 }
 
-.footer-links a {
-
-    color: #98a6b5;
-
-    margin: 0 8px;
+.footer-copy{
+    color:#69756f;
+    font-size:12px;
+    line-height:1.6;
 }
 
+.footer-links{
+    display:flex;
+    gap:20px;
+}
 
-/* =========================================================
+.footer-links a{
+    color:#8d9994;
+    font-size:12px;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+/* =========================
    MOBILE CTA
-========================================================= */
+========================= */
 
-.mobile-cta {
+.mobile-cta{
+    display:none;
 
-    display: none;
+    position:fixed;
+    left:12px;
+    right:12px;
+    bottom:12px;
 
-    position: fixed;
+    z-index:999;
 
-    z-index: 999;
+    padding:10px;
 
-    bottom: 0;
-    left: 0;
-    right: 0;
+    background:rgba(5,10,8,.82);
+    backdrop-filter:blur(18px);
 
-    padding: 11px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:18px;
 
-    background: rgba(5,11,18,.92);
-
-    backdrop-filter: blur(20px);
-
-    border-top: 1px solid rgba(255,255,255,.08);
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
-.mobile-cta a {
-    width: 100%;
+.mobile-cta a{
+    width:100%;
 }
 
+/* =========================
+   SCROLL REVEAL
+========================= */
 
-/* =========================================================
-   SCROLL ANIMATION
-========================================================= */
-
-.reveal {
-
-    opacity: 0;
-
-    transform: translateY(25px);
-
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
     transition:
-        opacity .7s ease,
-        transform .7s ease;
+        opacity .8s ease,
+        transform .8s ease;
 }
 
-.reveal.show {
-
-    opacity: 1;
-
-    transform: translateY(0);
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-
-/* =========================================================
+/* =========================
    RESPONSIVE
-========================================================= */
+========================= */
 
-@media(max-width: 950px) {
+@media(max-width:950px){
 
-    .hero-grid {
-
-        grid-template-columns: 1fr;
-
-        text-align: center;
+    .hero{
+        min-height:auto;
+        padding-top:150px;
     }
 
-    .hero-text {
-        margin-left: auto;
-        margin-right: auto;
+    .hero-grid,
+    .feature-grid{
+        grid-template-columns:1fr;
+        gap:55px;
     }
 
-    .hero-buttons {
-        justify-content: center;
+    .reward-stage{
+        min-height:500px;
     }
 
-    .hero-visual {
-        min-height: 450px;
+    .steps{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .steps-grid {
-
-        grid-template-columns: 1fr 1fr;
+    .feature-content{
+        order:-1;
     }
-
-    .feature-grid {
-
-        grid-template-columns: 1fr;
-
-        text-align: center;
-    }
-
-    .feature-list {
-
-        max-width: 450px;
-
-        margin: auto;
-
-        text-align: left;
-    }
-
 }
 
+@media(max-width:650px){
 
-@media(max-width: 600px) {
-
-    .nav {
-        height: 66px;
+    header{
+        padding:10px 0;
     }
 
-    .nav-link {
-        display: none;
+    .nav{
+        padding:10px 12px 10px 15px;
+        border-radius:14px;
     }
 
-    .hero {
-        padding: 65px 0 50px;
+    .logo{
+        font-size:16px;
     }
 
-    .hero h1 {
-
-        font-size: 45px;
-
-        letter-spacing: -2.5px;
+    .logo-icon{
+        width:30px;
+        height:30px;
     }
 
-    .hero-text {
-
-        font-size: 15px;
-
-        line-height: 1.65;
+    .nav-btn{
+        padding:9px 13px;
+        font-size:12px;
     }
 
-    .hero-buttons {
+    .hero{
+        padding:125px 0 50px;
+    }
 
-        flex-direction: column;
+    .hero h1{
+        font-size:46px;
+        letter-spacing:-2.5px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        display:grid;
+        grid-template-columns:1fr;
     }
 
     .primary-btn,
-    .secondary-btn {
-
-        width: 100%;
+    .secondary-btn{
+        width:100%;
     }
 
-    .hero-visual {
-
-        min-height: 400px;
+    .reward-stage{
+        min-height:430px;
     }
 
-    .reward-card {
-
-        padding: 25px;
-
-        border-radius: 25px;
+    .reward-card{
+        padding:24px;
+        border-radius:24px;
     }
 
-    .reward-amount {
-
-        font-size: 72px;
-
-        letter-spacing: -5px;
+    .money{
+        font-size:72px;
+        letter-spacing:-4px;
     }
 
-    .float-one {
-
-        left: -5px;
-        top: 70px;
+    .float1{
+        right:-2%;
+        top:5%;
     }
 
-    .float-two {
-
-        right: -5px;
-        bottom: 70px;
+    .float2{
+        left:-3%;
+        bottom:7%;
     }
 
-    .trust-items {
-
-        grid-template-columns: 1fr;
+    .trust-inner{
+        grid-template-columns:1fr;
     }
 
-    .trust-item {
-
-        justify-content: flex-start;
+    .trust-item + .trust-item{
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.08);
     }
 
-    .section {
-
-        padding: 70px 0;
+    section{
+        padding:80px 0;
     }
 
-    .steps-grid {
-
-        grid-template-columns: 1fr;
+    .steps{
+        grid-template-columns:1fr;
     }
 
-    .feature-circle {
-
-        width: 270px;
-        height: 270px;
+    .step{
+        min-height:auto;
     }
 
-    .feature-inner {
-
-        width: 185px;
-        height: 185px;
+    .visual-box{
+        min-height:390px;
     }
 
-    .feature-inner strong {
-
-        font-size: 42px;
+    .big-one{
+        width:180px;
+        height:180px;
+        font-size:42px;
     }
 
-    .disclosures {
-
-        grid-template-columns: 1fr;
+    .cta-box{
+        padding:55px 25px;
+        border-radius:25px;
     }
 
-    .transparency {
-
-        padding: 25px 20px;
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
     }
 
-    .final {
-
-        padding: 80px 0 100px;
+    .mobile-cta{
+        display:block;
     }
 
-    .mobile-cta {
-
-        display: block;
+    footer{
+        padding-bottom:110px;
     }
-
-    .footer {
-
-        padding-bottom: 95px;
-    }
-
 }
 
 </style>
 </head>
 
-
 <body>
 
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
 
-<!-- =========================================================
-     ANIMATED BACKGROUND
-========================================================= -->
 
-<div class="background">
+<!-- =========================
+     HEADER
+========================= -->
 
-    <div class="orb one"></div>
+<header>
 
-    <div class="orb two"></div>
+<div class="container">
 
-    <div class="orb three"></div>
+<nav class="nav">
+
+<a href="#" class="logo">
+    <div class="logo-icon">$</div>
+    UpLevel<span>Rewards</span>
+</a>
+
+<a href="#start" class="nav-btn">
+    Get Started →
+</a>
+
+</nav>
 
 </div>
-
-
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
-<header class="header">
-
-    <div class="container nav">
-
-        <a href="#" class="logo">
-            UpLevel<span>Rewards</span>
-        </a>
-
-        <a href="#eligibility" class="nav-link">
-            Check Eligibility →
-        </a>
-
-    </div>
 
 </header>
 
 
+<!-- =========================
+     HERO
+========================= -->
 
 <main>
 
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
 <section class="hero">
 
-    <div class="container hero-grid">
+<div class="container">
 
+<div class="hero-grid">
 
-        <div class="hero-content reveal">
+<div class="hero-content reveal">
 
-            <div class="eyebrow">
+<div class="status">
+    <span class="status-dot"></span>
+    Offer Status: Available
+</div>
 
-                <span class="status-dot"></span>
+<h1>
+    Your Next
+    <span class="gradient-text">$1,000</span>
+    Reward Could Be Here.
+</h1>
 
-                Special Reward Opportunity
+<p>
+    Discover an opportunity to qualify for a potential
+    $1,000 cash deposit through UpLevelRewards.
+    Complete the required steps and see if you're eligible.
+</p>
 
-            </div>
+<div class="hero-buttons">
 
+<a href="#start" class="primary-btn">
+    Check My Eligibility
+    <span>→</span>
+</a>
 
-            <h1>
+<a href="#how-it-works" class="secondary-btn">
+    How It Works
+</a>
 
-                Your Next
-
-                <span class="highlight">$1,000</span>
-
-                Reward Could Be Here.
-
-            </h1>
-
-
-            <p class="hero-text">
-
-                Explore the UpLevelRewards promotional opportunity.
-                Complete the applicable requirements and check whether
-                you qualify for the advertised cash reward.
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-                <a href="#eligibility" class="primary-btn">
-
-                    CHECK ELIGIBILITY
-
-                    <span>→</span>
-
-                </a>
-
-
-                <a href="#how-it-works" class="secondary-btn">
-
-                    See How It Works
-
-                </a>
-
-            </div>
-
-
-            <p class="hero-note">
-
-                Eligibility requirements, terms and conditions apply.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- REWARD CARD -->
-
-        <div class="hero-visual reveal">
-
-
-            <div class="float-card float-one">
-
-                <strong>✓</strong>
-
-                Eligibility required
-
-            </div>
-
-
-            <div class="float-card float-two">
-
-                🎁
-
-                Promotional reward
-
-            </div>
-
-
-            <div class="reward-card">
-
-
-                <div class="card-top">
-
-                    <div class="card-brand">
-
-                        UpLevel<span>Rewards</span>
-
-                    </div>
-
-
-                    <div class="card-icon">
-
-                        ✦
-
-                    </div>
-
-                </div>
-
-
-                <div class="reward-label">
-
-                    Potential Cash Reward
-
-                </div>
-
-
-                <div class="reward-amount">
-
-                    $1,000
-
-                </div>
-
-
-                <div class="reward-description">
-
-                    Available to eligible participants
-                    according to the applicable promotion terms.
-
-                </div>
-
-
-                <div class="progress-box">
-
-                    <div class="progress-header">
-
-                        <span>Eligibility process</span>
-
-                        <span>Review requirements</span>
-
-                    </div>
-
-
-                    <div class="progress">
-
-                        <div class="progress-bar"></div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     TRUST STRIP
-========================================================= -->
-
-<div class="trust-strip">
-
-    <div class="container trust-items">
-
-
-        <div class="trust-item">
-
-            <span>✓</span>
-
-            Eligibility requirements apply
-
-        </div>
-
-
-        <div class="trust-item">
-
-            <span>◆</span>
-
-            Promotional offer
-
-        </div>
-
-
-        <div class="trust-item">
-
-            <span>✓</span>
-
-            Terms & conditions apply
-
-        </div>
-
-
-    </div>
+</div>
 
 </div>
 
 
+<div class="reward-stage reveal">
 
-<!-- =========================================================
+<div class="reward-glow"></div>
+
+
+<div class="float-card float1">
+
+<small>Reward Type</small>
+<strong>Cash Deposit</strong>
+
+</div>
+
+
+<div class="float-card float2">
+
+<small>Eligibility</small>
+<strong>Requirements Apply</strong>
+
+</div>
+
+
+<div class="reward-card">
+
+<div class="card-top">
+
+<div class="card-label">
+    POTENTIAL REWARD
+</div>
+
+<div class="secure">
+    <div class="secure-icon">✓</div>
+    Secure
+</div>
+
+</div>
+
+
+<div class="money">
+    $1,000
+</div>
+
+
+<div class="card-description">
+
+Your eligibility may depend on completing
+specific requirements. Review the offer
+details before continuing.
+
+</div>
+
+
+<div class="progress-head">
+
+<span>Eligibility Journey</span>
+<span>Step 3 of 4</span>
+
+</div>
+
+<div class="progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+
+<div class="card-bottom">
+
+<span>Offer</span>
+<strong>UpLevelRewards</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TRUST STRIP
+========================= -->
+
+<div class="trust-strip">
+
+<div class="container">
+
+<div class="trust-inner">
+
+<div class="trust-item">
+    <span>✓</span>
+    <span><b>Clear Requirements</b></span>
+</div>
+
+<div class="trust-item">
+    <span>◆</span>
+    <span><b>Transparent Process</b></span>
+</div>
+
+<div class="trust-item">
+    <span>↗</span>
+    <span><b>Simple Online Journey</b></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
      HOW IT WORKS
-========================================================= -->
+========================= -->
 
-<section class="section" id="how-it-works">
+<section id="how-it-works">
 
-    <div class="container">
+<div class="container">
 
+<div class="section-head reveal">
 
-        <div class="section-heading reveal">
+<div class="eyebrow">
+    Simple Process
+</div>
 
-            <div class="section-kicker">
+<h2>
+    How It Works
+</h2>
 
-                HOW IT WORKS
+<p>
+    Follow the required steps and review the
+    eligibility information before completing your journey.
+</p>
 
-            </div>
+</div>
 
-            <h2>
 
-                Four Simple Steps
+<div class="steps">
 
-            </h2>
+<div class="step reveal">
 
-            <p>
+<div class="step-number">
+    01
+</div>
 
-                Follow the applicable promotional process
-                and review the requirements along the way.
+<h3>Get Started</h3>
 
-            </p>
+<p>
+    Begin the process by reviewing the offer
+    and entering the required information.
+</p>
 
-        </div>
+</div>
 
 
+<div class="step reveal">
 
-        <div class="steps-grid">
+<div class="step-number">
+    02
+</div>
 
+<h3>Complete Requirements</h3>
 
-            <div class="step reveal">
+<p>
+    Follow the instructions associated with
+    the offer and complete any required steps.
+</p>
 
-                <div class="step-number">
+</div>
 
-                    01
 
-                </div>
+<div class="step reveal">
 
-                <div class="step-icon">
+<div class="step-number">
+    03
+</div>
 
-                    🚀
+<h3>Eligibility Review</h3>
 
-                </div>
+<p>
+    Your submitted information and completed
+    requirements may be reviewed for eligibility.
+</p>
 
-                <h3>
+</div>
 
-                    Get Started
 
-                </h3>
+<div class="step reveal">
 
-                <p>
+<div class="step-number">
+    04
+</div>
 
-                    Begin the promotional process by
-                    following the provided instructions.
+<h3>Potential Reward</h3>
 
-                </p>
+<p>
+    Eligible participants may receive the
+    advertised reward according to the offer terms.
+</p>
 
-            </div>
+</div>
 
+</div>
 
-
-            <div class="step reveal">
-
-                <div class="step-number">
-
-                    02
-
-                </div>
-
-                <div class="step-icon">
-
-                    ✓
-
-                </div>
-
-                <h3>
-
-                    Complete Requirements
-
-                </h3>
-
-                <p>
-
-                    Complete the applicable offers,
-                    activities or requirements.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="step reveal">
-
-                <div class="step-number">
-
-                    03
-
-                </div>
-
-                <div class="step-icon">
-
-                    🔎
-
-                </div>
-
-                <h3>
-
-                    Review Eligibility
-
-                </h3>
-
-                <p>
-
-                    Your eligibility can be reviewed
-                    after the applicable requirements
-                    have been completed.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="step reveal">
-
-                <div class="step-number">
-
-                    04
-
-                </div>
-
-                <div class="step-icon">
-
-                    🎁
-
-                </div>
-
-                <h3>
-
-                    Receive Reward
-
-                </h3>
-
-                <p>
-
-                    Eligible participants may receive
-                    the advertised reward according
-                    to the official terms.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      FEATURE
-========================================================= -->
+========================= -->
 
-<section class="section feature">
+<section>
 
-    <div class="container feature-grid">
+<div class="container">
 
-
-        <div class="feature-visual reveal">
-
-            <div class="feature-circle">
-
-                <div class="feature-inner">
-
-                    <strong>$1K</strong>
-
-                    <span>
-
-                        Potential Reward
-
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
+<div class="feature-grid">
 
 
+<div class="visual-box reveal">
 
-        <div class="feature-content reveal">
+<div class="big-one">
+    <span>$1K</span>
+</div>
 
-            <div class="section-kicker">
-
-                THE OPPORTUNITY
-
-            </div>
-
-
-            <h2>
-
-                Could $1,000 Be Your Next Reward?
-
-            </h2>
+</div>
 
 
-            <p>
+<div class="feature-content reveal">
 
-                UpLevelRewards provides access to promotional
-                reward opportunities for eligible participants.
-                Review the applicable requirements before
-                participating.
+<div class="eyebrow">
+    The Opportunity
+</div>
 
-            </p>
+<h2>
+    Could $1,000 Be Your Next Reward?
+</h2>
 
-
-            <ul class="feature-list">
-
-                <li>
-
-                    <span>✓</span>
-
-                    Clear promotional requirements
-
-                </li>
+<p>
+    UpLevelRewards gives eligible participants
+    an opportunity to work through a simple
+    online process toward a potential cash deposit.
+</p>
 
 
-                <li>
+<div class="feature-list">
 
-                    <span>✓</span>
+<div>
+    <div class="check">✓</div>
+    <span>Review the offer requirements clearly.</span>
+</div>
 
-                    Eligibility-based participation
+<div>
+    <div class="check">✓</div>
+    <span>Complete the required eligibility steps.</span>
+</div>
 
-                </li>
+<div>
+    <div class="check">✓</div>
+    <span>Submit the necessary information.</span>
+</div>
 
+<div>
+    <div class="check">✓</div>
+    <span>Potential reward subject to applicable terms.</span>
+</div>
 
-                <li>
-
-                    <span>✓</span>
-
-                    Official terms and conditions apply
-
-                </li>
-
-
-                <li>
-
-                    <span>✓</span>
-
-                    Reward fulfillment subject to qualification
-
-                </li>
-
-            </ul>
-
-        </div>
+</div>
 
 
-    </div>
+<div class="disclosure">
+
+<strong>Important Information</strong>
+
+<p>
+    $1,000 is a potential advertised reward and
+    is not guaranteed. Eligibility requirements,
+    restrictions, terms and conditions may apply.
+    Please review the official offer details before
+    participating.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-
-<!-- =========================================================
-     TRANSPARENCY
-========================================================= -->
-
-<section class="section">
-
-    <div class="container">
-
-
-        <div class="transparency reveal">
-
-
-            <h3>
-
-                Before You Continue
-
-            </h3>
-
-
-            <p>
-
-                Promotional offers may have specific eligibility
-                requirements, geographic restrictions, completion
-                requirements and other conditions. Please review
-                the official promotion terms before participating.
-
-            </p>
-
-
-            <div class="disclosures">
-
-
-                <div class="disclosure">
-
-                    <span>✓</span>
-
-                    Eligibility restrictions may apply.
-
-                </div>
-
-
-                <div class="disclosure">
-
-                    <span>✓</span>
-
-                    Offer availability may vary.
-
-                </div>
-
-
-                <div class="disclosure">
-
-                    <span>✓</span>
-
-                    Terms and conditions apply.
-
-                </div>
-
-
-                <div class="disclosure">
-
-                    <span>✓</span>
-
-                    Reward timing depends on the official terms.
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
+<!-- =========================
      FAQ
-========================================================= -->
+========================= -->
 
-<section class="section">
+<section>
 
-    <div class="container">
+<div class="container">
 
+<div class="section-head reveal">
 
-        <div class="section-heading reveal">
+<div class="eyebrow">
+    Questions
+</div>
 
-            <div class="section-kicker">
+<h2>
+    Frequently Asked Questions
+</h2>
 
-                FAQ
+<p>
+    Here are some common questions about the offer.
+</p>
 
-            </div>
+</div>
 
-            <h2>
 
-                Questions? We've Got Answers.
+<div class="faq">
 
-            </h2>
 
-        </div>
+<div class="faq-item reveal">
 
+<button class="faq-question">
 
+<span>Is the $1,000 reward guaranteed?</span>
 
-        <div class="faq">
+<span class="faq-icon">+</span>
 
+</button>
 
-            <div class="faq-item reveal">
+<div class="faq-answer">
 
-                <button class="faq-question">
+<p>
+    No. The advertised amount is a potential reward.
+    Eligibility requirements and offer terms apply,
+    and receiving a reward is not guaranteed.
+</p>
 
-                    How does the $1,000 offer work?
+</div>
 
-                    <span>+</span>
+</div>
 
-                </button>
 
+<div class="faq-item reveal">
 
-                <div class="faq-answer">
+<button class="faq-question">
 
-                    Participants must complete the requirements
-                    specified in the official promotion terms.
-                    Qualified participants may be eligible for
-                    the advertised reward.
+<span>What do I need to do?</span>
 
-                </div>
+<span class="faq-icon">+</span>
 
-            </div>
+</button>
 
+<div class="faq-answer">
 
+<p>
+    You will need to follow the offer instructions
+    and complete any applicable eligibility
+    requirements shown during the process.
+</p>
 
-            <div class="faq-item reveal">
+</div>
 
-                <button class="faq-question">
+</div>
 
-                    Is everyone eligible?
 
-                    <span>+</span>
+<div class="faq-item reveal">
 
-                </button>
+<button class="faq-question">
 
+<span>How long does the process take?</span>
 
-                <div class="faq-answer">
+<span class="faq-icon">+</span>
 
-                    Eligibility depends on the applicable
-                    promotion terms and conditions.
+</button>
 
-                </div>
+<div class="faq-answer">
 
-            </div>
+<p>
+    Processing times can vary depending on the
+    requirements and the applicable offer terms.
+    Check the official terms for the most accurate information.
+</p>
 
+</div>
 
+</div>
 
-            <div class="faq-item reveal">
 
-                <button class="faq-question">
+<div class="faq-item reveal">
 
-                    How do I get started?
+<button class="faq-question">
 
-                    <span>+</span>
+<span>Who can participate?</span>
 
-                </button>
+<span class="faq-icon">+</span>
 
+</button>
 
-                <div class="faq-answer">
+<div class="faq-answer">
 
-                    Select the “Check Eligibility” button
-                    and follow the instructions provided
-                    on the promotional page.
+<p>
+    Participation depends on the eligibility
+    requirements and restrictions specified in
+    the official offer.
+</p>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
 
+</div>
 
-            <div class="faq-item reveal">
-
-                <button class="faq-question">
-
-                    When will the reward be received?
-
-                    <span>+</span>
-
-                </button>
-
-
-                <div class="faq-answer">
-
-                    Reward timing depends on successful
-                    completion of the applicable requirements
-                    and the official promotion terms.
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =========================================================
+<!-- =========================
      FINAL CTA
-========================================================= -->
+========================= -->
 
-<section class="final" id="eligibility">
+<section class="final-cta" id="start">
 
-    <div class="container reveal">
+<div class="container">
 
+<div class="cta-box reveal">
 
-        <div class="section-kicker">
+<div class="eyebrow">
+    Ready To Explore?
+</div>
 
-            READY TO CHECK?
+<h2>
+    Start Your Eligibility Journey.
+</h2>
 
-        </div>
+<p>
+    Review the offer requirements and continue
+    to see whether you qualify for the potential
+    $1,000 cash deposit.
+</p>
 
+<a href="#" class="primary-btn">
+    Check Eligibility
+    <span>→</span>
+</a>
 
-        <h2>
+</div>
 
-            Your <span>$1,000</span> Opportunity<br>
-
-            Starts Here.
-
-        </h2>
-
-
-        <p>
-
-            Take the first step and review whether
-            you meet the applicable eligibility requirements.
-
-        </p>
-
-
-        <!-- =================================================
-             IMPORTANT:
-             Replace "#" with your real offer URL.
-        ================================================== -->
-
-        <a href="#" class="primary-btn">
-
-            CHECK MY ELIGIBILITY
-
-            <span>→</span>
-
-        </a>
-
-
-        <p class="hero-note">
-
-            Terms & Conditions Apply. Eligibility restrictions may apply.
-
-        </p>
-
-    </div>
+</div>
 
 </section>
-
-
 
 </main>
 
 
-
-<!-- =========================================================
+<!-- =========================
      FOOTER
-========================================================= -->
+========================= -->
 
-<footer class="footer">
+<footer>
 
-    <div class="container">
+<div class="container">
 
-        <p>
+<div class="footer-inner">
 
-            © 2026 UpLevelRewards. All rights reserved.
+<div class="footer-copy">
 
-        </p>
-
-
-        <div class="footer-links">
-
-            <a href="#">Terms & Conditions</a>
-
-            <a href="#">Privacy Policy</a>
-
-            <a href="#">Contact</a>
-
-        </div>
-
-
-        <p style="margin-top:15px;">
-
-            This page is for promotional purposes.
-            Offer availability and reward fulfillment
-            are subject to the applicable official terms.
-
-        </p>
-
-    </div>
-
-</footer>
-
-
-
-<!-- =========================================================
-     MOBILE STICKY CTA
-========================================================= -->
-
-<div class="mobile-cta">
-
-    <!-- Replace "#" with your real offer URL -->
-
-    <a href="#" class="primary-btn">
-
-        CHECK ELIGIBILITY →
-
-    </a>
+© 2026 UpLevelRewards. All rights reserved.<br>
+Rewards are subject to eligibility and applicable terms.
 
 </div>
 
 
+<div class="footer-links">
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Contact</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     MOBILE CTA
+========================= -->
+
+<div class="mobile-cta">
+
+<a href="#start" class="primary-btn">
+    Check My Eligibility →
+</a>
+
+</div>
+
 
 <script>
 
-
-/* =========================================================
+/* =========================
    FAQ ACCORDION
-========================================================= */
+========================= */
 
 const faqItems = document.querySelectorAll(".faq-item");
-
 
 faqItems.forEach(item => {
 
@@ -2358,21 +1891,14 @@ faqItems.forEach(item => {
 
     button.addEventListener("click", () => {
 
-        const alreadyOpen =
-            item.classList.contains("active");
-
+        const isActive = item.classList.contains("active");
 
         faqItems.forEach(other => {
-
             other.classList.remove("active");
-
         });
 
-
-        if (!alreadyOpen) {
-
+        if(!isActive){
             item.classList.add("active");
-
         }
 
     });
@@ -2380,66 +1906,56 @@ faqItems.forEach(item => {
 });
 
 
-
-/* =========================================================
+/* =========================
    SCROLL REVEAL
-========================================================= */
+========================= */
 
-const revealElements =
-    document.querySelectorAll(".reveal");
-
+const revealItems = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(
 
-    entries => {
+(entries) => {
 
-        entries.forEach(entry => {
+    entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+        if(entry.isIntersecting){
 
-                entry.target.classList.add("show");
+            entry.target.classList.add("show");
 
-                observer.unobserve(entry.target);
+            observer.unobserve(entry.target);
 
-            }
+        }
 
-        });
+    });
 
-    },
+},
 
-    {
-        threshold: .12
-    }
+{
+    threshold:.12
+}
 
 );
 
 
-revealElements.forEach(element => {
-
-    observer.observe(element);
-
-});
+revealItems.forEach(el => observer.observe(el));
 
 
-
-/* =========================================================
+/* =========================
    SMOOTH CTA
-========================================================= */
+========================= */
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    link.addEventListener("click", function(e) {
+    link.addEventListener("click", function(e){
 
-        const target =
-            document.querySelector(this.getAttribute("href"));
+        const target = document.querySelector(this.getAttribute("href"));
 
-
-        if (target) {
+        if(target){
 
             e.preventDefault();
 
             target.scrollIntoView({
-                behavior: "smooth"
+                behavior:"smooth"
             });
 
         }
@@ -2449,8 +1965,33 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
-</script>
+/* =========================
+   SUBTLE MOUSE PARALLAX
+========================= */
 
+const rewardCard = document.querySelector(".reward-card");
+
+document.addEventListener("mousemove", (e) => {
+
+    if(window.innerWidth < 900) return;
+
+    const x = (e.clientX / window.innerWidth - .5);
+    const y = (e.clientY / window.innerHeight - .5);
+
+    rewardCard.style.transform =
+        `rotateY(${x * 5}deg) rotateX(${y * -5}deg)`;
+
+});
+
+
+document.addEventListener("mouseleave", () => {
+
+    rewardCard.style.transform =
+        "rotateY(0deg) rotateX(0deg)";
+
+});
+
+</script>
 
 </body>
 </html>
